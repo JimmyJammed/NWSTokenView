@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A9D3CB31B7A9E4D009BC983 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D3CB21B7A9E4D009BC983 /* AppDelegate.swift */; };
+		1A9D3CB51B7A9E4D009BC983 /* NWSTokenViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D3CB41B7A9E4D009BC983 /* NWSTokenViewExampleViewController.swift */; };
+		1A9D3CB81B7A9E4D009BC983 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9D3CB61B7A9E4D009BC983 /* Main.storyboard */; };
+		1A9D3CBA1B7A9E4D009BC983 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A9D3CB91B7A9E4D009BC983 /* Images.xcassets */; };
+		1A9D3CBD1B7A9E4D009BC983 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A9D3CBB1B7A9E4D009BC983 /* LaunchScreen.xib */; };
+		1A9D3CC91B7A9E4D009BC983 /* NWSTokenViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D3CC81B7A9E4D009BC983 /* NWSTokenViewTests.swift */; };
+		1A9D3CD31B7A9F13009BC983 /* NWSTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D3CD21B7A9F13009BC983 /* NWSTokenView.swift */; };
+		1A9D3CD41B7A9F13009BC983 /* NWSTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D3CD21B7A9F13009BC983 /* NWSTokenView.swift */; };
+		1A9D3CD61B7A9F23009BC983 /* NWSToken.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A9D3CD51B7A9F23009BC983 /* NWSToken.xib */; };
+		1A9D3CD71B7A9F23009BC983 /* NWSToken.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A9D3CD51B7A9F23009BC983 /* NWSToken.xib */; };
+		1A9D3CD91B7A9F5B009BC983 /* NWSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D3CD81B7A9F5B009BC983 /* NWSToken.swift */; };
+		1A9D3CDA1B7A9F5B009BC983 /* NWSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D3CD81B7A9F5B009BC983 /* NWSToken.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1A9D3CC31B7A9E4D009BC983 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A9D3CA51B7A9E4D009BC983 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A9D3CAC1B7A9E4D009BC983;
+			remoteInfo = NWSTokenView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1A9D3CAD1B7A9E4D009BC983 /* NWSTokenView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NWSTokenView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A9D3CB11B7A9E4D009BC983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A9D3CB21B7A9E4D009BC983 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1A9D3CB41B7A9E4D009BC983 /* NWSTokenViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWSTokenViewExampleViewController.swift; sourceTree = "<group>"; };
+		1A9D3CB71B7A9E4D009BC983 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1A9D3CB91B7A9E4D009BC983 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1A9D3CBC1B7A9E4D009BC983 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		1A9D3CC21B7A9E4D009BC983 /* NWSTokenViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NWSTokenViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A9D3CC71B7A9E4D009BC983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A9D3CC81B7A9E4D009BC983 /* NWSTokenViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWSTokenViewTests.swift; sourceTree = "<group>"; };
+		1A9D3CD21B7A9F13009BC983 /* NWSTokenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NWSTokenView.swift; sourceTree = "<group>"; };
+		1A9D3CD51B7A9F23009BC983 /* NWSToken.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NWSToken.xib; sourceTree = "<group>"; };
+		1A9D3CD81B7A9F5B009BC983 /* NWSToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NWSToken.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1A9D3CAA1B7A9E4D009BC983 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A9D3CBF1B7A9E4D009BC983 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A9D3CA41B7A9E4D009BC983 = {
+			isa = PBXGroup;
+			children = (
+				1A9D3CAF1B7A9E4D009BC983 /* NWSTokenView */,
+				1A9D3CC51B7A9E4D009BC983 /* NWSTokenViewTests */,
+				1A9D3CAE1B7A9E4D009BC983 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1A9D3CAE1B7A9E4D009BC983 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A9D3CAD1B7A9E4D009BC983 /* NWSTokenView.app */,
+				1A9D3CC21B7A9E4D009BC983 /* NWSTokenViewTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1A9D3CAF1B7A9E4D009BC983 /* NWSTokenView */ = {
+			isa = PBXGroup;
+			children = (
+				1A9D3CB21B7A9E4D009BC983 /* AppDelegate.swift */,
+				1A9D3CD81B7A9F5B009BC983 /* NWSToken.swift */,
+				1A9D3CD21B7A9F13009BC983 /* NWSTokenView.swift */,
+				1A9D3CD51B7A9F23009BC983 /* NWSToken.xib */,
+				1A9D3CB41B7A9E4D009BC983 /* NWSTokenViewExampleViewController.swift */,
+				1A9D3CB61B7A9E4D009BC983 /* Main.storyboard */,
+				1A9D3CB91B7A9E4D009BC983 /* Images.xcassets */,
+				1A9D3CBB1B7A9E4D009BC983 /* LaunchScreen.xib */,
+				1A9D3CB01B7A9E4D009BC983 /* Supporting Files */,
+			);
+			path = NWSTokenView;
+			sourceTree = "<group>";
+		};
+		1A9D3CB01B7A9E4D009BC983 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1A9D3CB11B7A9E4D009BC983 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1A9D3CC51B7A9E4D009BC983 /* NWSTokenViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				1A9D3CC81B7A9E4D009BC983 /* NWSTokenViewTests.swift */,
+				1A9D3CC61B7A9E4D009BC983 /* Supporting Files */,
+			);
+			path = NWSTokenViewTests;
+			sourceTree = "<group>";
+		};
+		1A9D3CC61B7A9E4D009BC983 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1A9D3CC71B7A9E4D009BC983 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1A9D3CAC1B7A9E4D009BC983 /* NWSTokenView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A9D3CCC1B7A9E4D009BC983 /* Build configuration list for PBXNativeTarget "NWSTokenView" */;
+			buildPhases = (
+				1A9D3CA91B7A9E4D009BC983 /* Sources */,
+				1A9D3CAA1B7A9E4D009BC983 /* Frameworks */,
+				1A9D3CAB1B7A9E4D009BC983 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NWSTokenView;
+			productName = NWSTokenView;
+			productReference = 1A9D3CAD1B7A9E4D009BC983 /* NWSTokenView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1A9D3CC11B7A9E4D009BC983 /* NWSTokenViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A9D3CCF1B7A9E4D009BC983 /* Build configuration list for PBXNativeTarget "NWSTokenViewTests" */;
+			buildPhases = (
+				1A9D3CBE1B7A9E4D009BC983 /* Sources */,
+				1A9D3CBF1B7A9E4D009BC983 /* Frameworks */,
+				1A9D3CC01B7A9E4D009BC983 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A9D3CC41B7A9E4D009BC983 /* PBXTargetDependency */,
+			);
+			name = NWSTokenViewTests;
+			productName = NWSTokenViewTests;
+			productReference = 1A9D3CC21B7A9E4D009BC983 /* NWSTokenViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1A9D3CA51B7A9E4D009BC983 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "NitWit Studios";
+				TargetAttributes = {
+					1A9D3CAC1B7A9E4D009BC983 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					1A9D3CC11B7A9E4D009BC983 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 1A9D3CAC1B7A9E4D009BC983;
+					};
+				};
+			};
+			buildConfigurationList = 1A9D3CA81B7A9E4D009BC983 /* Build configuration list for PBXProject "NWSTokenView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1A9D3CA41B7A9E4D009BC983;
+			productRefGroup = 1A9D3CAE1B7A9E4D009BC983 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1A9D3CAC1B7A9E4D009BC983 /* NWSTokenView */,
+				1A9D3CC11B7A9E4D009BC983 /* NWSTokenViewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A9D3CAB1B7A9E4D009BC983 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A9D3CB81B7A9E4D009BC983 /* Main.storyboard in Resources */,
+				1A9D3CD61B7A9F23009BC983 /* NWSToken.xib in Resources */,
+				1A9D3CBD1B7A9E4D009BC983 /* LaunchScreen.xib in Resources */,
+				1A9D3CBA1B7A9E4D009BC983 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A9D3CC01B7A9E4D009BC983 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A9D3CD71B7A9F23009BC983 /* NWSToken.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A9D3CA91B7A9E4D009BC983 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A9D3CD31B7A9F13009BC983 /* NWSTokenView.swift in Sources */,
+				1A9D3CB51B7A9E4D009BC983 /* NWSTokenViewExampleViewController.swift in Sources */,
+				1A9D3CD91B7A9F5B009BC983 /* NWSToken.swift in Sources */,
+				1A9D3CB31B7A9E4D009BC983 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A9D3CBE1B7A9E4D009BC983 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A9D3CC91B7A9E4D009BC983 /* NWSTokenViewTests.swift in Sources */,
+				1A9D3CDA1B7A9F5B009BC983 /* NWSToken.swift in Sources */,
+				1A9D3CD41B7A9F13009BC983 /* NWSTokenView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1A9D3CC41B7A9E4D009BC983 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A9D3CAC1B7A9E4D009BC983 /* NWSTokenView */;
+			targetProxy = 1A9D3CC31B7A9E4D009BC983 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1A9D3CB61B7A9E4D009BC983 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A9D3CB71B7A9E4D009BC983 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1A9D3CBB1B7A9E4D009BC983 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A9D3CBC1B7A9E4D009BC983 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1A9D3CCA1B7A9E4D009BC983 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1A9D3CCB1B7A9E4D009BC983 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1A9D3CCD1B7A9E4D009BC983 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NWSTokenView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1A9D3CCE1B7A9E4D009BC983 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NWSTokenView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1A9D3CD01B7A9E4D009BC983 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NWSTokenViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NWSTokenView.app/NWSTokenView";
+			};
+			name = Debug;
+		};
+		1A9D3CD11B7A9E4D009BC983 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NWSTokenViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NWSTokenView.app/NWSTokenView";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1A9D3CA81B7A9E4D009BC983 /* Build configuration list for PBXProject "NWSTokenView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A9D3CCA1B7A9E4D009BC983 /* Debug */,
+				1A9D3CCB1B7A9E4D009BC983 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A9D3CCC1B7A9E4D009BC983 /* Build configuration list for PBXNativeTarget "NWSTokenView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A9D3CCD1B7A9E4D009BC983 /* Debug */,
+				1A9D3CCE1B7A9E4D009BC983 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1A9D3CCF1B7A9E4D009BC983 /* Build configuration list for PBXNativeTarget "NWSTokenViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A9D3CD01B7A9E4D009BC983 /* Debug */,
+				1A9D3CD11B7A9E4D009BC983 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1A9D3CA51B7A9E4D009BC983 /* Project object */;
+}
