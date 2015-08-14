@@ -1,0 +1,14 @@
+PODS:
+  - NWSTokenView (0.1.0)
+
+DEPENDENCIES:
+  - NWSTokenView (from `../`)
+
+EXTERNAL SOURCES:
+  NWSTokenView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  NWSTokenView: 6cc35441363d081a5964f4e5501b2ab68fb09c0b
+
+COCOAPODS: 0.38.2

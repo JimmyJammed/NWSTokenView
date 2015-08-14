@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'NWSTokenView_Example', :exclusive => true do
+  pod "NWSTokenView", :path => "../"
+end
+
+target 'NWSTokenView_Tests', :exclusive => true do
+  pod "NWSTokenView", :path => "../"
+
+  
+end
