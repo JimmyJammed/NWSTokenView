@@ -7,18 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A60F3A21B7D635F00130958 /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A60F3A11B7D635F00130958 /* UIScrollView+EmptyDataSet.m */; };
+		1A60F3A31B7D635F00130958 /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A60F3A11B7D635F00130958 /* UIScrollView+EmptyDataSet.m */; };
+		1A60F3AB1B7D63D100130958 /* NWSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A60F3A91B7D63D100130958 /* NWSToken.swift */; };
+		1A60F3AC1B7D63D100130958 /* NWSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A60F3A91B7D63D100130958 /* NWSToken.swift */; };
+		1A60F3AD1B7D63D100130958 /* NWSToken.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A60F3AA1B7D63D100130958 /* NWSToken.xib */; };
+		1A60F3AE1B7D63D100130958 /* NWSToken.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A60F3AA1B7D63D100130958 /* NWSToken.xib */; };
+		1A60F3B11B7D640200130958 /* NWSTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A60F3B01B7D640200130958 /* NWSTokenView.swift */; };
+		1A60F3B21B7D640200130958 /* NWSTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A60F3B01B7D640200130958 /* NWSTokenView.swift */; };
+		1A60F3B51B7D640E00130958 /* NWSTokenViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A60F3B41B7D640E00130958 /* NWSTokenViewExampleViewController.swift */; };
+		1A60F3B61B7D640E00130958 /* NWSTokenViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A60F3B41B7D640E00130958 /* NWSTokenViewExampleViewController.swift */; };
 		1A9D3CB31B7A9E4D009BC983 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D3CB21B7A9E4D009BC983 /* AppDelegate.swift */; };
-		1A9D3CB51B7A9E4D009BC983 /* NWSTokenViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D3CB41B7A9E4D009BC983 /* NWSTokenViewExampleViewController.swift */; };
 		1A9D3CB81B7A9E4D009BC983 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9D3CB61B7A9E4D009BC983 /* Main.storyboard */; };
 		1A9D3CBA1B7A9E4D009BC983 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A9D3CB91B7A9E4D009BC983 /* Images.xcassets */; };
 		1A9D3CBD1B7A9E4D009BC983 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A9D3CBB1B7A9E4D009BC983 /* LaunchScreen.xib */; };
 		1A9D3CC91B7A9E4D009BC983 /* NWSTokenViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D3CC81B7A9E4D009BC983 /* NWSTokenViewTests.swift */; };
-		1A9D3CD31B7A9F13009BC983 /* NWSTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D3CD21B7A9F13009BC983 /* NWSTokenView.swift */; };
-		1A9D3CD41B7A9F13009BC983 /* NWSTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D3CD21B7A9F13009BC983 /* NWSTokenView.swift */; };
-		1A9D3CD61B7A9F23009BC983 /* NWSToken.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A9D3CD51B7A9F23009BC983 /* NWSToken.xib */; };
-		1A9D3CD71B7A9F23009BC983 /* NWSToken.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A9D3CD51B7A9F23009BC983 /* NWSToken.xib */; };
-		1A9D3CD91B7A9F5B009BC983 /* NWSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D3CD81B7A9F5B009BC983 /* NWSToken.swift */; };
-		1A9D3CDA1B7A9F5B009BC983 /* NWSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D3CD81B7A9F5B009BC983 /* NWSToken.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,19 +35,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A60F3A01B7D635F00130958 /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
+		1A60F3A11B7D635F00130958 /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
+		1A60F3A91B7D63D100130958 /* NWSToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NWSToken.swift; sourceTree = "<group>"; };
+		1A60F3AA1B7D63D100130958 /* NWSToken.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NWSToken.xib; sourceTree = "<group>"; };
+		1A60F3B01B7D640200130958 /* NWSTokenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NWSTokenView.swift; sourceTree = "<group>"; };
+		1A60F3B41B7D640E00130958 /* NWSTokenViewExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NWSTokenViewExampleViewController.swift; sourceTree = "<group>"; };
+		1A60F3B81B7D64BF00130958 /* NWSTokenViewExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NWSTokenViewExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		1A9D3CAD1B7A9E4D009BC983 /* NWSTokenView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NWSTokenView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A9D3CB11B7A9E4D009BC983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A9D3CB21B7A9E4D009BC983 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1A9D3CB41B7A9E4D009BC983 /* NWSTokenViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWSTokenViewExampleViewController.swift; sourceTree = "<group>"; };
 		1A9D3CB71B7A9E4D009BC983 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1A9D3CB91B7A9E4D009BC983 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1A9D3CBC1B7A9E4D009BC983 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1A9D3CC21B7A9E4D009BC983 /* NWSTokenViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NWSTokenViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A9D3CC71B7A9E4D009BC983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A9D3CC81B7A9E4D009BC983 /* NWSTokenViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWSTokenViewTests.swift; sourceTree = "<group>"; };
-		1A9D3CD21B7A9F13009BC983 /* NWSTokenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NWSTokenView.swift; sourceTree = "<group>"; };
-		1A9D3CD51B7A9F23009BC983 /* NWSToken.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NWSToken.xib; sourceTree = "<group>"; };
-		1A9D3CD81B7A9F5B009BC983 /* NWSToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NWSToken.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A60F39E1B7D635000130958 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1A60F39F1B7D635F00130958 /* DZNEmptyDataSet */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1A60F39F1B7D635F00130958 /* DZNEmptyDataSet */ = {
+			isa = PBXGroup;
+			children = (
+				1A60F3A01B7D635F00130958 /* UIScrollView+EmptyDataSet.h */,
+				1A60F3A11B7D635F00130958 /* UIScrollView+EmptyDataSet.m */,
+			);
+			name = DZNEmptyDataSet;
+			path = Resources/DZNEmptyDataSet;
+			sourceTree = "<group>";
+		};
+		1A60F3A71B7D63D100130958 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A9D3CBB1B7A9E4D009BC983 /* LaunchScreen.xib */,
+				1A9D3CB61B7A9E4D009BC983 /* Main.storyboard */,
+				1A60F3A81B7D63D100130958 /* NWSToken */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1A60F3A81B7D63D100130958 /* NWSToken */ = {
+			isa = PBXGroup;
+			children = (
+				1A60F3AA1B7D63D100130958 /* NWSToken.xib */,
+				1A60F3A91B7D63D100130958 /* NWSToken.swift */,
+			);
+			path = NWSToken;
+			sourceTree = "<group>";
+		};
+		1A60F3AF1B7D640200130958 /* NWSTokenView */ = {
+			isa = PBXGroup;
+			children = (
+				1A60F3B01B7D640200130958 /* NWSTokenView.swift */,
+			);
+			path = NWSTokenView;
+			sourceTree = "<group>";
+		};
+		1A60F3B31B7D640E00130958 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1A60F3B41B7D640E00130958 /* NWSTokenViewExampleViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1A60F3B71B7D641D00130958 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1A9D3CA41B7A9E4D009BC983 = {
 			isa = PBXGroup;
 			children = (
@@ -86,14 +152,13 @@
 		1A9D3CAF1B7A9E4D009BC983 /* NWSTokenView */ = {
 			isa = PBXGroup;
 			children = (
+				1A60F3AF1B7D640200130958 /* NWSTokenView */,
+				1A60F3B71B7D641D00130958 /* Models */,
+				1A60F3A71B7D63D100130958 /* Views */,
+				1A60F3B31B7D640E00130958 /* Controllers */,
+				1A60F39E1B7D635000130958 /* Resources */,
 				1A9D3CB21B7A9E4D009BC983 /* AppDelegate.swift */,
-				1A9D3CD81B7A9F5B009BC983 /* NWSToken.swift */,
-				1A9D3CD21B7A9F13009BC983 /* NWSTokenView.swift */,
-				1A9D3CD51B7A9F23009BC983 /* NWSToken.xib */,
-				1A9D3CB41B7A9E4D009BC983 /* NWSTokenViewExampleViewController.swift */,
-				1A9D3CB61B7A9E4D009BC983 /* Main.storyboard */,
 				1A9D3CB91B7A9E4D009BC983 /* Images.xcassets */,
-				1A9D3CBB1B7A9E4D009BC983 /* LaunchScreen.xib */,
 				1A9D3CB01B7A9E4D009BC983 /* Supporting Files */,
 			);
 			path = NWSTokenView;
@@ -103,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				1A9D3CB11B7A9E4D009BC983 /* Info.plist */,
+				1A60F3B81B7D64BF00130958 /* NWSTokenViewExample-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -205,8 +271,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A9D3CB81B7A9E4D009BC983 /* Main.storyboard in Resources */,
-				1A9D3CD61B7A9F23009BC983 /* NWSToken.xib in Resources */,
 				1A9D3CBD1B7A9E4D009BC983 /* LaunchScreen.xib in Resources */,
+				1A60F3AD1B7D63D100130958 /* NWSToken.xib in Resources */,
 				1A9D3CBA1B7A9E4D009BC983 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,7 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A9D3CD71B7A9F23009BC983 /* NWSToken.xib in Resources */,
+				1A60F3AE1B7D63D100130958 /* NWSToken.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,10 +292,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A9D3CD31B7A9F13009BC983 /* NWSTokenView.swift in Sources */,
-				1A9D3CB51B7A9E4D009BC983 /* NWSTokenViewExampleViewController.swift in Sources */,
-				1A9D3CD91B7A9F5B009BC983 /* NWSToken.swift in Sources */,
 				1A9D3CB31B7A9E4D009BC983 /* AppDelegate.swift in Sources */,
+				1A60F3B11B7D640200130958 /* NWSTokenView.swift in Sources */,
+				1A60F3B51B7D640E00130958 /* NWSTokenViewExampleViewController.swift in Sources */,
+				1A60F3AB1B7D63D100130958 /* NWSToken.swift in Sources */,
+				1A60F3A21B7D635F00130958 /* UIScrollView+EmptyDataSet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,9 +304,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A60F3B21B7D640200130958 /* NWSTokenView.swift in Sources */,
 				1A9D3CC91B7A9E4D009BC983 /* NWSTokenViewTests.swift in Sources */,
-				1A9D3CDA1B7A9F5B009BC983 /* NWSToken.swift in Sources */,
-				1A9D3CD41B7A9F13009BC983 /* NWSTokenView.swift in Sources */,
+				1A60F3B61B7D640E00130958 /* NWSTokenViewExampleViewController.swift in Sources */,
+				1A60F3A31B7D635F00130958 /* UIScrollView+EmptyDataSet.m in Sources */,
+				1A60F3AC1B7D63D100130958 /* NWSToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +329,7 @@
 				1A9D3CB71B7A9E4D009BC983 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		1A9D3CBB1B7A9E4D009BC983 /* LaunchScreen.xib */ = {
@@ -268,6 +338,7 @@
 				1A9D3CBC1B7A9E4D009BC983 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -363,6 +434,7 @@
 				INFOPLIST_FILE = NWSTokenView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/NWSTokenView/NWSTokenViewExample-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -373,6 +445,7 @@
 				INFOPLIST_FILE = NWSTokenView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/NWSTokenView/NWSTokenViewExample-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -391,6 +464,7 @@
 				INFOPLIST_FILE = NWSTokenViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/NWSTokenView/NWSTokenViewExample-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NWSTokenView.app/NWSTokenView";
 			};
 			name = Debug;
@@ -406,6 +480,7 @@
 				INFOPLIST_FILE = NWSTokenViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/NWSTokenView/NWSTokenViewExample-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NWSTokenView.app/NWSTokenView";
 			};
 			name = Release;
@@ -429,6 +504,7 @@
 				1A9D3CCE1B7A9E4D009BC983 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1A9D3CCF1B7A9E4D009BC983 /* Build configuration list for PBXNativeTarget "NWSTokenViewTests" */ = {
 			isa = XCConfigurationList;
@@ -437,6 +513,7 @@
 				1A9D3CD11B7A9E4D009BC983 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

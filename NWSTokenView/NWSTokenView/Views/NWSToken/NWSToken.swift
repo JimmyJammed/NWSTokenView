@@ -28,9 +28,7 @@ class NWSToken: UIView
             token.titleLabel.lineBreakMode = NSLineBreakMode.ByTruncatingTail
             let newTextWidth = token.titleLabel.bounds.width
             
-            let icon = image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-            token.imageView.image = icon
-            token.imageView.tintColor = UIColor.whiteColor()
+            token.imageView.image = image
             token.imageView.layer.cornerRadius = 5.0
             token.imageView.clipsToBounds = true
             token.layer.cornerRadius = 5.0

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NWSTokenDataSource, NWSTokenDelegate
+class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NWSTokenDataSource, NWSTokenDelegate, UIGestureRecognizerDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
 {
     @IBOutlet weak var tokenView: NWSTokenView!
     @IBOutlet weak var tableView: UITableView!
@@ -17,9 +17,10 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     let tokenViewMinHeight: CGFloat = 40.0
     let tokenViewMaxHeight: CGFloat = 120.0
     
+    var isSearching = false
     var contacts: [NWSTokenContact]!
     var selectedContacts = [NWSTokenContact]()
-    var isSearching = false
+    var filteredContacts = [NWSTokenContact]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +49,58 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: UIGestureRecognizerDelegate
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool
+    {
+        if touch.view.isDescendantOfView(tableView)
+        {
+            return false
+        }
+        return true
+    }
+    
+    // MARK: Keyboard
+    @IBAction func didTapView(sender: UITapGestureRecognizer)
+    {
+        dismissKeyboard()
+    }
+    
+    func dismissKeyboard()
+    {
+        tokenView.resignFirstResponder()
+        tokenView.endEditing(true)
+    }
+    
+    // MARK: Search Contacts
+    func searchContacts(text: String)
+    {
+        // Reset filtered contacts
+        filteredContacts = []
+        
+        // Filter contacts
+        if contacts.count > 0
+        {
+            filteredContacts = contacts.filter({ (contact: NWSTokenContact) -> Bool in
+                return contact.name.rangeOfString(text, options: .CaseInsensitiveSearch) != nil
+            })
+            
+            self.isSearching = true
+            self.tableView.reloadData()
+        }
+    }
+    
+    func didTypeEmailInTokenView()
+    {
+        let email = self.tokenView.textView.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        var contact = NWSTokenContact(name: email, andImage: UIImage(named: "TokenPlaceholder")!)
+        self.selectedContacts.append(contact)
+        
+        self.tokenView.textView.text = ""
+        self.isSearching = false
+        self.tokenView.reloadData()
+        self.tableView.reloadData()
+    }
+    
     // MARK: UITableViewDataSource
     func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
@@ -57,19 +110,72 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     // MARK: UITableViewDelegate
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
+        if isSearching
+        {
+            return filteredContacts.count
+        }
         return contacts.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         var cell = tableView.dequeueReusableCellWithIdentifier("NWSTokenViewExampleCellIdentifier", forIndexPath: indexPath) as! NWSTokenViewExampleCell
-        if let contact = contacts?[indexPath.row]
+        
+        let currentContacts: [NWSTokenContact]!
+        
+        // Check if searching
+        if isSearching
         {
-            cell.userTitleLabel.text = contact.name
-            cell.cellImageView.image = contact.image
+            currentContacts = filteredContacts
         }
+        else
+        {
+            currentContacts = contacts
+        }
+        
+        // Load contact data
+        let contact = currentContacts[indexPath.row]
+        cell.loadWithContact(contact)
+        
         return cell
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as! NWSTokenViewExampleCell
+        cell.selected = false
+        
+        // Check if already selected
+        if !contains(selectedContacts, cell.contact)
+        {
+            cell.contact.isSelected = true
+            selectedContacts.append(cell.contact)
+            isSearching = false
+            tokenView.textView.text = ""
+            tokenView.reloadData()
+            tableView.reloadData()
+        }
+    }
+    
+    // MARK: DZNEmptyDataSetSource
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage!
+    {
+        return UIImage(named: "Friends")!
+    }
+
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString!
+    {
+        let attributedString = NSAttributedString(string: "No Contacts Match", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
+        return attributedString
+    }
+    
+    func backgroundColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor!
+    {
+        return UIColor.lightGrayColor()
+    }
+    
+    // MARK: DZNEmptyDataSetDelegate
+    
     
     // MARK: NWSTokenDataSource
     func numberOfTokensForTokenView(tokenView: NWSTokenView) -> Int {
@@ -120,8 +226,8 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         if index < self.selectedContacts.count
         {
             var contact = self.selectedContacts[Int(index)] as NWSTokenContact
+            contact.isSelected = false
             self.selectedContacts.removeAtIndex(Int(index))
-//            self.didUpdateParticipants()
             
             tokenView.reloadData()
             tableView.reloadData()
@@ -147,22 +253,22 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     
     func tokenViewDidEndEditing(tokenView: NWSTokenView)
     {
-//        if tokenView.textView.text.isEmail()
-//        {
-//            self.didTypeEmailInTokenView()
-//        }
+        if tokenView.textView.text.isEmail()
+        {
+            didTypeEmailInTokenView()
+        }
         
-        self.isSearching = false
-//        self.displayContactsForType(currentContactType)
+        isSearching = false
+        tableView.reloadData()
     }
     
     func tokenView(tokenView: NWSTokenView, didChangeText text: String)
     {
-        // Check if empty
+        // Check if empty (deleting text)
         if text == ""
         {
-            self.isSearching = false
-            self.tableView.reloadData()
+            isSearching = false
+            tableView.reloadData()
             return
         }
         
@@ -190,7 +296,7 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         }
         else
         {
-//            SuNotifications.showThinMessageNotification(loc("message.conversation.invalidemail.error"), inViewController: self, underView: recipientView, isSticky: false, tapNotificationHandler: {SuNotifications.hideNotification()})
+
         }
     }
     
@@ -204,97 +310,6 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     {
 
     }
-    
-    // MARK: Search Contacts
-    func searchContacts(text: String)
-    {
-        // Reset filtered contacts
-//        self.filteredParticipants = [:]
-//        self.filteredParticipantSections = []
-//        
-//        // Use all participants
-//        self.currentParticipants = self.sortedParticipants(self.allParticipants)
-//        
-//        // Hide preview
-//        self.togglePreview(false, animated: true)
-//        
-//        // Hide tab view
-//        self.toggleTabView(false, animated: true)
-//        
-//        // Hide tooltips
-//        SuTooltipController.hideAllPresentedTooltips()
-//        
-//        // Filter contacts
-//        if self.allParticipants.count > 0
-//        {
-//            for (key, var contacts) in self.currentParticipants
-//            {
-//                self.filteredParticipants[key] = contacts.filter({ (contact: SuConversationParticipant) -> Bool in
-//                    if contact.suUser != nil
-//                    {
-//                        return (contact.suUser?.username.rangeOfString(text, options: NSStringCompareOptions.CaseInsensitiveSearch) != nil // Username
-//                            || contact.suUser?.name.rangeOfString(text, options: NSStringCompareOptions.CaseInsensitiveSearch) != nil // Real Name
-//                            || contact.suUser?.email.rangeOfString(text, options: NSStringCompareOptions.CaseInsensitiveSearch) != nil) // Email
-//                    }
-//                    if let apContact = contact.apContact
-//                    {
-//                        // Do a full search of all contact text
-//                        var fullString = ""
-//                        if let firstName = apContact.firstName
-//                        {
-//                            fullString += " " + firstName
-//                        }
-//                        if let lastName = apContact.lastName
-//                        {
-//                            fullString += " " + lastName
-//                        }
-//                        if let company = apContact.company
-//                        {
-//                            fullString += " " + company
-//                        }
-//                        if let email = apContact.emails[0] as? String
-//                        {
-//                            fullString += " " + email
-//                        }
-//                        return (fullString.rangeOfString(text, options: NSStringCompareOptions.CaseInsensitiveSearch) != nil)
-//                    }
-//                    return false
-//                })
-//                // Ignore empty results
-//                if self.filteredParticipants[key]?.count == 0
-//                {
-//                    self.filteredParticipants.removeValueForKey(key)
-//                }
-//            }
-//            // Sort Sections
-//            let alphabetKeys = Array(self.filteredParticipants.keys)
-//            self.filteredParticipantSections = alphabetKeys.sorted{ $0 < $1 }
-//            
-//            // Only load when starting  search
-//            if !self.isSearching
-//            {
-//                self.togglePreview(false, animated: true)
-//                self.displayContactsForType(.All)
-//            }
-//            
-//            self.isSearching = true
-//            self.tableView.reloadData()
-//        }
-    }
-    
-    func didTypeEmailInTokenView()
-    {
-        let email = self.tokenView.textView.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-        var contact = NWSTokenContact(name: email, andImage: UIImage(named: "TokenPlaceholder")!)
-        self.selectedContacts.append(contact)
-        
-        self.tokenView.textView.text = ""
-        self.isSearching = false
-        self.tokenView.reloadData()
-        self.tableView.reloadData()
-    }
-
-    
 
 }
 
@@ -302,6 +317,7 @@ class NWSTokenContact: NSObject
 {
     var image: UIImage!
     var name: String!
+    var isSelected = false
     
     init(name: String, andImage image: UIImage)
     {
@@ -319,15 +335,41 @@ class NWSTokenContact: NSObject
 
 class NWSTokenViewExampleCell: UITableViewCell
 {
-    @IBOutlet weak var cellImageView: UIImageView!
     @IBOutlet weak var userTitleLabel: UILabel!
+    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var checkmarkImageView: UIImageView!
+   
+    var contact: NWSTokenContact!
     
     override func awakeFromNib()
     {
         super.awakeFromNib()
         
-        cellImageView.layer.cornerRadius = 5.0
-        cellImageView.clipsToBounds = true
+        // Round corners
+        userImageView.layer.cornerRadius = 5.0
+        userImageView.clipsToBounds = true
+        
+        // Issue with storyboard tintColor not always setting properly, set in code.
+        let image = UIImage(named: "Checkmark")?.imageWithRenderingMode(.AlwaysTemplate)
+        checkmarkImageView.tintColor = UIColor(red: 61/255, green: 127/255, blue: 221/255, alpha: 1.0)
+        checkmarkImageView.image = image
+    }
+    
+    func loadWithContact(contact: NWSTokenContact)
+    {
+        self.contact = contact
+        userTitleLabel.text = contact.name
+        userImageView.image = contact.image
+        
+        // Show/Hide Checkmark
+        if contact.isSelected
+        {
+            checkmarkImageView.hidden = false
+        }
+        else
+        {
+            checkmarkImageView.hidden = true
+        }
     }
 }
 
