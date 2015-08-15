@@ -13,12 +13,11 @@ public class NWSToken: UIView
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
+    public var hiddenTextView = UITextView()
+    public var isSelected: Bool = false
     
-    var hiddenTextView = UITextView()
-    var isSelected: Bool = false
     
-    
-    class func initWithTitle(title: String, image: UIImage? = nil) -> NWSToken?
+    public class func initWithTitle(title: String, image: UIImage? = nil) -> NWSToken?
     {
         if var token = UINib(nibName: "NWSToken",bundle:nil).instantiateWithOwner(nil, options: nil)[0] as? NWSToken
         {

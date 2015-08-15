@@ -35,13 +35,13 @@ public protocol NWSTokenDelegate
 // MARK: NWSTokenView Class
 public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
 {
-    @IBInspectable var dataSource: NWSTokenDataSource? = nil
-    @IBInspectable var delegate: NWSTokenDelegate? = nil
+    @IBInspectable public var dataSource: NWSTokenDataSource? = nil
+    @IBInspectable public var delegate: NWSTokenDelegate? = nil
     
     // MARK: Private Vars
     private var shouldBecomeFirstResponder: Bool = false
     private var scrollView = UIScrollView()
-    var textView = UITextView()
+    public var textView = UITextView()
     private var lastTokenCount = 0
     private var lastText = ""
     
@@ -123,7 +123,7 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     }
     
     /// Reloads data from datasource and delegate implementations.
-    func reloadData()
+    public func reloadData()
     {
         UIView.setAnimationsEnabled(false) // Disable animation to fix flicker of token text
         
@@ -324,7 +324,7 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     /// :param: index Int value for token index.
     ///
     /// :returns: NWSToken
-    func tokenForIndex(index: Int) -> NWSToken
+    public func tokenForIndex(index: Int) -> NWSToken
     {
         return self.tokens[index]
     }
@@ -334,13 +334,13 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     /// :param: tapGesture UITapGestureRecognizer associated with the token.
     ///
     /// :returns: NWSToken
-    func didTapToken(tapGesture: UITapGestureRecognizer)
+    public func didTapToken(tapGesture: UITapGestureRecognizer)
     {
         var token = tapGesture.view as! NWSToken
         self.selectToken(token)
     }
     
-    func selectToken(token: NWSToken)
+    public func selectToken(token: NWSToken)
     {
         // Check if another token is already selected
         if self.selectedToken != nil && self.selectedToken != token
@@ -369,7 +369,7 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     }
     
     // UITextView Delegate
-    func textViewDidBeginEditing(textView: UITextView)
+    public func textViewDidBeginEditing(textView: UITextView)
     {
         // Deselect any tokens
         if self.selectedToken != nil
@@ -404,7 +404,7 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         self.delegate?.tokenView(self)
     }
     
-    func textViewDidEndEditing(textView: UITextView)
+    public func textViewDidEndEditing(textView: UITextView)
     {
         // Check if text view is input or hidden
         if textView.superview is NWSToken
@@ -440,7 +440,7 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         self.delegate?.tokenViewDidEndEditing(self)
     }
     
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool
+    public func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool
     {
         // Token Hidden TextView
         if textView.superview is NWSToken
@@ -489,7 +489,7 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         return true
     }
     
-    func textViewDidChange(textView: UITextView)
+    public func textViewDidChange(textView: UITextView)
     {
         // Token Hidden TextView
         if textView.superview is NWSToken
@@ -537,7 +537,7 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     }
     
     /// Dismiss keyboard and resign responder for Token View
-    func dismissTokenView()
+    public func dismissTokenView()
     {
         self.resignFirstResponder()
         self.endEditing(true)
