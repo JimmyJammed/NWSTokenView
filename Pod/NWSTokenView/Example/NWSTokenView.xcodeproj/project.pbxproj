@@ -15,6 +15,10 @@
 		1AE0B5A91B7E5B58008C5A6A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AE0B5A41B7E5B58008C5A6A /* LaunchScreen.xib */; };
 		1AE0B5AA1B7E5B58008C5A6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AE0B5A61B7E5B58008C5A6A /* Main.storyboard */; };
 		1AE0B5AB1B7E5B58008C5A6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AE0B5A61B7E5B58008C5A6A /* Main.storyboard */; };
+		1AE0B5BC1B7EBC24008C5A6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE0B5BB1B7EBC24008C5A6A /* AppDelegate.swift */; };
+		1AE0B5BD1B7EBC24008C5A6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE0B5BB1B7EBC24008C5A6A /* AppDelegate.swift */; };
+		1AE0B5BF1B7EBC78008C5A6A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AE0B5BE1B7EBC78008C5A6A /* Images.xcassets */; };
+		1AE0B5C01B7EBC78008C5A6A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AE0B5BE1B7EBC78008C5A6A /* Images.xcassets */; };
 		2CADBB4695B5DDF1F2845017 /* Pods_NWSTokenView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A694AB3A069744E9FE0F572 /* Pods_NWSTokenView_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		883D46BF45C36044285CCEF9 /* Pods_NWSTokenView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E276AB35B8685EEB45ADD4 /* Pods_NWSTokenView_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -37,6 +41,8 @@
 		1AE0B59B1B7E5B3F008C5A6A /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
 		1AE0B5A51B7E5B58008C5A6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = NWSTokenView/Base.lproj/LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
 		1AE0B5A71B7E5B58008C5A6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = NWSTokenView/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		1AE0B5BB1B7EBC24008C5A6A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = NWSTokenView/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		1AE0B5BE1B7EBC78008C5A6A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		236DA2C4367F704BBA5676D8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		2EB702F2F0D8353F19E6359E /* Pods-NWSTokenView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NWSTokenView_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-NWSTokenView_Example/Pods-NWSTokenView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		4A694AB3A069744E9FE0F572 /* Pods_NWSTokenView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NWSTokenView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +82,7 @@
 		1AE0B5901B7E5B3F008C5A6A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1AE0B5BB1B7EBC24008C5A6A /* AppDelegate.swift */,
 				1AE0B5911B7E5B3F008C5A6A /* NWSTokenViewExampleViewController.swift */,
 			);
 			path = Controllers;
@@ -158,6 +165,7 @@
 		607FACD21AFB9204008FA782 /* Example for NWSTokenView */ = {
 			isa = PBXGroup;
 			children = (
+				1AE0B5BE1B7EBC78008C5A6A /* Images.xcassets */,
 				1AE0B5901B7E5B3F008C5A6A /* Controllers */,
 				1AE0B5921B7E5B3F008C5A6A /* Views */,
 				1AE0B5971B7E5B3F008C5A6A /* Models */,
@@ -290,6 +298,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AE0B5BF1B7EBC78008C5A6A /* Images.xcassets in Resources */,
 				1AE0B5AA1B7E5B58008C5A6A /* Main.storyboard in Resources */,
 				1AE0B5A81B7E5B58008C5A6A /* LaunchScreen.xib in Resources */,
 			);
@@ -299,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AE0B5C01B7EBC78008C5A6A /* Images.xcassets in Resources */,
 				1AE0B5AB1B7E5B58008C5A6A /* Main.storyboard in Resources */,
 				1AE0B5A91B7E5B58008C5A6A /* LaunchScreen.xib in Resources */,
 			);
@@ -404,6 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AE0B5BC1B7EBC24008C5A6A /* AppDelegate.swift in Sources */,
 				1AE0B5A21B7E5B3F008C5A6A /* UIScrollView+EmptyDataSet.m in Sources */,
 				1AE0B59C1B7E5B3F008C5A6A /* NWSTokenViewExampleViewController.swift in Sources */,
 			);
@@ -413,6 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AE0B5BD1B7EBC24008C5A6A /* AppDelegate.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 				1AE0B5A31B7E5B3F008C5A6A /* UIScrollView+EmptyDataSet.m in Sources */,
 				1AE0B59D1B7E5B3F008C5A6A /* NWSTokenViewExampleViewController.swift in Sources */,
