@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4AAFDBFE92F70182A8C742A0"
+               BlueprintIdentifier = "A486AAFF981665064D46609A"
                BuildableName = "NWSTokenView.framework"
                BlueprintName = "NWSTokenView"
                ReferencedContainer = "container:Pods.xcodeproj">
