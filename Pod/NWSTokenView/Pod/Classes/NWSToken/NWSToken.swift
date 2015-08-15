@@ -19,7 +19,7 @@ public class NWSToken: UIView
     
     public class func initWithTitle(title: String, image: UIImage? = nil) -> NWSToken?
     {
-        if var token = UINib(nibName: "NWSToken",bundle:nil).instantiateWithOwner(nil, options: nil)[0] as? NWSToken
+        if var token = UINib(nibName: "NWSToken",bundle:NSBundle(forClass: NWSTokenView.self)).instantiateWithOwner(nil, options: nil)[0] as? NWSToken
         {
             let oldTextWidth = token.titleLabel.bounds.width
             token.titleLabel.text = title
