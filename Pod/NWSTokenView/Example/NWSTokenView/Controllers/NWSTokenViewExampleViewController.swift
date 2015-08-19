@@ -40,11 +40,20 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         NWSTokenContact(name: "Voldemort", andImage: UIImage(named: "TokenPlaceholder")!)]
         
         contacts = NWSTokenContact.sortedContacts(unsortedContacts)
+    }
+
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        // TableView
+        tableView.tableFooterView = UIView(frame: CGRectZero)
+
+        // TokenView
         tokenView.dataSource = self
         tokenView.delegate = self
         tokenView.reloadData()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -159,23 +168,18 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     }
     
     // MARK: DZNEmptyDataSetSource
-    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage!
-    {
-        return UIImage(named: "Friends")!
-    }
+    func customViewForEmptyDataSet(scrollView: UIScrollView!) -> UIView! {
+        
+        if let view = UINib(nibName: "EmptyDataSet", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as? UIView
+        {
+            view.frame = scrollView.bounds
+            view.setTranslatesAutoresizingMaskIntoConstraints(false)
+            view.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+            return view
+        }
 
-    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString!
-    {
-        let attributedString = NSAttributedString(string: "No Contacts Match", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
-        return attributedString
+        return nil
     }
-    
-    func backgroundColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor!
-    {
-        return UIColor.lightGrayColor()
-    }
-    
-    // MARK: DZNEmptyDataSetDelegate
     
     
     // MARK: NWSTokenDataSource

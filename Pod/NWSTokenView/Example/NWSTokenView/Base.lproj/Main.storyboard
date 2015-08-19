@@ -17,13 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="F3W-HS-Zfs">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <gestureRecognizers/>
-                            </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="979-fw-I4V">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="979-fw-I4V">
                                 <rect key="frame" x="0.0" y="114" width="600" height="488"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NWSTokenViewExampleCellIdentifier" rowHeight="60" id="lfN-Hg-td8" customClass="NWSTokenViewExampleCell" customModule="NWSTokenView_Example" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -96,7 +93,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.34846634119999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.50909271915467202" green="0.62471629836183595" blue="0.94157379082959103" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="kbh-2L-BPR" firstAttribute="top" secondItem="QjA-FH-dTJ" secondAttribute="top" constant="5" id="9r1-WO-ZU4"/>
                                     <constraint firstAttribute="trailing" secondItem="kbh-2L-BPR" secondAttribute="trailing" constant="5" id="C37-7o-t5K"/>
@@ -117,13 +114,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="F3W-HS-Zfs" secondAttribute="bottom" id="171-ha-wNy"/>
                             <constraint firstItem="979-fw-I4V" firstAttribute="trailing" secondItem="QjA-FH-dTJ" secondAttribute="trailing" id="1GY-BF-jUr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QjA-FH-dTJ" secondAttribute="trailing" constant="-16" id="3uB-l6-VDv"/>
-                            <constraint firstItem="F3W-HS-Zfs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="5P7-Xc-c94"/>
                             <constraint firstItem="QjA-FH-dTJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="97C-HW-i98"/>
-                            <constraint firstItem="F3W-HS-Zfs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Nb1-WY-KLK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="F3W-HS-Zfs" secondAttribute="trailing" constant="-16" id="SJC-DG-i1B"/>
                             <constraint firstItem="979-fw-I4V" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="2" id="ZUg-g0-HnQ"/>
                             <constraint firstItem="979-fw-I4V" firstAttribute="leading" secondItem="QjA-FH-dTJ" secondAttribute="leading" id="haL-Tx-RDU"/>
                             <constraint firstItem="979-fw-I4V" firstAttribute="top" secondItem="QjA-FH-dTJ" secondAttribute="bottom" id="rhb-lz-Lu7"/>
@@ -180,7 +173,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="365" height="365"/>
         <image name="Checkmark" width="612" height="792"/>
         <image name="TokenPlaceholder" width="85" height="85"/>
     </resources>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AD947981B83E6E3005FD716 /* EmptyDataSet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AD947971B83E6E3005FD716 /* EmptyDataSet.xib */; };
+		1AD947991B83E6E3005FD716 /* EmptyDataSet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AD947971B83E6E3005FD716 /* EmptyDataSet.xib */; };
 		1AE0B59C1B7E5B3F008C5A6A /* NWSTokenViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE0B5911B7E5B3F008C5A6A /* NWSTokenViewExampleViewController.swift */; };
 		1AE0B59D1B7E5B3F008C5A6A /* NWSTokenViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE0B5911B7E5B3F008C5A6A /* NWSTokenViewExampleViewController.swift */; };
 		1AE0B5A21B7E5B3F008C5A6A /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE0B59B1B7E5B3F008C5A6A /* UIScrollView+EmptyDataSet.m */; };
@@ -35,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1AD947971B83E6E3005FD716 /* EmptyDataSet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyDataSet.xib; sourceTree = "<group>"; };
 		1AE0B5911B7E5B3F008C5A6A /* NWSTokenViewExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NWSTokenViewExampleViewController.swift; sourceTree = "<group>"; };
 		1AE0B5961B7E5B3F008C5A6A /* NWSTokenViewExample-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NWSTokenViewExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		1AE0B59A1B7E5B3F008C5A6A /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
@@ -93,6 +96,7 @@
 			children = (
 				1AE0B5A41B7E5B58008C5A6A /* LaunchScreen.xib */,
 				1AE0B5A61B7E5B58008C5A6A /* Main.storyboard */,
+				1AD947971B83E6E3005FD716 /* EmptyDataSet.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -300,6 +304,7 @@
 			files = (
 				1AE0B5BF1B7EBC78008C5A6A /* Images.xcassets in Resources */,
 				1AE0B5AA1B7E5B58008C5A6A /* Main.storyboard in Resources */,
+				1AD947981B83E6E3005FD716 /* EmptyDataSet.xib in Resources */,
 				1AE0B5A81B7E5B58008C5A6A /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +315,7 @@
 			files = (
 				1AE0B5C01B7EBC78008C5A6A /* Images.xcassets in Resources */,
 				1AE0B5AB1B7E5B58008C5A6A /* Main.storyboard in Resources */,
+				1AD947991B83E6E3005FD716 /* EmptyDataSet.xib in Resources */,
 				1AE0B5A91B7E5B58008C5A6A /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
