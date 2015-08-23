@@ -183,11 +183,13 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     
     
     // MARK: NWSTokenDataSource
-    func numberOfTokensForTokenView(tokenView: NWSTokenView) -> Int {
+    func numberOfTokensForTokenView(tokenView: NWSTokenView) -> Int
+    {
         return selectedContacts.count
     }
     
-    func insetsForTokenView(tokenView: NWSTokenView) -> UIEdgeInsets? {
+    func insetsForTokenView(tokenView: NWSTokenView) -> UIEdgeInsets?
+    {
         return UIEdgeInsetsMake(5, 5, 5, 5)
     }
     
