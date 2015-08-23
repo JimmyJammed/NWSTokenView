@@ -4,16 +4,20 @@
 NWSTokenView is a flexible UIView subclass that shows a collection of objects in a similar manner to the Messages app. 
 
 # Why is it different from others?
-NWSTokenView’s main difference when compared to other similar libraries is the fact that it allows you to easily create your own style tokens via XIB files or programmatically.
+NWSTokenView’s main difference when compared to other similar libraries is the fact that it allows you to easily create your own style tokens via XIB files or programmatically without all the headaches. NWSTokenView does come with a default token style you can use.
 
 # Installation
 Available in Cocoa Pods
+    
     pod ‘NWSTokenView’
 
 # How to use
 
 ## Import
-import NWSTokenView
+
+    //Swift
+    import NWSTokenView
+
 
 ## Protocol Conformance
 
@@ -21,7 +25,7 @@ import NWSTokenView
     {
          override fun viewDidLoad()
          {
-	      super.viewDidLoad()
+              super.viewDidLoad()
               tokenView.dataSource = self
               tokenView.delegate = self
          }
@@ -60,6 +64,7 @@ The placeholder text for the tokenView when there are no tokens:
     }
     
 The custom view for the tokens:
+
     func tokenView(tokenView: NWSTokenView, viewForTokenAtIndex index: Int) -> UIView?
     {
         let contact = contacts[Int(index)]
@@ -71,57 +76,67 @@ The custom view for the tokens:
     }
 
 ## Delegate Implementation
+
 Return the behaviors for the token view.
 
 Notifies you when a token was selected:
+
     func tokenView(tokenView: NWSTokenView, didSelectTokenAtIndex index: Int)
     {
         // Do something
     }
    
 Notifies you when a token was deselected: 
+
     func tokenView(tokenView: NWSTokenView, didDeselectTokenAtIndex index: Int)
     {
         // Do something
     }
     
 Notifies you when a token was deleted (i.e. selected then backspaced/overwritten/etc.):
+
     func tokenView(tokenView: NWSTokenView, didDeleteTokenAtIndex index: Int)
     {
         // Do something
     }
     
 Notifies you when the token view’s textField becomes the first responder:
+
     func tokenView(tokenViewDidBeginEditing: NWSTokenView)
     {
         // Do something
     }
    
 Notifies you when the token view’s textField resigns the first responder: 
+
     func tokenViewDidEndEditing(tokenView: NWSTokenView)
     {
         // Do something
     }
  
-Notifies you when the token view’s textField’s text is changed:    
+Notifies you when the token view’s textField’s text is changed:  
+  
     func tokenView(tokenView: NWSTokenView, didChangeText text: String)
     {
         // Do something
     }
   
-Notifies you when the token view’s textField’s text is returned:      
+Notifies you when the token view’s textField’s text is returned:  
+    
     func tokenView(tokenView: NWSTokenView, didEnterText text: String)
     {
         // Do something    
     }
     
-Notifies you when the token view’s content size has changed (i.e. new line added):      
+Notifies you when the token view’s content size has changed (i.e. new line added): 
+     
     func tokenView(tokenView: NWSTokenView, contentSizeChanged size: CGSize)
     {
         // Do something
     }
 
-Notifies you when the token view finished loading all tokens:          
+Notifies you when the token view finished loading all tokens:  
+        
     func tokenView(tokenView: NWSTokenView, didFinishLoadingTokens tokenCount: Int)
     {
 	// Do something
