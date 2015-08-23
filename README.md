@@ -1,9 +1,9 @@
 # NWSTokenView
 
-<img src="/Screenshots/NWSTokenView-1.png" alt="NWSTokenView Screenshot #1" style="width: 200px;"/>
-![NWSTokenView Screenshot #2](/Screenshots/NWSTokenView-2.png)
-![NWSTokenView Screenshot #3](/Screenshots/NWSTokenView-3.png)
-![NWSTokenView Screenshot #4](/Screenshots/NWSTokenView-4.png)
+<img src="/Screenshots/NWSTokenView-1.png" alt="NWSTokenView Screenshot #1" style="width: 150px;"/>
+<img src="/Screenshots/NWSTokenView-2.png" alt="NWSTokenView Screenshot #2” style="width: 150px;"/>
+<img src="/Screenshots/NWSTokenView-3.png" alt="NWSTokenView Screenshot #3” style="width: 150px;"/>
+<img src="/Screenshots/NWSTokenView-4.png" alt="NWSTokenView Screenshot #4” style="width: 150px;"/>
 
 # Introduction
 NWSTokenView is a flexible UIView subclass that shows a collection of objects in a similar manner to the Messages app. 
