@@ -1,5 +1,10 @@
 # NWSTokenView
 
+![NWSTokenView Screenshot #1](http://api.nitwitstudios.com/app-screenshots/NWSTokenView-1.png =250x)
+![NWSTokenView  Screenshot #2](http://api.nitwitstudios.com/app-screenshots/NWSTokenView-2.png =250x)
+![NWSTokenView  Screenshot #3](http://api.nitwitstudios.com/app-screenshots/NWSTokenView-3.png =250x)
+![NWSTokenView  Screenshot #4](http://api.nitwitstudios.com/app-screenshots/NWSTokenView-4.png =250x)
+
 # Introduction
 NWSTokenView is a flexible UIView subclass that shows a collection of objects in a similar manner to the Messages app. 
 
