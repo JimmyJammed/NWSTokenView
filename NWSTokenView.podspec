@@ -18,11 +18,11 @@ Pod::Spec.new do |s|
                        * Don't worry about the indent, we strip it!
                        DESC
   s.homepage         = "https://github.com/NitWitStudios/NWSTokenView"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.screenshots     = "https://github.com/NitWitStudios/NWSTokenView/blob/master/Screenshots/NWSTokenViewExample.gif"
   s.license          = 'MIT'
   s.author           = { "James Hickman" => "james.hickman@nitwitstudios.com" }
   s.source           = { :git => "https://github.com/NitWitStudios/NWSTokenView.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/NitWitStudios'
+  s.social_media_url = 'https://twitter.com/NitWitStudios'
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
