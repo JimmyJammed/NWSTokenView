@@ -1,0 +1,33 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/James/GIT/NWSTokenView/Example/build/Debug-iphonesimulator/NWSTokenView.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "NWSTokenView-Swift.h",
+          'external-contents': "/Users/James/GIT/NWSTokenView/Example/build/Debug-iphonesimulator/NWSTokenView.framework/Headers/NWSTokenView-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "NWSTokenView-umbrella.h",
+          'external-contents': "/Users/James/GIT/NWSTokenView/Example/Pods/Target Support Files/NWSTokenView/NWSTokenView-umbrella.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/James/GIT/NWSTokenView/Example/build/Debug-iphonesimulator/NWSTokenView.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/James/GIT/NWSTokenView/Example/build/Pods.build/Debug-iphonesimulator/NWSTokenView.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}
