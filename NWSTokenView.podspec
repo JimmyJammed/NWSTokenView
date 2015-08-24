@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   #s.screenshots     = "https://github.com/NitWitStudios/NWSTokenView/blob/master/Screenshots/NWSTokenViewExample.gif"
   s.license          = 'MIT'
   s.author           = { "James Hickman" => "james.hickman@nitwitstudios.com" }
-  s.source           = { :git => "https://github.com/NitWitStudios/NWSTokenView.git", :tag => "v#{s.version}"s }
+  s.source           = { :git => "https://github.com/NitWitStudios/NWSTokenView.git", :tag => "v#{s.version}" }
   s.social_media_url = 'https://twitter.com/NitWitStudios'
 
   s.platform     = :ios, '8.0'
