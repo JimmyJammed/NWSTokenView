@@ -7,14 +7,10 @@
 
 ![NWSTokenView Demo](/Screenshots/NWSTokenViewExample.gif)
 
-## Usage
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
 # Introduction
 NWSTokenView is a flexible UIView subclass that shows a collection of objects in a similar manner to the Messages app. 
 
-# Why is it different from others?
+## Why is it different from others?
 NWSTokenView’s main difference when compared to other similar libraries is the fact that it allows you to easily create your own style tokens via XIB files or programmatically without all the headaches. NWSTokenView does come with a default token style you can use.
 
 ## Installation
@@ -25,6 +21,10 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "NWSTokenView"
 ```
+
+## Usage
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 # How to use
 
@@ -157,7 +157,12 @@ Notifies you when the token view finished loading all tokens:
 	// Do something
     }
 
-# License
+
+## Author
+
+James Hickman, james.hickman@nitwitstudios.com
+
+## License
 
 The MIT License (MIT)
 
@@ -180,13 +185,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
-
-
-## Author
-
-James Hickman, james.hickman@nitwitstudios.com
-
-## License
-
-NWSTokenView is available under the MIT license. See the LICENSE file for more info.
