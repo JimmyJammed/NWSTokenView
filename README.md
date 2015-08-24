@@ -1,6 +1,6 @@
 # NWSTokenView
 
-![Example](/Screenshots/NWSTokenViewExample.gif =375x667)
+![Example](/Screenshots/NWSTokenViewExample.gif)
 <img src="/Screenshots/NWSTokenView-1.png" alt="NWSTokenView Screenshot #1" style="width: 150px;"/>
 <img src="/Screenshots/NWSTokenView-2.png" alt="NWSTokenView Screenshot #2” style="width: 150px;"/>
 <img src="/Screenshots/NWSTokenView-3.png" alt="NWSTokenView Screenshot #3” style="width: 150px;"/>
