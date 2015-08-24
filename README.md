@@ -1,6 +1,6 @@
 # NWSTokenView
 
-<img src="/Screenshots/NWSTokenViewExample.gif” alt="NWSTokenViewExample GIF” />
+<img src="/Screenshots/NWSTokenViewExample.gif”/>
 <img src="/Screenshots/NWSTokenView-1.png" alt="NWSTokenView Screenshot #1" style="width: 150px;"/>
 <img src="/Screenshots/NWSTokenView-2.png" alt="NWSTokenView Screenshot #2” style="width: 150px;"/>
 <img src="/Screenshots/NWSTokenView-3.png" alt="NWSTokenView Screenshot #3” style="width: 150px;"/>
@@ -29,7 +29,7 @@ Available in Cocoa Pods
 
     class ViewController: UIViewController, NWSTokenViewDataSource, NWSTokenViewDelegate
     {
-         override fun viewDidLoad()
+         override func viewDidLoad()
          {
               super.viewDidLoad()
               tokenView.dataSource = self
