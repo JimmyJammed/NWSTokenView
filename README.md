@@ -113,14 +113,18 @@ Notifies you when a token was selected:
 
     func tokenView(tokenView: NWSTokenView, didSelectTokenAtIndex index: Int)
     {
-        // Do something
+	// NOTE - If getting the token itself using ‘tokenForIndex()’, be sure to convert the token to your own subclass.
+	// Example:
+	// var token = tokenView.tokenForIndex(index) as! NWSImageToken
     }
    
 Notifies you when a token was deselected: 
 
     func tokenView(tokenView: NWSTokenView, didDeselectTokenAtIndex index: Int)
     {
-        // Do something
+	// NOTE - If getting the token itself using ‘tokenForIndex()’, be sure to convert the token to your own subclass.
+	// Example:
+	// var token = tokenView.tokenForIndex(index) as! NWSImageToken
     }
     
 Notifies you when a token was deleted (i.e. selected then backspaced/overwritten/etc.):
