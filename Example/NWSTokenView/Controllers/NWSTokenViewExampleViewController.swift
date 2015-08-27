@@ -206,7 +206,7 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     func tokenView(tokenView: NWSTokenView, viewForTokenAtIndex index: Int) -> UIView?
     {
         let contact = selectedContacts[Int(index)]
-        if let token = NWSToken.initWithTitle(contact.name, image: contact.image)
+        if let token = NWSImageToken.initWithTitle(contact.name, image: contact.image)
         {
             return token
         }
@@ -217,13 +217,13 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     // MARK: NWSTokenDelegate
     func tokenView(tokenView: NWSTokenView, didSelectTokenAtIndex index: Int)
     {
-        var token = tokenView.tokenForIndex(index)
+        var token = tokenView.tokenForIndex(index) as! NWSImageToken
         token.backgroundColor = UIColor.blueColor()
     }
     
     func tokenView(tokenView: NWSTokenView, didDeselectTokenAtIndex index: Int)
     {
-        var token = tokenView.tokenForIndex(index)
+        var token = tokenView.tokenForIndex(index) as! NWSImageToken
         token.backgroundColor = UIColor.blueColor()
     }
     
@@ -244,7 +244,7 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
             // Check if search text exists, if so, reload table (i.e. user deleted a selected token by pressing an alphanumeric key)
             if tokenView.textView.text != ""
             {
-                //self.searchContacts(tokenView.textView.text)
+                self.searchContacts(tokenView.textView.text)
             }
         }
     }
