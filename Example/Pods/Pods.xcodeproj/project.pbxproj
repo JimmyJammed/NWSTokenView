@@ -10,9 +10,6 @@
 		04F313AEF12D0FD002BE4D64A6F7F4EE /* NWSTokenView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D1687566276FC42F96470D5E0F5541C7 /* NWSTokenView-dummy.m */; };
 		0BE2AC20A263A653657D1ED0FAE3A1F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C71174B9689FF83A48EDDF9C05A4D7 /* Foundation.framework */; };
 		0CF460F449C8D5C262892D03B1833B00 /* Pods-NWSTokenView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4323003ED8816ECF20EC502D933EA2F0 /* Pods-NWSTokenView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1AA058941B8BA0C000C6F303 /* NWSImageToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA058931B8BA0C000C6F303 /* NWSImageToken.swift */; };
-		1AA058961B8BA10300C6F303 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AA058951B8BA10300C6F303 /* Images.xcassets */; };
-		1AA058981B8BA12100C6F303 /* NWSImageToken.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AA058971B8BA12100C6F303 /* NWSImageToken.xib */; };
 		43213F2D00187180D6ECF42139FF8D72 /* Pods-NWSTokenView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A85A9E201B0E6E7446EDA75C6BE25F1 /* Pods-NWSTokenView_Tests-dummy.m */; };
 		45055BD93C8ACD9DD3157FE6594373B0 /* NWSTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94B310A878D457D02A0FFF5614D53AF /* NWSTokenView.swift */; };
 		695E744C2F307D5E04B0B47D20E00F28 /* NWSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = E872D94B30C760AFD4DF3B7C7F80451F /* NWSToken.swift */; };
@@ -53,9 +50,6 @@
 		0A85A9E201B0E6E7446EDA75C6BE25F1 /* Pods-NWSTokenView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NWSTokenView_Tests-dummy.m"; sourceTree = "<group>"; };
 		0CF717A25547DC4FE3D2F597BDA1F50D /* NWSTokenView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NWSTokenView-umbrella.h"; sourceTree = "<group>"; };
 		11F7E7B59324F6F37996AE4C05C48BF3 /* Pods-NWSTokenView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NWSTokenView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		1AA058931B8BA0C000C6F303 /* NWSImageToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NWSImageToken.swift; path = ../NWSImageToken/NWSImageToken.swift; sourceTree = "<group>"; };
-		1AA058951B8BA10300C6F303 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../NWSImageToken/Images.xcassets; sourceTree = "<group>"; };
-		1AA058971B8BA12100C6F303 /* NWSImageToken.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NWSImageToken.xib; path = ../NWSImageToken/NWSImageToken.xib; sourceTree = "<group>"; };
 		280ECF71D6A29DA8183666DEF228EF3E /* Pods-NWSTokenView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NWSTokenView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		4323003ED8816ECF20EC502D933EA2F0 /* Pods-NWSTokenView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NWSTokenView_Example-umbrella.h"; sourceTree = "<group>"; };
 		4577F793663DFE923DF2AFDB355E7C08 /* NWSTokenView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NWSTokenView.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,7 +173,6 @@
 			children = (
 				E94B310A878D457D02A0FFF5614D53AF /* NWSTokenView.swift */,
 				E872D94B30C760AFD4DF3B7C7F80451F /* NWSToken.swift */,
-				93BCC7FA3614423A86FDB1514D776981 /* NWSImageToken */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -193,17 +186,6 @@
 				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
 				1BE3CA482E09BCA1E63391CD25464391 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		93BCC7FA3614423A86FDB1514D776981 /* NWSImageToken */ = {
-			isa = PBXGroup;
-			children = (
-				1AA058971B8BA12100C6F303 /* NWSImageToken.xib */,
-				1AA058931B8BA0C000C6F303 /* NWSImageToken.swift */,
-				1AA058951B8BA10300C6F303 /* Images.xcassets */,
-			);
-			name = NWSImageToken;
-			path = NWSToken;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -412,9 +394,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AA058981B8BA12100C6F303 /* NWSImageToken.xib in Resources */,
 				E204DB58F96F7E8CC51CE81221815D1C /* NWSTokenView.bundle in Resources */,
-				1AA058961B8BA10300C6F303 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,7 +429,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				695E744C2F307D5E04B0B47D20E00F28 /* NWSToken.swift in Sources */,
-				1AA058941B8BA0C000C6F303 /* NWSImageToken.swift in Sources */,
 				04F313AEF12D0FD002BE4D64A6F7F4EE /* NWSTokenView-dummy.m in Sources */,
 				45055BD93C8ACD9DD3157FE6594373B0 /* NWSTokenView.swift in Sources */,
 			);

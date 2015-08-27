@@ -14,6 +14,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 */
 
 import UIKit
+import NWSTokenView
 
 public class NWSImageToken: NWSToken
 {
@@ -22,7 +23,7 @@ public class NWSImageToken: NWSToken
     
     public class func initWithTitle(title: String, image: UIImage? = nil) -> NWSImageToken?
     {
-        if var token = UINib(nibName: "NWSImageToken",bundle:NSBundle(forClass: NWSTokenView.self)).instantiateWithOwner(nil, options: nil)[0] as? NWSImageToken
+        if var token = UINib(nibName: "NWSImageToken", bundle:nil).instantiateWithOwner(nil, options: nil)[0] as? NWSImageToken
         {
             let oldTextWidth = token.titleLabel.bounds.width
             token.titleLabel.text = title

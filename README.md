@@ -30,9 +30,24 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Import
 
-    //Swift
+    // Swift
     import NWSTokenView
 
+
+## Subclass NWSToken
+
+You can create your own customized tokens by subclassing the NWSToken class. In the example, you can see how this done in the NWSImageToken class:
+
+    public class NWSImageToken: NWSToken
+    {
+    	@IBOutlet weak var imageView: UIImageView!
+    	@IBOutlet weak var titleLabel: UILabel!
+    
+    	public class func initWithTitle(title: String, image: UIImage? = nil) -> NWSImageToken?
+    	{
+		…set UI here…
+    	}
+    }
 
 ## Protocol Conformance
 
