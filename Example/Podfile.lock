@@ -1,5 +1,5 @@
 PODS:
-  - NWSTokenView (0.1.0)
+  - NWSTokenView (1.0.0)
 
 DEPENDENCIES:
   - NWSTokenView (from `../`)
