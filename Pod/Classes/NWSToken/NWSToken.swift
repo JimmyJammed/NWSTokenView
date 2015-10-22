@@ -3,30 +3,51 @@
 //  NWSTokenView
 //
 //  Created by James Hickman on 8/11/15.
-/*
-Copyright (c) 2015 NitWit Studios, LLC
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.//
-*/
+//  Copyright (c) 2015 NitWit Studios. All rights reserved.
+//
 
 import UIKit
 
 public class NWSToken: UIView
 {
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    
     public var hiddenTextView = UITextView()
     public var isSelected: Bool = false
-
-    required public init(coder aDecoder: NSCoder)
+    
+    
+    public class func initWithTitle(title: String, image: UIImage? = nil) -> NWSToken?
     {
-        super.init(coder: aDecoder)
-        // Hide text view (for using keyboard to delete token)
-        hiddenTextView.hidden = true
-        hiddenTextView.text = "NWSTokenDeleteKey" // Set default text for detection in delegate
-        hiddenTextView.autocorrectionType = UITextAutocorrectionType.No // Hide suggestions to prevent key from being displayed
-        addSubview(hiddenTextView)
+        if let token = UINib(nibName: "NWSToken",bundle:NSBundle(forClass: NWSTokenView.self)).instantiateWithOwner(nil, options: nil)[0] as? NWSToken
+        {
+            let oldTextWidth = token.titleLabel.bounds.width
+            token.titleLabel.text = title
+            token.titleLabel.sizeToFit()
+            token.titleLabel.lineBreakMode = NSLineBreakMode.ByTruncatingTail
+            let newTextWidth = token.titleLabel.bounds.width
+            
+            token.imageView.image = image
+            token.imageView.layer.cornerRadius = 5.0
+            token.imageView.clipsToBounds = true
+            token.layer.cornerRadius = 5.0
+            token.clipsToBounds = true
+            
+            // Resize to fit text
+            token.frame.size = CGSizeMake(token.frame.size.width+(newTextWidth-oldTextWidth), token.frame.height)
+            token.setNeedsLayout()
+            token.frame = token.frame
+            
+            // Hide text view (for using keyboard to delete token)
+            token.hiddenTextView.hidden = true
+            token.hiddenTextView.text = "NWSTokenDeleteKey" // Set default text for detection in delegate
+            token.hiddenTextView.autocorrectionType = UITextAutocorrectionType.No // Hide suggestions to prevent key from being displayed
+            token.addSubview(token.hiddenTextView)
+            
+            return token
+        }
+        
+        return nil
     }
+
 }

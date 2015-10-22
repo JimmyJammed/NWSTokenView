@@ -1,0 +1,1 @@
+ const unsigned char Pods_NWSTokenView_ExampleVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:Pods_NWSTokenView_Example  PROJECT:Pods-1" "\n"; const double Pods_NWSTokenView_ExampleVersionNumber __attribute__ ((used)) = (double)1.;
