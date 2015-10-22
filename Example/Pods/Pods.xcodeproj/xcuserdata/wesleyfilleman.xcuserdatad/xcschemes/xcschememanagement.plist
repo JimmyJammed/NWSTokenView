@@ -6,43 +6,43 @@
 	<dict>
 		<key>NWSTokenView-NWSTokenView.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>NWSTokenView.xcscheme_^#shared#^_</key>
+		<key>NWSTokenView.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>0</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-NWSTokenView_Example.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-NWSTokenView_Tests.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>06A7E4EA9051DA6A46C5691AECA58EE7</key>
+		<key>0BC84E17044AE95834EE3E8DD32ADCF0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0ED331544E84554281AB02C4508AE0FF</key>
+		<key>56C3A6112138BB02197A3D14A7232013</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2A3D9FA1A76D0CBB16DAA0EF89E510EB</key>
+		<key>CA92759AFA26ED87404F52AB7FD87B13</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CD849B05C69F01EC5BDE4EC556ADC559</key>
+		<key>CBA58530F08F8437139131E227CECDFD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

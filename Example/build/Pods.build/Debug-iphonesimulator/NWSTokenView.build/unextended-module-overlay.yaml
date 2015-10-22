@@ -3,11 +3,11 @@
   'case-sensitive': 'false',
   'roots': [{
     'type': 'directory',
-    'name': '/Users/wesleyfilleman/Developer/NWSTokenView/Example/build/Debug-iphonesimulator/NWSTokenView.framework/Modules'
+    'name': '/Users/James/GIT/NWSTokenView/Example/build/Debug-iphonesimulator/NWSTokenView.framework/Modules'
     'contents': [{
       'type': 'file',
       'name': 'module.modulemap',
-      'external-contents': '/Users/wesleyfilleman/Developer/NWSTokenView/Example/build/Pods.build/Debug-iphonesimulator/NWSTokenView.build/unextended-module.modulemap',
+      'external-contents': '/Users/James/GIT/NWSTokenView/Example/build/Pods.build/Debug-iphonesimulator/NWSTokenView.build/unextended-module.modulemap',
     }]
   }]
 }

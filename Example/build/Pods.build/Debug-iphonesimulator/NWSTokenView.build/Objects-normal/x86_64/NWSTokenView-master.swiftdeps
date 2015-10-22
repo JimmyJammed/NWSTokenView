@@ -1,6 +1,5 @@
-version: "Apple Swift version 2.1 (swiftlang-700.1.101.6 clang-700.1.76)"
-options: "e81121365a93f6fa3356dbdf97147774"
-build_time: [498849269, 72956000]
-inputs:
-  "/Users/wesleyfilleman/Developer/NWSTokenView/Pod/Classes/NWSTokenView.swift": [498777197, 0]
-  "/Users/wesleyfilleman/Developer/NWSTokenView/Pod/Classes/NWSToken/NWSToken.swift": [498776680, 0]
+version: "Apple Swift version 1.2 (swiftlang-602.0.53.1 clang-602.0.53)"
+options: "0170a9f6d67af102bb3e5d500ba5670e"
+inputs: 
+- "/Users/James/GIT/NWSTokenView/Pod/Classes/NWSToken/NWSToken.swift"
+- "/Users/James/GIT/NWSTokenView/Pod/Classes/NWSTokenView.swift"
