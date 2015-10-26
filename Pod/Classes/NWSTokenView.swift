@@ -42,6 +42,9 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     private var shouldBecomeFirstResponder: Bool = false
     private var scrollView = UIScrollView()
     public var textView = UITextView()
+    public var toTextColor = UIColor.blackColor()
+    public var mainTextColor = UIColor.blackColor()
+    public var placeholderTextColor = UIColor.lightGrayColor()
     private var lastTokenCount = 0
     private var lastText = ""
     
@@ -77,11 +80,11 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         
         // Set default label properties
         self.label.font = UIFont(name: "HelveticaNeue", size: 14)
-        self.label.textColor = UIColor.blackColor()
+        self.label.textColor = toTextColor
         
         // Set default text view properties
         self.textView.backgroundColor = UIColor.clearColor()
-        self.textView.textColor = UIColor.blackColor()
+        self.textView.textColor = mainTextColor
         self.textView.font = UIFont(name: "HelveticaNeue", size: 14)
         self.textView.delegate = self
         self.textView.scrollEnabled = false
@@ -246,12 +249,12 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
             if let placeholderText = self.dataSource?.titleForTokenViewPlaceholder(self)
             {
                 self.textView.text = placeholderText
-                self.textView.textColor = UIColor.lightGrayColor()
+                self.textView.textColor = placeholderTextColor
             }
         }
         else
         {
-            self.textView.textColor = UIColor.blackColor()
+            self.textView.textColor = mainTextColor
             self.textView.text = ""
         }
         
@@ -394,7 +397,7 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
                 if textView.text == placeholderText
                 {
                     textView.text = ""
-                    textView.textColor = UIColor.blackColor()
+                    textView.textColor = mainTextColor
                 }
             }
             
@@ -432,7 +435,7 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
                 if let placeholderText = self.dataSource?.titleForTokenViewPlaceholder(self)
                 {
                     textView.text = placeholderText
-                    textView.textColor = UIColor.lightGrayColor()
+                    textView.textColor = placeholderTextColor
                 }
             }
         }
