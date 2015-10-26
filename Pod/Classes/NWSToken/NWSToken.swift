@@ -10,8 +10,8 @@ import UIKit
 
 public class NWSToken: UIView
 {
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet public weak var imageView: UIImageView!
+    @IBOutlet public weak var titleLabel: UILabel!
     
     public var hiddenTextView = UITextView()
     public var isSelected: Bool = false
