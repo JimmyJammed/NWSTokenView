@@ -42,9 +42,21 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     private var shouldBecomeFirstResponder: Bool = false
     private var scrollView = UIScrollView()
     public var textView = UITextView()
-    public var toTextColor = UIColor.blackColor()
-    public var mainTextColor = UIColor.blackColor()
-    public var placeholderTextColor = UIColor.lightGrayColor()
+    public var toTextColor = UIColor.blackColor() {
+        didSet {
+            self.label.textColor = toTextColor
+        }
+    }
+    public var mainTextColor = UIColor.blackColor() {
+        didSet {
+            self.textView.textColor = mainTextColor
+        }
+    }
+    public var placeholderTextColor = UIColor.lightGrayColor() {
+        didSet {
+            self.textView.textColor = placeholderTextColor
+        }
+    }
     private var lastTokenCount = 0
     private var lastText = ""
     
