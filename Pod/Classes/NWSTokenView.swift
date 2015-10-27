@@ -40,7 +40,7 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     
     // MARK: Private Vars
     private var shouldBecomeFirstResponder: Bool = false
-    private var scrollView = UIScrollView()
+    public var scrollView = UIScrollView()
     public var textView = UITextView()
     public var toTextColor = UIColor.blackColor() {
         didSet {
@@ -120,6 +120,14 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         
         // Orientation Rotation Listener
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "didRotateInterfaceOrientation", name: UIDeviceOrientationDidChangeNotification, object: nil)
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if self.tokens.count == 0 {
+            self.scrollView.contentSize = CGSizeMake(self.scrollView.bounds.width, self.scrollView.bounds.height)
+        }
     }
     
     /// Reloads data when interface orientation is changed.
