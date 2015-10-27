@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '77E8961FD2608EE700899CD9'
-               BlueprintName = 'NWSTokenView'
+               BlueprintIdentifier = '5A1CB64700047164BAD47341'
+               BlueprintName = 'Pods-NWSTokenView_Example'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'NWSTokenView.framework'>
+               BuildableName = 'Pods_NWSTokenView_Example.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

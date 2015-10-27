@@ -3,15 +3,8 @@
 //  NWSTokenView
 //
 //  Created by James Hickman on 8/11/15.
-/*
-Copyright (c) 2015 NitWit Studios, LLC
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.//
-*/
+//  Copyright (c) 2015 NitWit Studios. All rights reserved.
+//
 
 import UIKit
 
@@ -47,8 +40,33 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     
     // MARK: Private Vars
     private var shouldBecomeFirstResponder: Bool = false
-    private var scrollView = UIScrollView()
+    public var scrollView = UIScrollView()
     public var textView = UITextView()
+    public var toTextColor = UIColor.blackColor() {
+        didSet {
+            self.label.textColor = toTextColor
+        }
+    }
+    public var mainTextColor = UIColor.blackColor() {
+        didSet {
+            self.textView.textColor = mainTextColor
+        }
+    }
+    public var placeholderTextColor = UIColor.lightGrayColor() {
+        didSet {
+            self.textView.textColor = placeholderTextColor
+        }
+    }
+    public var defaultFontToLabel = UIFont(name: "HelveticaNeue", size: 14) {
+        didSet {
+            self.label.font = defaultFontToLabel
+        }
+    }
+    public var defaultFontTextView = UIFont(name: "HelveticaNeue", size: 14) {
+        didSet {
+            self.textView.font = defaultFontTextView
+        }
+    }
     private var lastTokenCount = 0
     private var lastText = ""
     
@@ -66,7 +84,7 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     var textViewMinimumWidth: CGFloat = 30.0
     var textViewMinimumHeight: CGFloat = 30.0
     
-    required public init(coder aDecoder: NSCoder)
+    required public init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
     }
@@ -84,11 +102,11 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         
         // Set default label properties
         self.label.font = UIFont(name: "HelveticaNeue", size: 14)
-        self.label.textColor = UIColor.blackColor()
+        self.label.textColor = toTextColor
         
         // Set default text view properties
         self.textView.backgroundColor = UIColor.clearColor()
-        self.textView.textColor = UIColor.blackColor()
+        self.textView.textColor = mainTextColor
         self.textView.font = UIFont(name: "HelveticaNeue", size: 14)
         self.textView.delegate = self
         self.textView.scrollEnabled = false
@@ -96,7 +114,7 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         self.scrollView.addSubview(self.textView)
         
         // Auto Layout Constraints
-        self.scrollView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.scrollView.translatesAutoresizingMaskIntoConstraints = false
         let constraintLeft = NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Left, multiplier: 1.0, constant: 0)
         let constraintRight = NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Right, multiplier: 1.0, constant: 0)
         let constraintTop = NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 0)
@@ -106,6 +124,14 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         
         // Orientation Rotation Listener
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "didRotateInterfaceOrientation", name: UIDeviceOrientationDidChangeNotification, object: nil)
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if self.tokens.count == 0 {
+            self.scrollView.contentSize = CGSizeMake(self.scrollView.bounds.width, self.scrollView.bounds.height)
+        }
     }
     
     /// Reloads data when interface orientation is changed.
@@ -253,12 +279,12 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
             if let placeholderText = self.dataSource?.titleForTokenViewPlaceholder(self)
             {
                 self.textView.text = placeholderText
-                self.textView.textColor = UIColor.lightGrayColor()
+                self.textView.textColor = placeholderTextColor
             }
         }
         else
         {
-            self.textView.textColor = UIColor.blackColor()
+            self.textView.textColor = mainTextColor
             self.textView.text = ""
         }
         
@@ -294,7 +320,7 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         token.hiddenTextView.delegate = self
         
         // Add tap gesture
-        var tapGesture = UITapGestureRecognizer(target: self, action:"didTapToken:")
+        let tapGesture = UITapGestureRecognizer(target: self, action:"didTapToken:")
         token.addGestureRecognizer(tapGesture)
         
         // Add tags for referencing
@@ -319,18 +345,18 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         remainingWidth = self.scrollView.bounds.width - x
         
         // Check if previously selected (i.e. pre-rotation)
-//        if self.selectedToken != nil && self.selectedToken?.titleLabel.text == token.titleLabel.text
-//        {
-//            self.selectedToken = nil // Reset so selectToken function properly sets token
-//            self.selectToken(token)
-//        }
+        if self.selectedToken != nil && self.selectedToken?.titleLabel.text == token.titleLabel.text
+        {
+            self.selectedToken = nil // Reset so selectToken function properly sets token
+            self.selectToken(token)
+        }
     }
     
     /// Returns a generated token.
     ///
-    /// :param: index Int value for token index.
+    /// - parameter index: Int value for token index.
     ///
-    /// :returns: NWSToken
+    /// - returns: NWSToken
     public func tokenForIndex(index: Int) -> NWSToken
     {
         return self.tokens[index]
@@ -338,12 +364,12 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     
     /// Selects the tapped token for interaction (i.e. removal).
     ///
-    /// :param: tapGesture UITapGestureRecognizer associated with the token.
+    /// - parameter tapGesture: UITapGestureRecognizer associated with the token.
     ///
-    /// :returns: NWSToken
+    /// - returns: NWSToken
     public func didTapToken(tapGesture: UITapGestureRecognizer)
     {
-        var token = tapGesture.view as! NWSToken
+        let token = tapGesture.view as! NWSToken
         self.selectToken(token)
     }
     
@@ -401,7 +427,7 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
                 if textView.text == placeholderText
                 {
                     textView.text = ""
-                    textView.textColor = UIColor.blackColor()
+                    textView.textColor = mainTextColor
                 }
             }
             
@@ -417,7 +443,7 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         if textView.superview is NWSToken
         {
             // Force deselect if another responder is activated
-            for (index, token) in enumerate(self.tokens)
+            for (index, token) in self.tokens.enumerate()
             {
                 if textView.superview == token
                 {
@@ -439,7 +465,7 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
                 if let placeholderText = self.dataSource?.titleForTokenViewPlaceholder(self)
                 {
                     textView.text = placeholderText
-                    textView.textColor = UIColor.lightGrayColor()
+                    textView.textColor = placeholderTextColor
                 }
             }
         }
@@ -506,7 +532,6 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         else // Text View Input
         {
             // Check if text view will overflow current line
-            let scrollViewOriginX = textView.frame.origin.x
             var scrollViewOriginY = textView.frame.origin.y
             let availableWidth = textView.bounds.width
             let maxWidth = self.scrollView.bounds.width - self.tokenViewInsets.left - self.tokenViewInsets.right
@@ -528,7 +553,6 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
                 else
                 {
                     // Grow height
-                    let currentFrame = self.textView.frame
                     self.textView.sizeToFit()
                     
                     height = self.textView.frame.height
@@ -552,8 +576,8 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     
     /// Scroll token view to bottom. Useful for scrolling along while user types in overflowing text or adds a new token.
     ///
-    /// :param: animated Bool value for animating the scroll.
-    private func scrollToBottom(#animated: Bool)
+    /// - parameter animated: Bool value for animating the scroll.
+    private func scrollToBottom(animated animated: Bool)
     {
         let bottomPoint = CGPointMake(0, self.scrollView.contentSize.height-self.scrollView.bounds.height)
         self.scrollView.setContentOffset(bottomPoint, animated: animated)
