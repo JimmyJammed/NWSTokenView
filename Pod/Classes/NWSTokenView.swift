@@ -57,10 +57,14 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
             self.textView.textColor = placeholderTextColor
         }
     }
-    public var defaultFont = UIFont(name: "HelveticaNeue", size: 14) {
+    public var defaultFontToLabel = UIFont(name: "HelveticaNeue", size: 14) {
         didSet {
-            self.textView.font = defaultFont
-            self.label.font = defaultFont
+            self.label.font = defaultFontToLabel
+        }
+    }
+    public var defaultFontTextView = UIFont(name: "HelveticaNeue", size: 14) {
+        didSet {
+            self.textView.font = defaultFontTextView
         }
     }
     private var lastTokenCount = 0
