@@ -1,6 +1,6 @@
 # NWSTokenView
 
-[![CI Status](http://img.shields.io/travis/James Hickman/NWSTokenView.svg?style=flat)](https://travis-ci.org/James Hickman/NWSTokenView)
+[![CI Status](http://img.shields.io/travis/NitWitStudios/NWSTokenView.svg?style=flat)](https://travis-ci.org/NitWitStudios/NWSTokenView)
 [![Version](https://img.shields.io/cocoapods/v/NWSTokenView.svg?style=flat)](http://cocoapods.org/pods/NWSTokenView)
 [![License](https://img.shields.io/cocoapods/l/NWSTokenView.svg?style=flat)](http://cocoapods.org/pods/NWSTokenView)
 [![Platform](https://img.shields.io/cocoapods/p/NWSTokenView.svg?style=flat)](http://cocoapods.org/pods/NWSTokenView)
