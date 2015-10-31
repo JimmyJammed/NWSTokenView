@@ -66,7 +66,7 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     var textViewMinimumWidth: CGFloat = 30.0
     var textViewMinimumHeight: CGFloat = 30.0
     
-    required public init(coder aDecoder: NSCoder)
+    required public init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
     }
@@ -96,7 +96,7 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         self.scrollView.addSubview(self.textView)
         
         // Auto Layout Constraints
-        self.scrollView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.scrollView.translatesAutoresizingMaskIntoConstraints = false
         let constraintLeft = NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Left, multiplier: 1.0, constant: 0)
         let constraintRight = NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Right, multiplier: 1.0, constant: 0)
         let constraintTop = NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1.0, constant: 0)
@@ -294,7 +294,7 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         token.hiddenTextView.delegate = self
         
         // Add tap gesture
-        var tapGesture = UITapGestureRecognizer(target: self, action:"didTapToken:")
+        let tapGesture = UITapGestureRecognizer(target: self, action:"didTapToken:")
         token.addGestureRecognizer(tapGesture)
         
         // Add tags for referencing
@@ -328,9 +328,9 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     
     /// Returns a generated token.
     ///
-    /// :param: index Int value for token index.
+    /// - parameter index: Int value for token index.
     ///
-    /// :returns: NWSToken
+    /// - returns: NWSToken
     public func tokenForIndex(index: Int) -> NWSToken
     {
         return self.tokens[index]
@@ -338,12 +338,12 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     
     /// Selects the tapped token for interaction (i.e. removal).
     ///
-    /// :param: tapGesture UITapGestureRecognizer associated with the token.
+    /// - parameter tapGesture: UITapGestureRecognizer associated with the token.
     ///
-    /// :returns: NWSToken
+    /// - returns: NWSToken
     public func didTapToken(tapGesture: UITapGestureRecognizer)
     {
-        var token = tapGesture.view as! NWSToken
+        let token = tapGesture.view as! NWSToken
         self.selectToken(token)
     }
     
@@ -417,7 +417,7 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         if textView.superview is NWSToken
         {
             // Force deselect if another responder is activated
-            for (index, token) in enumerate(self.tokens)
+            for (index, token) in self.tokens.enumerate()
             {
                 if textView.superview == token
                 {
@@ -506,7 +506,6 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         else // Text View Input
         {
             // Check if text view will overflow current line
-            let scrollViewOriginX = textView.frame.origin.x
             var scrollViewOriginY = textView.frame.origin.y
             let availableWidth = textView.bounds.width
             let maxWidth = self.scrollView.bounds.width - self.tokenViewInsets.left - self.tokenViewInsets.right
@@ -528,9 +527,7 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
                 else
                 {
                     // Grow height
-                    let currentFrame = self.textView.frame
                     self.textView.sizeToFit()
-                    
                     height = self.textView.frame.height
                 }
                 textView.frame = CGRectMake(self.tokenViewInsets.left, scrollViewOriginY, maxWidth, height)
@@ -552,8 +549,8 @@ public class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     
     /// Scroll token view to bottom. Useful for scrolling along while user types in overflowing text or adds a new token.
     ///
-    /// :param: animated Bool value for animating the scroll.
-    private func scrollToBottom(#animated: Bool)
+    /// - parameter animated: Bool value for animating the scroll.
+    private func scrollToBottom(animated animated: Bool)
     {
         let bottomPoint = CGPointMake(0, self.scrollView.contentSize.height-self.scrollView.bounds.height)
         self.scrollView.setContentOffset(bottomPoint, animated: animated)

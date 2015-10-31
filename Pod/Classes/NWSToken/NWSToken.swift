@@ -20,7 +20,7 @@ public class NWSToken: UIView
     public var hiddenTextView = UITextView()
     public var isSelected: Bool = false
 
-    required public init(coder aDecoder: NSCoder)
+    required public init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
         // Hide text view (for using keyboard to delete token)
