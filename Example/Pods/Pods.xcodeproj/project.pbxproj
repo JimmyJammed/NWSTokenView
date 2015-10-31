@@ -11,6 +11,7 @@
 		0CF460F449C8D5C262892D03B1833B00 /* Pods-NWSTokenView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4323003ED8816ECF20EC502D933EA2F0 /* Pods-NWSTokenView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		10AD21F3C2C5D97FB07E4B796CE4ED24 /* NWSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A1144EB3A5E86518B869CA610E155D /* NWSToken.swift */; };
 		1AB7C2241BE4906D00FA8D31 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB7C2231BE4906D00FA8D31 /* UIKit.framework */; };
+		1AB7C2251BE493D200FA8D31 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB7C2231BE4906D00FA8D31 /* UIKit.framework */; };
 		1E788F30E1FBD7025A79CC76B3FF5DB2 /* NWSTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3E6E626B750024BFFF1E92F3D106AC /* NWSTokenView.swift */; };
 		39A0D37AC592B65CB2FFEAF6FF11BB60 /* NWSTokenView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5E9621BE84EB5795786D3390A4698ECC /* NWSTokenView.bundle */; };
 		43213F2D00187180D6ECF42139FF8D72 /* Pods-NWSTokenView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A85A9E201B0E6E7446EDA75C6BE25F1 /* Pods-NWSTokenView_Tests-dummy.m */; };
@@ -105,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AB7C2251BE493D200FA8D31 /* UIKit.framework in Frameworks */,
 				E6674590C5C789D45385A63847224735 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
