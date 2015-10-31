@@ -16,7 +16,8 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     @IBOutlet weak var tokenViewHeightConstraint: NSLayoutConstraint!
     
     let tokenViewMinHeight: CGFloat = 40.0
-    let tokenViewMaxHeight: CGFloat = 120.0
+    let tokenViewMaxHeight: CGFloat = 150.0
+    let tokenBackgroundColor = UIColor(red: 98.0/255.0, green: 203.0/255.0, blue: 255.0/255.0, alpha: 1.0)
     
     var isSearching = false
     var contacts: [NWSTokenContact]!
@@ -28,16 +29,33 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         // Do any additional setup after loading the view, typically from a nib.
         
         // Create list of contacts to test
-        let unsortedContacts = [NWSTokenContact(name: "Albus Dumbledore", andImage: UIImage(named: "TokenPlaceholder")!),
-        NWSTokenContact(name: "Rubeus Hagrid", andImage: UIImage(named: "TokenPlaceholder")!),
-        NWSTokenContact(name: "Harry Potter", andImage: UIImage(named: "TokenPlaceholder")!),
-        NWSTokenContact(name: "Hermione Granger", andImage: UIImage(named: "TokenPlaceholder")!),
-        NWSTokenContact(name: "Ron Weasley", andImage: UIImage(named: "TokenPlaceholder")!),
-        NWSTokenContact(name: "Minerva McGonagall", andImage: UIImage(named: "TokenPlaceholder")!),
-        NWSTokenContact(name: "Seamus Finnigan", andImage: UIImage(named: "TokenPlaceholder")!),
-        NWSTokenContact(name: "Draco Malfoy", andImage: UIImage(named: "TokenPlaceholder")!),
-        NWSTokenContact(name: "Severus Snape", andImage: UIImage(named: "TokenPlaceholder")!),
-        NWSTokenContact(name: "Voldemort", andImage: UIImage(named: "TokenPlaceholder")!)]
+        let unsortedContacts = [
+            NWSTokenContact(name: "Albus Dumbledore", andImage: UIImage(named: "Albus-Dumbledore")!),
+            NWSTokenContact(name: "Cedric Diggory", andImage: UIImage(named: "Cedric-Diggory")!),
+            NWSTokenContact(name: "Cho Chang", andImage: UIImage(named: "Cho-Chang")!),
+            NWSTokenContact(name: "Draco Malfoy", andImage: UIImage(named: "Draco-Malfoy")!),
+            NWSTokenContact(name: "Fred Weasley", andImage: UIImage(named: "Fred-Weasley")!),
+            NWSTokenContact(name: "George Weasley", andImage: UIImage(named: "George-Weasley")!),
+            NWSTokenContact(name: "Ginny Weasley", andImage: UIImage(named: "Ginny-Weasley")!),
+            NWSTokenContact(name: "Gregory Goyle", andImage: UIImage(named: "Gregory-Goyle")!),
+            NWSTokenContact(name: "Harry Potter", andImage: UIImage(named: "Harry-Potter")!),
+            NWSTokenContact(name: "Hermione Granger", andImage: UIImage(named: "Hermione-Granger")!),
+            NWSTokenContact(name: "James Potter", andImage: UIImage(named: "James-Potter")!),
+            NWSTokenContact(name: "Lily Potter", andImage: UIImage(named: "Lily-Potter")!),
+            NWSTokenContact(name: "Luna Lovegood", andImage: UIImage(named: "Luna-Lovegood")!),
+            NWSTokenContact(name: "Minerva McGonagal", andImage: UIImage(named: "Minerva-McGonagal")!),
+            NWSTokenContact(name: "Moaning Myrtle", andImage: UIImage(named: "Moaning-Myrtle")!),
+            NWSTokenContact(name: "Neville Longbottom", andImage: UIImage(named: "Neville-Longbottom")!),
+            NWSTokenContact(name: "Nymphadora Tonks", andImage: UIImage(named: "Nymphadora-Tonks")!),
+            NWSTokenContact(name: "Peter Pettigrew", andImage: UIImage(named: "Peter-Pettigrew")!),
+            NWSTokenContact(name: "Remus Lupin", andImage: UIImage(named: "Remus-Lupin")!),
+            NWSTokenContact(name: "Ron Weasley", andImage: UIImage(named: "Ron-Weasley")!),
+            NWSTokenContact(name: "Rubeus Hagrid", andImage: UIImage(named: "Rubeus-Hagrid")!),
+            NWSTokenContact(name: "Severus Snape", andImage: UIImage(named: "Severus-Snape")!),
+            NWSTokenContact(name: "Sirius Black", andImage: UIImage(named: "Sirius-Black")!),
+            NWSTokenContact(name: "Vincent Crabbe", andImage: UIImage(named: "Vincent-Crabbe")!),
+            NWSTokenContact(name: "Voldemort", andImage: UIImage(named: "Voldemort")!),
+        ]
         
         contacts = NWSTokenContact.sortedContacts(unsortedContacts)
     }
@@ -47,7 +65,8 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         super.viewWillAppear(animated)
         // TableView
         tableView.tableFooterView = UIView(frame: CGRectZero)
-
+        tableView.separatorStyle = .SingleLine
+        
         // TokenView
         tokenView.dataSource = self
         tokenView.delegate = self
@@ -227,7 +246,7 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     func tokenView(tokenView: NWSTokenView, didDeselectTokenAtIndex index: Int)
     {
         let token = tokenView.tokenForIndex(index) as! NWSImageToken
-        token.backgroundColor = UIColor.blueColor()
+        token.backgroundColor = tokenBackgroundColor
     }
     
     func tokenView(tokenView: NWSTokenView, didDeleteTokenAtIndex index: Int)
@@ -359,10 +378,7 @@ class NWSTokenViewExampleCell: UITableViewCell
         userImageView.layer.cornerRadius = 5.0
         userImageView.clipsToBounds = true
         
-        // Issue with storyboard tintColor not always setting properly, set in code.
-        let image = UIImage(named: "Checkmark")?.imageWithRenderingMode(.AlwaysTemplate)
-        checkmarkImageView.tintColor = UIColor(red: 61/255, green: 127/255, blue: 221/255, alpha: 1.0)
-        checkmarkImageView.image = image
+        checkmarkImageView.image = UIImage(named: "Bolt")
     }
     
     func loadWithContact(contact: NWSTokenContact)
