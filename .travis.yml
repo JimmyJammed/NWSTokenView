@@ -14,8 +14,5 @@ before_install:
 install:
 - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 script:
-#- set -o pipefail && xcodebuild -workspace Example/NWSTokenView.xcworkspace -scheme NWSTokenViewExample -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
 - xcodebuild -workspace Example/NWSTokenView.xcworkspace -scheme NWSTokenViewExample -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-#- xctool -workspace Example/NWSTokenView.xcworkspace -scheme NWSTokenViewExample -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-
 - pod lib lint --quick
