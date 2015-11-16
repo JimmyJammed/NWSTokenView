@@ -26,7 +26,10 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Adjust tableView offset for keyboard
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
         
         // Create list of contacts to test
         let unsortedContacts = [
@@ -92,6 +95,22 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     }
     
     // MARK: Keyboard
+    func keyboardWillShow(notification: NSNotification)
+    {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+            tableView.contentInset = contentInsets
+            tableView.scrollIndicatorInsets = contentInsets
+
+        }        
+    }
+    
+    func keyboardWillHide(notification: NSNotificationCenter)
+    {
+        tableView.contentInset = UIEdgeInsetsZero
+        tableView.scrollIndicatorInsets = UIEdgeInsetsZero
+    }
+    
     @IBAction func didTapView(sender: UITapGestureRecognizer)
     {
         dismissKeyboard()
