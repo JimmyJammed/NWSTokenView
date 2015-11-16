@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/NWSTokenView.svg?style=flat)](http://cocoapods.org/pods/NWSTokenView)
 [![Platform](https://img.shields.io/cocoapods/p/NWSTokenView.svg?style=flat)](http://cocoapods.org/pods/NWSTokenView)
 
-![NWSTokenView Demo](/Screenshots/NWSTokenViewExample.gif =250x)
+![NWSTokenView Demo](/Screenshots/NWSTokenViewExample.gif)
 
 # Introduction
 NWSTokenView is a flexible UIView subclass that shows a collection of objects in a similar manner to the Messages app. 
