@@ -30,36 +30,40 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Import
 
-    // Swift
-    import NWSTokenView
-
+```swift
+import NWSTokenView
+```
 
 ## Subclass NWSToken
 
 You can create your own customized tokens by subclassing the NWSToken class. In the example, you can see how this done in the NWSImageToken class:
 
-    public class NWSImageToken: NWSToken
-    {
-    	@IBOutlet weak var imageView: UIImageView!
-    	@IBOutlet weak var titleLabel: UILabel!
+```swift
+public class NWSImageToken: NWSToken
+{
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
     
-    	public class func initWithTitle(title: String, image: UIImage? = nil) -> NWSImageToken?
-    	{
-		…set UI here…
-    	}
+    public class func initWithTitle(title: String, image: UIImage? = nil) -> NWSImageToken?
+    {
+        …set UI here…
     }
+}
+```
 
 ## Protocol Conformance
 
-    class ViewController: UIViewController, NWSTokenViewDataSource, NWSTokenViewDelegate
-    {
-         override func viewDidLoad()
-         {
-              super.viewDidLoad()
-              tokenView.dataSource = self
-              tokenView.delegate = self
-         }
-    }
+```swift
+class ViewController: UIViewController, NWSTokenViewDataSource, NWSTokenViewDelegate
+{
+     override func viewDidLoad()
+     {
+          super.viewDidLoad()
+          tokenView.dataSource = self
+          tokenView.delegate = self
+     }
+}
+```
 
 ## Data Source Implementation
 
@@ -67,43 +71,53 @@ Return the token data to display in the tokenView.
 
 The number of tokens to display:
 
-    func numberOfTokensForTokenView(tokenView: NWSTokenView) -> Int
-    {
-        return tokens.count
-    }
-    
+```swift
+func numberOfTokensForTokenView(tokenView: NWSTokenView) -> Int
+{
+    return tokens.count
+}
+```
+
 The insets for the tokenView:
 
-    func insetsForTokenView(tokenView: NWSTokenView) -> UIEdgeInsets?
-    {
-        return UIEdgeInsetsMake(5, 5, 5, 5)
-    }
-    
+```swift
+func insetsForTokenView(tokenView: NWSTokenView) -> UIEdgeInsets?
+{
+    return UIEdgeInsetsMake(5, 5, 5, 5)
+}
+```
+
 The title for the tokenView:
 
-    func titleForTokenViewLabel(tokenView: NWSTokenView) -> String?
-    {
-        return "To:"
-    }
-    
+```swift
+func titleForTokenViewLabel(tokenView: NWSTokenView) -> String?
+{
+    return "To:"
+}
+```
+
 The placeholder text for the tokenView when there are no tokens:
 
-    func titleForTokenViewPlaceholder(tokenView: NWSTokenView) -> String?
-    {
-        return "Search contacts..."
-    }
-    
+```swift
+func titleForTokenViewPlaceholder(tokenView: NWSTokenView) -> String?
+{
+    return "Search contacts..."
+}
+```
+
 The custom view for the tokens:
 
-    func tokenView(tokenView: NWSTokenView, viewForTokenAtIndex index: Int) -> UIView?
+```swift
+func tokenView(tokenView: NWSTokenView, viewForTokenAtIndex index: Int) -> UIView?
+{
+    let contact = contacts[Int(index)]
+    if let token = NWSToken.initWithTitle(contact.name, image: contact.image)
     {
-        let contact = contacts[Int(index)]
-        if let token = NWSToken.initWithTitle(contact.name, image: contact.image)
-        {
-            return token
-        }
-        return nil
+        return token
     }
+    return nil
+}
+```
 
 ## Delegate Implementation
 
@@ -111,71 +125,88 @@ Return the behaviors for the token view.
 
 Notifies you when a token was selected:
 
-    func tokenView(tokenView: NWSTokenView, didSelectTokenAtIndex index: Int)
-    {
-	// NOTE - If getting the token itself using ‘tokenForIndex()’, be sure to convert the token to your own subclass.
-	// Example:
-	// var token = tokenView.tokenForIndex(index) as! NWSImageToken
-    }
+```swift
+func tokenView(tokenView: NWSTokenView, didSelectTokenAtIndex index: Int)
+{
+    // NOTE - If getting the token itself using ‘tokenForIndex()’, be sure to convert the token to your own subclass.
+    // Example:
+    // var token = tokenView.tokenForIndex(index) as! NWSImageToken
+}
+```
    
 Notifies you when a token was deselected: 
 
-    func tokenView(tokenView: NWSTokenView, didDeselectTokenAtIndex index: Int)
-    {
-	// NOTE - If getting the token itself using ‘tokenForIndex()’, be sure to convert the token to your own subclass.
-	// Example:
-	// var token = tokenView.tokenForIndex(index) as! NWSImageToken
-    }
+```swift
+func tokenView(tokenView: NWSTokenView, didDeselectTokenAtIndex index: Int)
+{
+    // NOTE - If getting the token itself using ‘tokenForIndex()’, be sure to convert the token to your own subclass.
+    // Example:
+    // var token = tokenView.tokenForIndex(index) as! NWSImageToken
+}
+```
     
 Notifies you when a token was deleted (i.e. selected then backspaced/overwritten/etc.):
 
-    func tokenView(tokenView: NWSTokenView, didDeleteTokenAtIndex index: Int)
-    {
-        // Do something
-    }
-    
+```swift
+func tokenView(tokenView: NWSTokenView, didDeleteTokenAtIndex index: Int)
+{
+    // Do something
+}
+```
+
 Notifies you when the token view’s textField becomes the first responder:
 
-    func tokenView(tokenViewDidBeginEditing: NWSTokenView)
-    {
-        // Do something
-    }
-   
+```swift
+func tokenView(tokenViewDidBeginEditing: NWSTokenView)
+{
+    // Do something
+}
+```
+
 Notifies you when the token view’s textField resigns the first responder: 
 
-    func tokenViewDidEndEditing(tokenView: NWSTokenView)
-    {
-        // Do something
-    }
- 
+```swift
+func tokenViewDidEndEditing(tokenView: NWSTokenView)
+{
+    // Do something
+}
+```
+
 Notifies you when the token view’s textField’s text is changed:  
-  
-    func tokenView(tokenView: NWSTokenView, didChangeText text: String)
-    {
-        // Do something
-    }
-  
+
+```swift  
+func tokenView(tokenView: NWSTokenView, didChangeText text: String)
+{
+    // Do something
+}
+```
+
 Notifies you when the token view’s textField’s text is returned:  
-    
-    func tokenView(tokenView: NWSTokenView, didEnterText text: String)
-    {
-        // Do something    
-    }
-    
+
+```swift    
+func tokenView(tokenView: NWSTokenView, didEnterText text: String)
+{
+    // Do something    
+}
+```
+
 Notifies you when the token view’s content size has changed (i.e. new line added): 
-     
-    func tokenView(tokenView: NWSTokenView, contentSizeChanged size: CGSize)
-    {
-        // Do something
-    }
+
+```swift     
+func tokenView(tokenView: NWSTokenView, contentSizeChanged size: CGSize)
+{
+    // Do something
+}
+```
 
 Notifies you when the token view finished loading all tokens:  
-        
-    func tokenView(tokenView: NWSTokenView, didFinishLoadingTokens tokenCount: Int)
-    {
-	// Do something
-    }
 
+```swift        
+func tokenView(tokenView: NWSTokenView, didFinishLoadingTokens tokenCount: Int)
+{
+    // Do something
+}
+```
 
 ## Author
 
