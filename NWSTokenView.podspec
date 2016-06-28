@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "NWSTokenView"
-  s.version          = "1.0.0"
+  s.version          = "1.0.1"
   s.summary          = "NWSTokenView is a flexible iOS token view for selecting contacts."
   s.description      = <<-DESC
                        NWSTokenView is a flexible token view that allows the selection of various contacts (a la Messages style) using your own custom xibs.
@@ -29,7 +29,5 @@ Pod::Spec.new do |s|
     'NWSTokenView' => ['Pod/Assets/*.png']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit'
 end
