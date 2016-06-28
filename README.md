@@ -212,7 +212,10 @@ func tokenView(tokenView: NWSTokenView, didFinishLoadingTokens tokenCount: Int)
 
 James Hickman, james.hickman@nitwitstudios.com
 
-[![paypal](/Buy-Me-A-Beer.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L46UYPQQ6C4WG)
+[![paypal](/Buy-Me-A-Beer.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=S7YTPZZRANJMJ)
+[![paypal](/Buy-Me-A-6-Pack.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DH58C6SCQZD6J)
+[![paypal](/Buy-Me-A-Keg.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XMSPVEHQWWNSC)
+[![paypal](/Pay-Off-My-Student-Loans.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BWY74RN32UG5L)
 
 ## License
 
