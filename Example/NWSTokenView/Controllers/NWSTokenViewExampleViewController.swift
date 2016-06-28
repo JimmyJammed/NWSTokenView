@@ -28,8 +28,8 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         super.viewDidLoad()
 
         // Adjust tableView offset for keyboard
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NWSTokenViewExampleViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NWSTokenViewExampleViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
         
         // Create list of contacts to test
         let unsortedContacts = [
@@ -322,7 +322,7 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         
         // Check if typed an email and hit space
         let lastChar = text[text.endIndex.predecessor()]
-        if lastChar == " " && text.substringWithRange(Range<String.Index>(start: text.startIndex, end: text.endIndex.predecessor())).isEmail()
+        if lastChar == " " && text.substringWithRange(text.startIndex..<text.endIndex.predecessor()).isEmail()
         {
             self.didTypeEmailInTokenView()
             return
