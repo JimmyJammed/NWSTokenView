@@ -212,6 +212,8 @@ func tokenView(tokenView: NWSTokenView, didFinishLoadingTokens tokenCount: Int)
 
 James Hickman, james.hickman@nitwitstudios.com
 
+[![paypal](/Buy-Me-A-Beer.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L46UYPQQ6C4WG)
+
 ## License
 
 The MIT License (MIT)
