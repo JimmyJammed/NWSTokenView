@@ -8,6 +8,17 @@
 
 import UIKit
 import NWSTokenView
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
 
 class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NWSTokenDataSource, NWSTokenDelegate, UIGestureRecognizerDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
 {
@@ -28,8 +39,8 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         super.viewDidLoad()
 
         // Adjust tableView offset for keyboard
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NWSTokenViewExampleViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NWSTokenViewExampleViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(NWSTokenViewExampleViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(NWSTokenViewExampleViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         // Create list of contacts to test
         let unsortedContacts = [
@@ -63,12 +74,12 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         contacts = NWSTokenContact.sortedContacts(unsortedContacts)
     }
 
-    override func viewWillAppear(animated: Bool)
+    override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
         // TableView
-        tableView.tableFooterView = UIView(frame: CGRectZero)
-        tableView.separatorStyle = .SingleLine
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
+        tableView.separatorStyle = .singleLine
         
         // TokenView
         tokenView.dataSource = self
@@ -82,11 +93,11 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     }
 
     // MARK: UIGestureRecognizerDelegate
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool
     {
         if let view = touch.view
         {
-            if view.isDescendantOfView(tableView)
+            if view.isDescendant(of: tableView)
             {
                 return false
             }
@@ -95,9 +106,9 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     }
     
     // MARK: Keyboard
-    func keyboardWillShow(notification: NSNotification)
+    func keyboardWillShow(_ notification: Notification)
     {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+        if let keyboardSize = ((notification as NSNotification).userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
             tableView.contentInset = contentInsets
             tableView.scrollIndicatorInsets = contentInsets
@@ -105,13 +116,13 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         }        
     }
     
-    func keyboardWillHide(notification: NSNotificationCenter)
+    func keyboardWillHide(_ notification: NotificationCenter)
     {
-        tableView.contentInset = UIEdgeInsetsZero
-        tableView.scrollIndicatorInsets = UIEdgeInsetsZero
+        tableView.contentInset = UIEdgeInsets.zero
+        tableView.scrollIndicatorInsets = UIEdgeInsets.zero
     }
     
-    @IBAction func didTapView(sender: UITapGestureRecognizer)
+    @IBAction func didTapView(_ sender: UITapGestureRecognizer)
     {
         dismissKeyboard()
     }
@@ -123,7 +134,7 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     }
     
     // MARK: Search Contacts
-    func searchContacts(text: String)
+    func searchContacts(_ text: String)
     {
         // Reset filtered contacts
         filteredContacts = []
@@ -132,7 +143,7 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         if contacts.count > 0
         {
             filteredContacts = contacts.filter({ (contact: NWSTokenContact) -> Bool in
-                return contact.name.rangeOfString(text, options: .CaseInsensitiveSearch) != nil
+                return contact.name.range(of: text, options: .caseInsensitive) != nil
             })
             
             self.isSearching = true
@@ -142,7 +153,7 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     
     func didTypeEmailInTokenView()
     {
-        let email = self.tokenView.textView.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        let email = self.tokenView.textView.text.trimmingCharacters(in: CharacterSet.whitespaces)
         let contact = NWSTokenContact(name: email, andImage: UIImage(named: "TokenPlaceholder")!)
         self.selectedContacts.append(contact)
         
@@ -153,13 +164,13 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     }
     
     // MARK: UITableViewDataSource
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    func numberOfSections(in tableView: UITableView) -> Int
     {
         return 1
     }
     
     // MARK: UITableViewDelegate
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         if isSearching
         {
@@ -168,9 +179,9 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         return contacts.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("NWSTokenViewExampleCellIdentifier", forIndexPath: indexPath) as! NWSTokenViewExampleCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NWSTokenViewExampleCellIdentifier", for: indexPath) as! NWSTokenViewExampleCell
         
         let currentContacts: [NWSTokenContact]!
         
@@ -185,16 +196,16 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         }
         
         // Load contact data
-        let contact = currentContacts[indexPath.row]
+        let contact = currentContacts[(indexPath as NSIndexPath).row]
         cell.loadWithContact(contact)
         
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as! NWSTokenViewExampleCell
-        cell.selected = false
+        let cell = tableView.cellForRow(at: indexPath) as! NWSTokenViewExampleCell
+        cell.isSelected = false
         
         // Check if already selected
         if !selectedContacts.contains(cell.contact)
@@ -209,13 +220,13 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     }
     
     // MARK: DZNEmptyDataSetSource
-    func customViewForEmptyDataSet(scrollView: UIScrollView!) -> UIView! {
+    func customView(forEmptyDataSet scrollView: UIScrollView!) -> UIView! {
         
-        if let view = UINib(nibName: "EmptyDataSet", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as? UIView
+        if let view = UINib(nibName: "EmptyDataSet", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? UIView
         {
             view.frame = scrollView.bounds
             view.translatesAutoresizingMaskIntoConstraints = false
-            view.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
+            view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
             return view
         }
 
@@ -224,27 +235,27 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     
     
     // MARK: NWSTokenDataSource
-    func numberOfTokensForTokenView(tokenView: NWSTokenView) -> Int
+    func numberOfTokensForTokenView(_ tokenView: NWSTokenView) -> Int
     {
         return selectedContacts.count
     }
     
-    func insetsForTokenView(tokenView: NWSTokenView) -> UIEdgeInsets?
+    func insetsForTokenView(_ tokenView: NWSTokenView) -> UIEdgeInsets?
     {
         return UIEdgeInsetsMake(5, 5, 5, 5)
     }
     
-    func titleForTokenViewLabel(tokenView: NWSTokenView) -> String?
+    func titleForTokenViewLabel(_ tokenView: NWSTokenView) -> String?
     {
         return "To:"
     }
     
-    func titleForTokenViewPlaceholder(tokenView: NWSTokenView) -> String?
+    func titleForTokenViewPlaceholder(_ tokenView: NWSTokenView) -> String?
     {
         return "Search contacts..."
     }
     
-    func tokenView(tokenView: NWSTokenView, viewForTokenAtIndex index: Int) -> UIView?
+    func tokenView(_ tokenView: NWSTokenView, viewForTokenAtIndex index: Int) -> UIView?
     {
         let contact = selectedContacts[Int(index)]
         if let token = NWSImageToken.initWithTitle(contact.name, image: contact.image)
@@ -256,26 +267,26 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     }
     
     // MARK: NWSTokenDelegate
-    func tokenView(tokenView: NWSTokenView, didSelectTokenAtIndex index: Int)
+    func tokenView(_ tokenView: NWSTokenView, didSelectTokenAtIndex index: Int)
     {
         let token = tokenView.tokenForIndex(index) as! NWSImageToken
-        token.backgroundColor = UIColor.blueColor()
+        token.backgroundColor = UIColor.blue
     }
     
-    func tokenView(tokenView: NWSTokenView, didDeselectTokenAtIndex index: Int)
+    func tokenView(_ tokenView: NWSTokenView, didDeselectTokenAtIndex index: Int)
     {
         let token = tokenView.tokenForIndex(index) as! NWSImageToken
         token.backgroundColor = tokenBackgroundColor
     }
     
-    func tokenView(tokenView: NWSTokenView, didDeleteTokenAtIndex index: Int)
+    func tokenView(_ tokenView: NWSTokenView, didDeleteTokenAtIndex index: Int)
     {
         // Ensure index is within bounds
         if index < self.selectedContacts.count
         {
             let contact = self.selectedContacts[Int(index)] as NWSTokenContact
             contact.isSelected = false
-            self.selectedContacts.removeAtIndex(Int(index))
+            self.selectedContacts.remove(at: Int(index))
             
             tokenView.reloadData()
             tableView.reloadData()
@@ -290,16 +301,16 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         }
     }
     
-    func tokenView(tokenViewDidBeginEditing: NWSTokenView)
+    func tokenView(_ tokenViewDidBeginEditing: NWSTokenView)
     {
         // Check if entering search field and it already contains text (ignore token selections)
-        if tokenView.textView.isFirstResponder() && tokenView.textView.text != ""
+        if tokenView.textView.isFirstResponder && tokenView.textView.text != ""
         {
             //self.searchContacts(tokenView.textView.text)
         }
     }
     
-    func tokenViewDidEndEditing(tokenView: NWSTokenView)
+    func tokenViewDidEndEditing(_ tokenView: NWSTokenView)
     {
         if tokenView.textView.text.isEmail()
         {
@@ -310,7 +321,7 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         tableView.reloadData()
     }
     
-    func tokenView(tokenView: NWSTokenView, didChangeText text: String)
+    func tokenView(_ tokenView: NWSTokenView, didChangeText text: String)
     {
         // Check if empty (deleting text)
         if text == ""
@@ -321,8 +332,8 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         }
         
         // Check if typed an email and hit space
-        let lastChar = text[text.endIndex.predecessor()]
-        if lastChar == " " && text.substringWithRange(text.startIndex..<text.endIndex.predecessor()).isEmail()
+        let lastChar = text[text.characters.index(before: text.endIndex)]
+        if lastChar == " " && text.substring(with: text.startIndex..<text.characters.index(before: text.endIndex)).isEmail()
         {
             self.didTypeEmailInTokenView()
             return
@@ -331,7 +342,7 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         self.searchContacts(text)
     }
     
-    func tokenView(tokenView: NWSTokenView, didEnterText text: String)
+    func tokenView(_ tokenView: NWSTokenView, didEnterText text: String)
     {
         if text == ""
         {
@@ -348,13 +359,13 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         }
     }
     
-    func tokenView(tokenView: NWSTokenView, contentSizeChanged size: CGSize)
+    func tokenView(_ tokenView: NWSTokenView, contentSizeChanged size: CGSize)
     {
         self.tokenViewHeightConstraint.constant = max(tokenViewMinHeight,min(size.height, self.tokenViewMaxHeight))
         self.view.layoutIfNeeded()
     }
     
-    func tokenView(tokenView: NWSTokenView, didFinishLoadingTokens tokenCount: Int)
+    func tokenView(_ tokenView: NWSTokenView, didFinishLoadingTokens tokenCount: Int)
     {
 
     }
@@ -373,9 +384,9 @@ class NWSTokenContact: NSObject
         self.image = image
     }
     
-    class func sortedContacts(contacts: [NWSTokenContact]) -> [NWSTokenContact]
+    class func sortedContacts(_ contacts: [NWSTokenContact]) -> [NWSTokenContact]
     {
-        return contacts.sort({ (first, second) -> Bool in
+        return contacts.sorted(by: { (first, second) -> Bool in
             return first.name < second.name
         })
     }
@@ -400,7 +411,7 @@ class NWSTokenViewExampleCell: UITableViewCell
         checkmarkImageView.image = UIImage(named: "Bolt")
     }
     
-    func loadWithContact(contact: NWSTokenContact)
+    func loadWithContact(_ contact: NWSTokenContact)
     {
         self.contact = contact
         userTitleLabel.text = contact.name
@@ -409,11 +420,11 @@ class NWSTokenViewExampleCell: UITableViewCell
         // Show/Hide Checkmark
         if contact.isSelected
         {
-            checkmarkImageView.hidden = false
+            checkmarkImageView.isHidden = false
         }
         else
         {
-            checkmarkImageView.hidden = true
+            checkmarkImageView.isHidden = true
         }
     }
 }
@@ -422,8 +433,8 @@ extension String
 {
     func isEmail() -> Bool
     {
-        let regex = try? NSRegularExpression(pattern: "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$", options: .CaseInsensitive)
-        return regex?.firstMatchInString(self, options: [], range: NSMakeRange(0, self.characters.count)) != nil
+        let regex = try? NSRegularExpression(pattern: "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$", options: .caseInsensitive)
+        return regex?.firstMatch(in: self, options: [], range: NSMakeRange(0, self.characters.count)) != nil
     }
 }
 
