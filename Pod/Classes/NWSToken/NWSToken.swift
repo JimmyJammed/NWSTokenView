@@ -15,18 +15,18 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 import UIKit
 
-public class NWSToken: UIView
+open class NWSToken: UIView
 {
-    public var hiddenTextView = UITextView()
-    public var isSelected: Bool = false
+    open var hiddenTextView = UITextView()
+    open var isSelected: Bool = false
 
     required public init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
         // Hide text view (for using keyboard to delete token)
-        hiddenTextView.hidden = true
+        hiddenTextView.isHidden = true
         hiddenTextView.text = "NWSTokenDeleteKey" // Set default text for detection in delegate
-        hiddenTextView.autocorrectionType = UITextAutocorrectionType.No // Hide suggestions to prevent key from being displayed
+        hiddenTextView.autocorrectionType = UITextAutocorrectionType.no // Hide suggestions to prevent key from being displayed
         addSubview(hiddenTextView)
     }
 }

@@ -1,6 +1,6 @@
 {
   "name": "NWSTokenView",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "summary": "NWSTokenView is a flexible iOS token view for selecting contacts.",
   "description": "NWSTokenView is a flexible token view that allows the selection of various contacts (a la Messages style) using your own custom xibs.",
   "homepage": "https://github.com/NitWitStudios/NWSTokenView",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/NitWitStudios/NWSTokenView.git",
-    "tag": "1.0.0"
+    "tag": "1.0.1"
   },
   "social_media_url": "https://twitter.com/NitWitStudios",
   "platforms": {
@@ -18,9 +18,5 @@
   },
   "requires_arc": true,
   "source_files": "Pod/Classes/**/*",
-  "resource_bundles": {
-    "NWSTokenView": [
-      "Pod/Assets/*.png"
-    ]
-  }
+  "frameworks": "UIKit"
 }

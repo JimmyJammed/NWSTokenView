@@ -16,20 +16,20 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 import UIKit
 import NWSTokenView
 
-public class NWSImageToken: NWSToken
+open class NWSImageToken: NWSToken
 {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
-    public class func initWithTitle(title: String, image: UIImage? = nil) -> NWSImageToken?
+    open class func initWithTitle(_ title: String, image: UIImage? = nil) -> NWSImageToken?
     {
-        if let token = UINib(nibName: "NWSImageToken", bundle:nil).instantiateWithOwner(nil, options: nil)[0] as? NWSImageToken
+        if let token = UINib(nibName: "NWSImageToken", bundle:nil).instantiate(withOwner: nil, options: nil)[0] as? NWSImageToken
         {
             token.backgroundColor = UIColor(red: 98.0/255.0, green: 203.0/255.0, blue: 255.0/255.0, alpha: 1.0)
             let oldTextWidth = token.titleLabel.bounds.width
             token.titleLabel.text = title
             token.titleLabel.sizeToFit()
-            token.titleLabel.lineBreakMode = NSLineBreakMode.ByTruncatingTail
+            token.titleLabel.lineBreakMode = NSLineBreakMode.byTruncatingTail
             let newTextWidth = token.titleLabel.bounds.width
             
             token.imageView.image = image
@@ -39,7 +39,7 @@ public class NWSImageToken: NWSToken
             token.clipsToBounds = true
             
             // Resize to fit text
-            token.frame.size = CGSizeMake(token.frame.size.width+(newTextWidth-oldTextWidth), token.frame.height)
+            token.frame.size = CGSize(width: token.frame.size.width+(newTextWidth-oldTextWidth), height: token.frame.height)
             token.setNeedsLayout()
             token.frame = token.frame
             
