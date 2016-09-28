@@ -1,6 +1,0 @@
-framework module NWSTokenView {
-  umbrella header "NWSTokenView-umbrella.h"
-
-  export *
-  module * { export * }
-}
