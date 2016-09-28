@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>NWSTokenView-NWSTokenView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>NWSTokenView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,42 +22,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>06A7E4EA9051DA6A46C5691AECA58EE7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>0ED331544E84554281AB02C4508AE0FF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2A3D9FA1A76D0CBB16DAA0EF89E510EB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>300E09AA60233D10BF87CF5CB17B8CDB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>3AF37B07D0AFD972D88DDFB10308B7B0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>56C68FFF3CC4DB6D43D5F66FB1E4709F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>7567D9D82576B4708BAC23A94FC03D43</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CD849B05C69F01EC5BDE4EC556ADC559</key>
 		<dict>
 			<key>primary</key>
 			<true/>

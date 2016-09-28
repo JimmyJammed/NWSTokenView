@@ -1,5 +1,5 @@
 PODS:
-  - NWSTokenView (1.0.1)
+  - NWSTokenView (2.0.0)
 
 DEPENDENCIES:
   - NWSTokenView (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  NWSTokenView: aa87c58c1fb6cc4ce1508ebd81228792542bf7cd
+  NWSTokenView: 11270cc760c49b73807fab97ddd0af2094b093b4
 
 PODFILE CHECKSUM: b3dd764087d79221bb23247fbfa20dfd25ac9c96
 
