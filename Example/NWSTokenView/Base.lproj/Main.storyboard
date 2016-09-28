@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Vx6-RL-lMv">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A319" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vx6-RL-lMv">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Empty Data Set Delegate-->
@@ -15,51 +16,42 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="979-fw-I4V">
-                                <rect key="frame" x="0.0" y="114" width="600" height="486"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NWSTokenViewExampleCellIdentifier" rowHeight="60" id="lfN-Hg-td8" customClass="NWSTokenViewExampleCell" customModule="NWSTokenView_Example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="22" width="600" height="60"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lfN-Hg-td8" id="f2P-3A-aTj">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
+                                            <frame key="frameInset" width="320" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TokenPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="YRs-03-c8g">
-                                                    <rect key="frame" x="8" y="5" width="50" height="50"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="995-Q2-u0g"/>
                                                         <constraint firstAttribute="width" constant="50" id="bQO-fV-uis"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bolt" translatesAutoresizingMaskIntoConstraints="NO" id="el5-Z1-T0C">
-                                                    <rect key="frame" x="552" y="10" width="40" height="40"/>
-                                                    <animations/>
-                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="6mW-So-0hQ"/>
                                                         <constraint firstAttribute="width" constant="40" id="LPM-FH-gKe"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Johnny Appleseed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6G-aw-ujb">
-                                                    <rect key="frame" x="66" y="5" width="478" height="50"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="Al1-WY-grL"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="el5-Z1-T0C" firstAttribute="leading" secondItem="j6G-aw-ujb" secondAttribute="trailing" constant="8" id="2HD-L4-oLB"/>
                                                 <constraint firstItem="YRs-03-c8g" firstAttribute="leading" secondItem="f2P-3A-aTj" secondAttribute="leadingMargin" id="MJG-XV-HoU"/>
@@ -76,7 +68,6 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <connections>
                                             <outlet property="checkmarkImageView" destination="el5-Z1-T0C" id="i8S-VG-Mft"/>
                                             <outlet property="userImageView" destination="YRs-03-c8g" id="tmz-5I-NjA"/>
@@ -92,19 +83,15 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QjA-FH-dTJ">
-                                <rect key="frame" x="0.0" y="64" width="600" height="50"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kbh-2L-BPR" customClass="NWSTokenView" customModule="NWSTokenView">
-                                        <rect key="frame" x="8" y="5" width="584" height="40"/>
-                                        <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="R9E-yS-qrh"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <animations/>
-                                <color key="backgroundColor" red="0.50909271915467202" green="0.62471629836183595" blue="0.94157379082959103" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.50909271915467202" green="0.62471629836183595" blue="0.94157379082959103" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="kbh-2L-BPR" firstAttribute="top" secondItem="QjA-FH-dTJ" secondAttribute="top" constant="5" id="9r1-WO-ZU4"/>
                                     <constraint firstItem="kbh-2L-BPR" firstAttribute="trailing" secondItem="QjA-FH-dTJ" secondAttribute="trailingMargin" id="AuB-YL-r1b"/>
@@ -126,8 +113,7 @@
                                 </variation>
                             </view>
                         </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="979-fw-I4V" firstAttribute="trailing" secondItem="QjA-FH-dTJ" secondAttribute="trailing" id="1GY-BF-jUr"/>
@@ -136,11 +122,11 @@
                             <constraint firstItem="QjA-FH-dTJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="97C-HW-i98"/>
                             <constraint firstItem="979-fw-I4V" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="2" id="ZUg-g0-HnQ"/>
                             <constraint firstItem="979-fw-I4V" firstAttribute="leading" secondItem="QjA-FH-dTJ" secondAttribute="leading" id="haL-Tx-RDU"/>
-                            <constraint firstItem="QjA-FH-dTJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="km0-Ql-akX"/>
+                            <constraint firstItem="QjA-FH-dTJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="km0-Ql-akX"/>
                             <constraint firstItem="979-fw-I4V" firstAttribute="top" secondItem="QjA-FH-dTJ" secondAttribute="bottom" id="rhb-lz-Lu7"/>
                             <constraint firstItem="QjA-FH-dTJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="tUD-0Q-E0k"/>
                             <constraint firstItem="979-fw-I4V" firstAttribute="top" secondItem="QjA-FH-dTJ" secondAttribute="top" constant="50" id="uB1-6c-22l"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="QjA-FH-dTJ" secondAttribute="trailing" constant="-20" id="vgc-U7-7TS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QjA-FH-dTJ" secondAttribute="trailing" constant="-16" id="vgc-U7-7TS"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -169,7 +155,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1142" y="387"/>
+            <point key="canvasLocation" x="1141.875" y="386.61971830985914"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hc1-Hd-PXi">
@@ -179,10 +165,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cEB-S8-A1o">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                        <color key="barTintColor" red="0.23921568627450979" green="0.49803921568627452" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.18875950574874878" green="0.40674507617950439" blue="0.83389544486999512" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -197,6 +182,6 @@
     </scenes>
     <resources>
         <image name="Bolt" width="90" height="90"/>
-        <image name="TokenPlaceholder" width="85" height="85"/>
+        <image name="TokenPlaceholder" width="256" height="256"/>
     </resources>
 </document>
