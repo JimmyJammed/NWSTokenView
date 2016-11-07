@@ -66,15 +66,18 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     var textViewMinimumWidth: CGFloat = 30.0
     var textViewMinimumHeight: CGFloat = 30.0
     
-    required public init?(coder aDecoder: NSCoder)
-    {
-        super.init(coder: aDecoder)
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        // Update scroll view content size
+        let contentSize = self.scrollView.contentSize
+        self.scrollView.contentSize = CGSize(width: self.scrollView.bounds.width, height: contentSize.height)
     }
     
     override open func awakeFromNib()
     {
         super.awakeFromNib()
-        
+
         // Set default scroll properties
         self.scrollView.backgroundColor = UIColor.clear
         self.scrollView.isScrollEnabled = true
@@ -96,14 +99,13 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         self.scrollView.addSubview(self.textView)
         
         // Auto Layout Constraints
+        self.translatesAutoresizingMaskIntoConstraints = false
         self.scrollView.translatesAutoresizingMaskIntoConstraints = false
-        let constraintLeft = NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.left, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.left, multiplier: 1.0, constant: 0)
-        let constraintRight = NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.right, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.right, multiplier: 1.0, constant: 0)
-        let constraintTop = NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.top, multiplier: 1.0, constant: 0)
-        let constraintBottom = NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.bottom, multiplier: 1.0, constant: 0)
-        self.addConstraints([constraintLeft, constraintRight, constraintTop, constraintBottom])
-        self.layoutIfNeeded()
-        
+        NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.left, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.left, multiplier: 1.0, constant: 0).isActive = true
+        NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.right, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.right, multiplier: 1.0, constant: 0).isActive = true
+        NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.top, multiplier: 1.0, constant: 0).isActive = true
+        NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.bottom, multiplier: 1.0, constant: 0).isActive = true
+
         // Orientation Rotation Listener
         NotificationCenter.default.addObserver(self, selector: #selector(NWSTokenView.didRotateInterfaceOrientation), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }

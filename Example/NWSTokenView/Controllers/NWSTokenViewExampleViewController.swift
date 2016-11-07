@@ -72,19 +72,21 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         ]
         
         contacts = NWSTokenContact.sortedContacts(unsortedContacts)
-    }
-
-    override func viewWillAppear(_ animated: Bool)
-    {
-        super.viewWillAppear(animated)
+        
         // TableView
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         tableView.separatorStyle = .singleLine
         
         // TokenView
+        tokenView.layoutIfNeeded()
         tokenView.dataSource = self
         tokenView.delegate = self
         tokenView.reloadData()
+    }
+
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
     }
     
     override func didReceiveMemoryWarning() {
