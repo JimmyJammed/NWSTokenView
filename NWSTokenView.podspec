@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "NWSTokenView"
-  s.version          = "2.0.2"
+  s.version          = "2.0.3"
   s.summary          = "NWSTokenView is a flexible iOS token view for selecting contacts."
   s.description      = <<-DESC
                        NWSTokenView is a flexible token view that allows the selection of various contacts (a la Messages style) using your own custom xibs.
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/NitWitStudios/NWSTokenView.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/NitWitStudios'
 
-  s.platform     = :ios, '9.0'
+  s.platform     = :ios, '8.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
