@@ -5,6 +5,3 @@ target 'NWSTokenView_Example' do
   pod "NWSTokenView", :path => "../"
 end
 
-target 'NWSTokenView_Tests' do
-  pod "NWSTokenView", :path => "../"
-end
