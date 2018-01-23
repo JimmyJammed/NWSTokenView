@@ -156,7 +156,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         self.setupLabel(offsetX: &scrollViewOriginX, offsetY: &scrollViewOriginY, remainingWidth:&remainingWidth)
         
         // Add Tokens
-        let numOfTokens: Int = (dataSource?.numberOfTokensForTokenView(self))!
+        let numOfTokens: Int = (dataSource?.numberOfTokensForTokenView(self)) ?? 0
         for index in 0..<numOfTokens {
             if var token = dataSource?.tokenView(self, viewForTokenAtIndex: index) as? NWSToken
             {
