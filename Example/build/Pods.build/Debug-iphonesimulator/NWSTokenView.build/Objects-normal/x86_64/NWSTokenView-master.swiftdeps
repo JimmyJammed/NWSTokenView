@@ -1,5 +1,0 @@
-version: "Apple Swift version 1.2 (swiftlang-602.0.53.1 clang-602.0.53)"
-options: "0170a9f6d67af102bb3e5d500ba5670e"
-inputs: 
-- "/Users/James/GIT/NWSTokenView/Pod/Classes/NWSToken/NWSToken.swift"
-- "/Users/James/GIT/NWSTokenView/Pod/Classes/NWSTokenView.swift"
