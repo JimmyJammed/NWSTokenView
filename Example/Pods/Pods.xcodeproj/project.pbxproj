@@ -29,19 +29,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1E6030A9D7A0F039FF709949B6C5BC91 /* Pods_NWSTokenView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_NWSTokenView_Example.framework; path = "Pods-NWSTokenView_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E6030A9D7A0F039FF709949B6C5BC91 /* Pods_NWSTokenView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NWSTokenView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47944A774EBFB38A954A7E1A568CB0D3 /* Pods-NWSTokenView_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NWSTokenView_Example-resources.sh"; sourceTree = "<group>"; };
 		5463B9216D5B994B3C956AE04A20A939 /* NWSTokenView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NWSTokenView.xcconfig; sourceTree = "<group>"; };
-		547AB480C744EA641C2F9DDDB1EEB49E /* NWSTokenView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = NWSTokenView.modulemap; sourceTree = "<group>"; };
+		547AB480C744EA641C2F9DDDB1EEB49E /* NWSTokenView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = NWSTokenView.modulemap; sourceTree = "<group>"; };
 		616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		61DF02B79AF15033CC28F926CE4C5BE6 /* Pods-NWSTokenView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-NWSTokenView_Example.modulemap"; sourceTree = "<group>"; };
+		61DF02B79AF15033CC28F926CE4C5BE6 /* Pods-NWSTokenView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-NWSTokenView_Example.modulemap"; sourceTree = "<group>"; };
 		6957F9B81B4EC2BE44C809CB652D66F8 /* NWSTokenView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NWSTokenView.swift; sourceTree = "<group>"; };
 		6975112FAD4DAA5BE8E719A46A66FE4B /* Pods-NWSTokenView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NWSTokenView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		6B7B20098B61C560DE7684935109D26D /* NWSTokenView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NWSTokenView-umbrella.h"; sourceTree = "<group>"; };
-		7871FE41B75DF933F384578F3B6DFA59 /* NWSTokenView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NWSTokenView.framework; path = NWSTokenView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7871FE41B75DF933F384578F3B6DFA59 /* NWSTokenView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NWSTokenView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		84CD4EA28991CB8A4874908EC701F602 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		94013C5931DCC7E33A31066551A9DBF8 /* Pods-NWSTokenView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NWSTokenView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		981C602CDFDC7E11CBDE4D103953554E /* Pods-NWSTokenView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NWSTokenView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		9CDDC32A4B11FCAB14C495CDF832BA98 /* Pods-NWSTokenView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NWSTokenView_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -108,7 +108,6 @@
 				6957F9B81B4EC2BE44C809CB652D66F8 /* NWSTokenView.swift */,
 				DF6387199ADC0434CD1E44A52348F786 /* NWSToken */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -128,7 +127,6 @@
 			children = (
 				7AF614A0FA9FAF496289E2789ADE3157 /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -159,7 +157,6 @@
 			children = (
 				DE07FE9B92EFCFDD8CFE179CB577A5CC /* NWSToken.swift */,
 			);
-			name = NWSToken;
 			path = NWSToken;
 			sourceTree = "<group>";
 		};
@@ -382,7 +379,7 @@
 				PRODUCT_NAME = NWSTokenView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -526,7 +523,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

@@ -42,8 +42,8 @@ public protocol NWSTokenDelegate
 // MARK: NWSTokenView Class
 open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
 {
-    @IBInspectable open var dataSource: NWSTokenDataSource? = nil
-    @IBInspectable open var delegate: NWSTokenDelegate? = nil
+    open var dataSource: NWSTokenDataSource? = nil
+    open var delegate: NWSTokenDelegate? = nil
     
     // MARK: Private Vars
     fileprivate var shouldBecomeFirstResponder: Bool = false
@@ -111,7 +111,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     }
     
     /// Reloads data when interface orientation is changed.
-    func didRotateInterfaceOrientation()
+    @objc func didRotateInterfaceOrientation()
     {
         // Ignore "flat" orientation
         if UIDevice.current.orientation == UIDeviceOrientation.faceUp || UIDevice.current.orientation == UIDeviceOrientation.faceDown || UIDevice.current.orientation == UIDeviceOrientation.unknown
@@ -343,7 +343,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     /// - parameter tapGesture: UITapGestureRecognizer associated with the token.
     ///
     /// - returns: NWSToken
-    open func didTapToken(_ tapGesture: UITapGestureRecognizer)
+    @objc open func didTapToken(_ tapGesture: UITapGestureRecognizer)
     {
         let token = tapGesture.view as! NWSToken
         self.selectToken(token)
