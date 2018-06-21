@@ -508,7 +508,6 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         else // Text View Input
         {
             // Check if text view will overflow current line
-            var scrollViewOriginY = textView.frame.origin.y
             let availableWidth = textView.bounds.width
             let maxWidth = self.scrollView.bounds.width - self.tokenViewInsets.left - self.tokenViewInsets.right
             
@@ -519,6 +518,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
             // Check if text is greater than available width (on line with tokens/label), ignore if text view is already on it's own line
             if textWidth > availableWidth
             {
+                var scrollViewOriginY = textView.frame.origin.y
                 var height = textView.frame.height
                 
                 // Only move text view to new line if it is not already on it's own line
@@ -535,6 +535,9 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
                 textView.frame = CGRect(x: self.tokenViewInsets.left, y: scrollViewOriginY, width: maxWidth, height: height)
                 self.scrollView.contentSize = CGSize(width: self.scrollView.bounds.width, height: textView.frame.origin.y+height+self.tokenViewInsets.bottom)
                 self.layoutIfNeeded()
+
+                // Notify delegate of content size change
+                self.delegate?.tokenView(self, contentSizeChanged: self.scrollView.contentSize)
             }
             self.textView.layoutIfNeeded()
             self.scrollToBottom(animated: true)
