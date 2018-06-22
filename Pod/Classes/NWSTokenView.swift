@@ -109,6 +109,23 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         // Orientation Rotation Listener
         NotificationCenter.default.addObserver(self, selector: #selector(NWSTokenView.didRotateInterfaceOrientation), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
+
+    @discardableResult override open func becomeFirstResponder() -> Bool
+    {
+        return self.textView.becomeFirstResponder()
+    }
+
+    public var text: String
+    {
+        get
+        {
+            return textView.text
+        }
+        set
+        {
+            textView.text = newValue
+        }
+    }
     
     /// Reloads data when interface orientation is changed.
     @objc func didRotateInterfaceOrientation()
