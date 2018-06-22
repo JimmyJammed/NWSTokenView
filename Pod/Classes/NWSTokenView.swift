@@ -16,7 +16,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 import UIKit
 
 // MARK: NWSTokenDataSource Protocols
-public protocol NWSTokenDataSource
+public protocol NWSTokenDataSource: class
 {
     func insetsForTokenView(_ tokenView: NWSTokenView) -> UIEdgeInsets?
     func numberOfTokensForTokenView(_ tokenView: NWSTokenView) -> Int
@@ -26,7 +26,7 @@ public protocol NWSTokenDataSource
 }
 
 // MARK: NWSTokenDelegate Protocols
-public protocol NWSTokenDelegate
+public protocol NWSTokenDelegate: class
 {
     func tokenView(_ tokenView: NWSTokenView, didSelectTokenAtIndex index: Int)
     func tokenView(_ tokenView: NWSTokenView, didDeselectTokenAtIndex index: Int)
@@ -42,8 +42,8 @@ public protocol NWSTokenDelegate
 // MARK: NWSTokenView Class
 open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
 {
-    open var dataSource: NWSTokenDataSource? = nil
-    open var delegate: NWSTokenDelegate? = nil
+    open weak var dataSource: NWSTokenDataSource? = nil
+    open weak var delegate: NWSTokenDelegate? = nil
     
     // MARK: Private Vars
     fileprivate var shouldBecomeFirstResponder: Bool = false
