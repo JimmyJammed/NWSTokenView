@@ -48,7 +48,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     // MARK: Private Vars
     fileprivate var shouldBecomeFirstResponder: Bool = false
     fileprivate var scrollView = UIScrollView()
-    open var textView = UITextView()
+    fileprivate var textView = UITextView()
     fileprivate var lastTokenCount = 0
     fileprivate var lastText = ""
     
@@ -115,6 +115,11 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         return self.textView.becomeFirstResponder()
     }
 
+    override open var isFirstResponder: Bool
+    {
+        return self.textView.isFirstResponder
+    }
+
     public var text: String
     {
         get
@@ -124,6 +129,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         set
         {
             textView.text = newValue
+            self.delegate?.tokenView(self, didChangeText: newValue)
         }
     }
     

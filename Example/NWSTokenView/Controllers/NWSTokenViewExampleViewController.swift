@@ -155,11 +155,11 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     
     func didTypeEmailInTokenView()
     {
-        let email = self.tokenView.textView.text.trimmingCharacters(in: CharacterSet.whitespaces)
+        let email = self.tokenView.text.trimmingCharacters(in: CharacterSet.whitespaces)
         let contact = NWSTokenContact(name: email, andImage: UIImage(named: "TokenPlaceholder")!)
         self.selectedContacts.append(contact)
         
-        self.tokenView.textView.text = ""
+        self.tokenView.text = ""
         self.isSearching = false
         self.tokenView.reloadData()
         self.tableView.reloadData()
@@ -215,7 +215,7 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
             cell.contact.isSelected = true
             selectedContacts.append(cell.contact)
             isSearching = false
-            tokenView.textView.text = ""
+            tokenView.text = ""
             tokenView.reloadData()
             tableView.reloadData()
         }
@@ -293,12 +293,12 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
             tokenView.reloadData()
             tableView.reloadData()
             tokenView.layoutIfNeeded()
-            tokenView.textView.becomeFirstResponder()
+            tokenView.becomeFirstResponder()
             
             // Check if search text exists, if so, reload table (i.e. user deleted a selected token by pressing an alphanumeric key)
-            if tokenView.textView.text != ""
+            if tokenView.text != ""
             {
-                self.searchContacts(tokenView.textView.text)
+                self.searchContacts(tokenView.text)
             }
         }
     }
@@ -306,7 +306,7 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     func tokenView(_ tokenViewDidBeginEditing: NWSTokenView)
     {
         // Check if entering search field and it already contains text (ignore token selections)
-        if tokenView.textView.isFirstResponder && tokenView.textView.text != ""
+        if tokenView.isFirstResponder && tokenView.text != ""
         {
             //self.searchContacts(tokenView.textView.text)
         }
@@ -314,7 +314,7 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     
     func tokenViewDidEndEditing(_ tokenView: NWSTokenView)
     {
-        if tokenView.textView.text.isEmail()
+        if tokenView.text.isEmail()
         {
             didTypeEmailInTokenView()
         }
