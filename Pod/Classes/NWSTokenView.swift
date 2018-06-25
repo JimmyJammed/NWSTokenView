@@ -16,17 +16,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 import UIKit
 
 // MARK: NWSTokenDataSource Protocols
-public protocol NWSTokenDataSource: class
+@objc public protocol NWSTokenDataSource: class
 {
-    func insetsForTokenView(_ tokenView: NWSTokenView) -> UIEdgeInsets?
     func numberOfTokensForTokenView(_ tokenView: NWSTokenView) -> Int
-    func titleForTokenViewLabel(_ tokenView: NWSTokenView) -> String?
-    func titleForTokenViewPlaceholder(_ tokenView: NWSTokenView) -> String?
     func tokenView(_ tokenView: NWSTokenView, viewForTokenAtIndex index: Int) -> UIView?
 }
 
 // MARK: NWSTokenDelegate Protocols
-public protocol NWSTokenDelegate: class
+@objc public protocol NWSTokenDelegate: class
 {
     func tokenView(_ tokenView: NWSTokenView, didSelectTokenAtIndex index: Int)
     func tokenView(_ tokenView: NWSTokenView, didDeselectTokenAtIndex index: Int)
@@ -40,31 +37,104 @@ public protocol NWSTokenDelegate: class
 }
 
 // MARK: NWSTokenView Class
+@IBDesignable
 open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
 {
-    open weak var dataSource: NWSTokenDataSource? = nil
-    open weak var delegate: NWSTokenDelegate? = nil
+    @IBOutlet open weak var dataSource: NWSTokenDataSource? = nil
+    @IBOutlet open weak var delegate: NWSTokenDelegate? = nil
     
     // MARK: Private Vars
     fileprivate var shouldBecomeFirstResponder: Bool = false
     fileprivate var scrollView = UIScrollView()
-    fileprivate var textView = UITextView()
+    fileprivate var textView = FixCaretTextView()
     fileprivate var lastTokenCount = 0
-    fileprivate var lastText = ""
-    
+
+    // MARK: Inspectables
+    @IBInspectable
+    public var textColor: UIColor? {
+        get {
+            return textView.textColor
+        }
+        set {
+            textView.textColor = newValue
+        }
+    }
+
+    @IBInspectable
+    public var titleColor: UIColor {
+        get {
+            return label.textColor
+        }
+        set {
+            label.textColor = newValue
+        }
+    }
+
+    @IBInspectable
+    public var titleText: String? {
+        get {
+            return label.text
+        }
+        set {
+            label.text = newValue
+        }
+    }
+
+    @IBInspectable
+    public var placeholderColor: UIColor {
+        get {
+            return placeholder.textColor
+        }
+        set {
+            placeholder.textColor = newValue
+        }
+    }
+
+    @IBInspectable
+    public var placeholderText: String? {
+        get {
+            return placeholder.text
+        }
+        set {
+            placeholder.text = newValue
+        }
+    }
+
+    // MARK: Wish could be IBInspectable...
+    public var tokenViewInsets: UIEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5) // Default
+
+    public var titleFont: UIFont {
+        get {
+            return label.font
+        }
+        set {
+            label.font = newValue
+        }
+    }
+
+    public var textFont: UIFont? {
+        get {
+            return textView.font
+        }
+        set {
+            textView.font = newValue
+            placeholder.font = newValue
+        }
+    }
+
     // MARK: Public Vars
     var label = UILabel()
+    var placeholder = UILabel()
     var tokens: [NWSToken] = []
     var selectedToken: NWSToken?
-    var tokenViewInsets: UIEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5) // Default
     var tokenHeight: CGFloat = 30.0 // Default
     var didReloadFromRotation = false
     
     // MARK: Constants
-    var labelMinimumHeight: CGFloat = 30.0
-    var labelMinimumWidth: CGFloat = 30.0
-    var textViewMinimumWidth: CGFloat = 30.0
-    var textViewMinimumHeight: CGFloat = 30.0
+    let labelMinimumHeight: CGFloat = 30.0
+    let labelMinimumWidth: CGFloat = 30.0
+    let textViewMinimumWidth: CGFloat = 30.0
+    let textViewMinimumHeight: CGFloat = 30.0
     
     open override func layoutSubviews() {
         super.layoutSubviews()
@@ -73,30 +143,36 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         let contentSize = self.scrollView.contentSize
         self.scrollView.contentSize = CGSize(width: self.scrollView.bounds.width, height: contentSize.height)
     }
-    
-    override open func awakeFromNib()
+
+    required public init?(coder aDecoder: NSCoder)
     {
-        super.awakeFromNib()
+        super.init(coder: aDecoder)
 
         // Set default scroll properties
-        self.scrollView.backgroundColor = UIColor.clear
+        self.scrollView.backgroundColor = .clear
         self.scrollView.isScrollEnabled = true
         self.scrollView.isUserInteractionEnabled = true
         self.scrollView.autoresizesSubviews = false
         self.addSubview(self.scrollView)
         
         // Set default label properties
-        self.label.font = UIFont(name: "HelveticaNeue", size: 14)
+        self.label.font = UIFont.systemFont(ofSize: 16)
         self.label.textColor = UIColor.black
-        
+        self.scrollView.addSubview(self.label)
+
         // Set default text view properties
         self.textView.backgroundColor = UIColor.clear
         self.textView.textColor = UIColor.black
-        self.textView.font = UIFont(name: "HelveticaNeue", size: 14)
+        self.textView.font = UIFont.systemFont(ofSize: 16)
         self.textView.delegate = self
         self.textView.isScrollEnabled = false
         self.textView.autocorrectionType = UITextAutocorrectionType.no // Hide suggestions to prevent UI issues with message bar / keyboard.
         self.scrollView.addSubview(self.textView)
+
+        self.placeholder.backgroundColor = .clear
+        self.placeholder.textColor = .lightGray
+        self.placeholder.font = self.textView.font
+        self.scrollView.addSubview(self.placeholder)
         
         // Auto Layout Constraints
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -162,12 +238,6 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         // Reset
         self.resetTokenView()
         
-        // Update Insets from delegate
-        if let insets = dataSource?.insetsForTokenView(self)
-        {
-            self.tokenViewInsets = insets
-        }
-        
         // Set origins
         var scrollViewOriginX: CGFloat = self.tokenViewInsets.left
         var scrollViewOriginY: CGFloat = self.tokenViewInsets.top
@@ -208,13 +278,6 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         }
         self.lastTokenCount = self.tokens.count
         
-        // Restore text
-        if self.lastText != ""
-        {
-            self.textView.text = self.lastText
-            self.lastText = ""
-        }
-        
         // Check if text view should become first responder (i.e. new token added)
         if self.shouldBecomeFirstResponder
         {
@@ -244,25 +307,18 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         
         self.tokens = []
         self.tokenHeight = 0
-        // Ignore placeholder text
-        if self.textView.text != self.dataSource?.titleForTokenViewPlaceholder(self)
-        {
-            self.lastText = self.textView.text
-        }
     }
     
     /// Sets up token view label.
     fileprivate func setupLabel(offsetX x: inout CGFloat, offsetY y: inout CGFloat, remainingWidth: inout CGFloat)
     {
-        if let labelText = self.dataSource?.titleForTokenViewLabel(self)
+        if let labelText = self.label.text
         {
             self.label.bounds.size = CGSize(width: self.labelMinimumWidth, height: self.labelMinimumHeight)
-            self.label.text = labelText
             self.label.frame = CGRect(x: x, y: y, width: self.label.bounds.width-self.tokenViewInsets.left-self.tokenViewInsets.right, height: self.labelMinimumHeight)
             self.label.sizeToFit()
             // Reset frame after sizeToFit
             self.label.frame = CGRect(x: x, y: y, width: self.label.bounds.width, height: self.labelMinimumHeight)
-            self.scrollView.addSubview(self.label)
             x += self.label.bounds.width
             remainingWidth -= x
         }
@@ -271,28 +327,19 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     
     private var emptyTextViewFrame = CGRect.zero
 
+    // TODO: Figure out a non-magic way of fixing vertical alignment.
+    private let magicYOffset: CGFloat = 3
+
     /// Sets up token view text view.
     fileprivate func setupTextView(offsetX x: inout CGFloat, offsetY y: inout CGFloat, remainingWidth: inout CGFloat)
     {
         // Set placeholder text (ignore if tokens exist, text exists, or is currently active field)
-        if self.tokens.count == 0 && self.lastText == "" && !self.shouldBecomeFirstResponder
-        {
-            if let placeholderText = self.dataSource?.titleForTokenViewPlaceholder(self)
-            {
-                self.textView.text = placeholderText
-                self.textView.textColor = UIColor.lightGray
-            }
-        }
-        else
-        {
-            self.textView.textColor = UIColor.black
-            self.textView.text = ""
-        }
-        
+        self.placeholder.isHidden = self.tokens.count > 0 || self.textView.text.count > 0
+
         // Get remaining width on line
         if remainingWidth >= self.textViewMinimumWidth
         {
-            self.textView.frame = CGRect(x: x + self.tokenViewInsets.left, y: y, width: remainingWidth - self.tokenViewInsets.left - self.tokenViewInsets.right, height: max(self.textViewMinimumHeight, self.tokenHeight))
+            self.textView.frame = CGRect(x: x + self.tokenViewInsets.left, y: y - magicYOffset, width: remainingWidth - self.tokenViewInsets.left - self.tokenViewInsets.right, height: max(self.textViewMinimumHeight, self.tokenHeight))
             remainingWidth = self.scrollView.bounds.width - x - self.textView.frame.width
         }
         else // Move text view to new line
@@ -305,10 +352,16 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
             // Increase Y Offset
             y += max(self.textViewMinimumHeight, self.tokenHeight) + self.tokenViewInsets.top
             
-            self.textView.frame = CGRect(x: x + self.tokenViewInsets.left, y: y, width: remainingWidth - self.tokenViewInsets.left - self.tokenViewInsets.right, height: max(self.textViewMinimumHeight, self.tokenHeight))
+            self.textView.frame = CGRect(x: x + self.tokenViewInsets.left, y: y - magicYOffset, width: remainingWidth - self.tokenViewInsets.left - self.tokenViewInsets.right, height: max(self.textViewMinimumHeight, self.tokenHeight))
         }
-        emptyTextViewFrame = self.textView.frame
-        
+        self.emptyTextViewFrame = self.textView.frame
+
+        let textContainerInset = self.textView.textContainerInset
+        var placeHolderFrame = self.textView.frame
+        placeHolderFrame.origin.x += self.textView.textContainer.lineFragmentPadding
+        placeHolderFrame.origin.y += magicYOffset
+        self.placeholder.frame = placeHolderFrame
+
         self.textView.returnKeyType = UIReturnKeyType.next
     }
     
@@ -345,13 +398,6 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         // Update frame data
         x += self.tokenViewInsets.left + token.frame.width
         remainingWidth = self.scrollView.bounds.width - x
-        
-        // Check if previously selected (i.e. pre-rotation)
-//        if self.selectedToken != nil && self.selectedToken?.titleLabel.text == token.titleLabel.text
-//        {
-//            self.selectedToken = nil // Reset so selectToken function properly sets token
-//            self.selectToken(token)
-//        }
     }
     
     /// Returns a generated token.
@@ -416,25 +462,6 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
             self.selectedToken = nil
         }
         
-        // Check if text view is input or hidden
-        if textView.superview is NWSToken
-        {
-            // Do nothing...
-        }
-        else
-        {
-            // Replace placeholder text
-            if let placeholderText = self.dataSource?.titleForTokenViewPlaceholder(self)
-            {
-                if textView.text == placeholderText
-                {
-                    textView.text = ""
-                    textView.textColor = UIColor.black
-                }
-            }
-            
-        }
-        
         // Notify delegate
         self.delegate?.tokenView(self)
     }
@@ -459,19 +486,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
                 }
             }
         }
-        else
-        {
-            // Replace placeholder text
-            if self.tokens.count == 0 && textView.text == ""
-            {
-                if let placeholderText = self.dataSource?.titleForTokenViewPlaceholder(self)
-                {
-                    textView.text = placeholderText
-                    textView.textColor = UIColor.lightGray
-                }
-            }
-        }
-        
+
         self.delegate?.tokenViewDidEndEditing(self)
     }
     
@@ -579,6 +594,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
             self.textView.layoutIfNeeded()
             self.scrollToBottom(animated: true)
             self.delegate?.tokenView(self, didChangeText: textView.text)
+            self.placeholder.isHidden = self.tokens.count > 0 || self.textView.text.count > 0
         }
     }
     
@@ -599,4 +615,13 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     }
 }
 
-
+/// Used to fix a weird issue with the caret being taller when there's no text.
+private class FixCaretTextView: UITextView {
+    override func caretRect(for position: UITextPosition) -> CGRect {
+        var rect = super.caretRect(for: position)
+        if let h = self.font?.lineHeight {
+            rect.size.height = h
+        }
+        return rect
+    }
+}
