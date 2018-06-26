@@ -30,6 +30,7 @@ import UIKit
     func tokenView(_ tokenView: NWSTokenView, didDeleteTokenAtIndex index: Int)
     func tokenView(_ tokenViewDidBeginEditing: NWSTokenView)
     func tokenViewDidEndEditing(_ tokenView: NWSTokenView)
+    func tokenView(_ tokenView: NWSTokenView, shouldChangeText text: String) -> Bool
     func tokenView(_ tokenView: NWSTokenView, didChangeText text: String)
     func tokenView(_ tokenView: NWSTokenView, didEnterText text: String)
     func tokenView(_ tokenView: NWSTokenView, contentSizeChanged size: CGSize)
@@ -204,8 +205,11 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         }
         set
         {
-            textView.text = newValue
-            self.delegate?.tokenView(self, didChangeText: newValue)
+            if self.delegate?.tokenView(self, shouldChangeText: newValue) ?? true
+            {
+                textView.text = newValue
+                self.delegate?.tokenView(self, didChangeText: newValue)
+            }
         }
     }
     
@@ -511,6 +515,11 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         }
         else // Text View Input
         {
+            guard self.delegate?.tokenView(self, shouldChangeText: text) ?? true else
+            {
+                return false
+            }
+
             // Blank return
             if textView.text == "" && text == "\n"
             {
