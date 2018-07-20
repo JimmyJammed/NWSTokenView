@@ -45,7 +45,8 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     @IBOutlet open weak var delegate: NWSTokenDelegate? = nil
     
     // MARK: Private Vars
-    fileprivate var shouldBecomeFirstResponder: Bool = false
+    fileprivate var shouldBecomeFirstResponder = false
+    fileprivate var wasFirstResponder = false
     fileprivate var scrollView = UIScrollView()
     fileprivate var textView = FixCaretTextView()
     fileprivate var lastTokenCount = 0
@@ -230,7 +231,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         }
         
         // Prevent keyboard from hiding on rotation due to reloadData called from delegate
-        if self.textView.isFirstResponder
+        if self.wasFirstResponder
         {
             self.shouldBecomeFirstResponder = true
         }
@@ -284,7 +285,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         // Scroll to bottom if added new token, otherwise stay in current position
         if self.tokens.count > self.lastTokenCount
         {
-            self.shouldBecomeFirstResponder = true
+            self.shouldBecomeFirstResponder = self.wasFirstResponder
             self.scrollToBottom(animated: false)
         }
         self.lastTokenCount = self.tokens.count
@@ -463,6 +464,8 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     // UITextView Delegate
     open func textViewDidBeginEditing(_ textView: UITextView)
     {
+        self.wasFirstResponder = true
+
         // Deselect any tokens
         if self.selectedToken != nil
         {
@@ -479,6 +482,8 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     
     open func textViewDidEndEditing(_ textView: UITextView)
     {
+        self.wasFirstResponder = false
+
         // Check if text view is input or hidden
         if textView.superview is NWSToken
         {
