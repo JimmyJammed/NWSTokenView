@@ -111,6 +111,16 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
 
     // MARK: Wish could be IBInspectable...
     public var tokenViewInsets: UIEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5) // Default
+    public var returnKeyType: UIReturnKeyType {
+        get {
+            return textView.returnKeyType
+        }
+        set {
+            guard textView.returnKeyType != newValue else { return }
+            textView.returnKeyType = newValue
+            textView.reloadInputViews()
+        }
+    }
 
     public var titleFont: UIFont {
         get {
@@ -198,6 +208,11 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     @discardableResult override open func becomeFirstResponder() -> Bool
     {
         return self.textView.becomeFirstResponder()
+    }
+
+    @discardableResult override open func resignFirstResponder() -> Bool
+    {
+        return self.textView.resignFirstResponder()
     }
 
     override open var isFirstResponder: Bool
@@ -382,8 +397,6 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         placeHolderFrame.origin.x += self.textView.textContainer.lineFragmentPadding
         placeHolderFrame.origin.y += magicYOffset
         self.placeholder.frame = placeHolderFrame
-
-        self.textView.returnKeyType = UIReturnKeyType.next
     }
     
     /// Sets up new token.
