@@ -14,12 +14,12 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
                        NWSTokenView is a flexible token view that allows the selection of various contacts (a la Messages style) using your own custom xibs.
                        DESC
-  s.homepage         = "https://github.com/NitWitStudios/NWSTokenView"
-  #s.screenshots     = "https://github.com/NitWitStudios/NWSTokenView/blob/master/Screenshots/NWSTokenViewExample.gif"
+  s.homepage         = "https://github.com/Appmazo/NWSTokenView"
+  #s.screenshots     = "https://github.com/Appmazo/NWSTokenView/blob/master/Screenshots/NWSTokenViewExample.gif"
   s.license          = 'MIT'
-  s.author           = { "James Hickman" => "james.hickman@nitwitstudios.com" }
-  s.source           = { :git => "https://github.com/NitWitStudios/NWSTokenView.git", :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/NitWitStudios'
+  s.author           = { "James Hickman" => "jhickman@appmazo.com" }
+  s.source           = { :git => "https://github.com/Appmazo/NWSTokenView.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/Appmazo'
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
