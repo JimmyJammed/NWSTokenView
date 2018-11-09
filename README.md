@@ -1,9 +1,11 @@
 # NWSTokenView
 
-[![CI Status](http://img.shields.io/travis/NitWitStudios/NWSTokenView.svg?style=flat)](https://travis-ci.org/NitWitStudios/NWSTokenView)
+[![CI Status](http://img.shields.io/travis/Appmazo/NWSTokenView.svg?style=flat)](https://travis-ci.org/Appmazo/NWSTokenView)
 [![Version](https://img.shields.io/cocoapods/v/NWSTokenView.svg?style=flat)](http://cocoapods.org/pods/NWSTokenView)
 [![License](https://img.shields.io/cocoapods/l/NWSTokenView.svg?style=flat)](http://cocoapods.org/pods/NWSTokenView)
 [![Platform](https://img.shields.io/cocoapods/p/NWSTokenView.svg?style=flat)](http://cocoapods.org/pods/NWSTokenView)
+[![Beerpay](https://beerpay.io/Appmazo/NWSTokenView/badge.svg?style=beer-square)](https://beerpay.io/Appmazo/NWSTokenView)
+[![Beerpay](https://beerpay.io/Appmazo/NWSTokenView/make-wish.svg?style=flat-square)](https://beerpay.io/Appmazo/NWSTokenView?focus=wish)
 
 ![NWSTokenView Demo](/Screenshots/NWSTokenViewExample.gif)
 
@@ -210,18 +212,13 @@ func tokenView(tokenView: NWSTokenView, didFinishLoadingTokens tokenCount: Int)
 
 ## Author
 
-James Hickman, james.hickman@nitwitstudios.com
-
-[![paypal](/Buy-Me-A-Beer.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=S7YTPZZRANJMJ)
-[![paypal](/Buy-Me-A-6-Pack.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NYAV54X822GQE)
-[![paypal](/Buy-Me-A-Keg.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XMSPVEHQWWNSC)
-[![paypal](/Pay-Off-My-Student-Loans.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CVUNART65NT2A)
+James Hickman, jhickman@appmazo.com
 
 ## License
 
 The MIT License (MIT)
 
-Copyright (c) 2015 NitWit Studios, LLC
+Copyright (c) 2015 Appmazo, LLC
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
