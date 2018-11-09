@@ -1,16 +1,23 @@
 PODS:
-  - NWSTokenView (2.0.3)
+  - DZNEmptyDataSet (1.8.1)
+  - NWSTokenView (2.0.4)
 
 DEPENDENCIES:
+  - DZNEmptyDataSet (~> 1.8.1)
   - NWSTokenView (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - DZNEmptyDataSet
 
 EXTERNAL SOURCES:
   NWSTokenView:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  NWSTokenView: b3a541a4b8d5bf2187294019f47c6849ef4d9e1e
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  NWSTokenView: 029afac6de19b4828c63ebddbcd5b31e9e438e02
 
-PODFILE CHECKSUM: c63892a919357d12be23d68bfbfa97b187838c43
+PODFILE CHECKSUM: f14e2d643262692a608bb45fcdb5cee814436f69
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.5.3

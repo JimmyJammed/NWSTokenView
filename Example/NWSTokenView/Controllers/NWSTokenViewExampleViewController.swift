@@ -8,6 +8,8 @@
 
 import UIKit
 import NWSTokenView
+import DZNEmptyDataSet
+
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   switch (lhs, rhs) {
   case let (l?, r?):
@@ -335,7 +337,8 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         
         // Check if typed an email and hit space
         let lastChar = text[text.index(before: text.endIndex)]
-        if lastChar == " " && text.substring(with: text.startIndex..<text.index(before: text.endIndex)).isEmail()
+        let isEmail = String(text[text.startIndex..<text.index(before: text.endIndex)]).isEmail()
+        if lastChar == " " && isEmail
         {
             self.didTypeEmailInTokenView()
             return

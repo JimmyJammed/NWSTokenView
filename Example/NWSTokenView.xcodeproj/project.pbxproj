@@ -11,7 +11,6 @@
 		1AA058A11B8F7A8600C6F303 /* NWSImageToken.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AA0589C1B8F7A8600C6F303 /* NWSImageToken.xib */; };
 		1AD947981B83E6E3005FD716 /* EmptyDataSet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AD947971B83E6E3005FD716 /* EmptyDataSet.xib */; };
 		1AE0B59C1B7E5B3F008C5A6A /* NWSTokenViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE0B5911B7E5B3F008C5A6A /* NWSTokenViewExampleViewController.swift */; };
-		1AE0B5A21B7E5B3F008C5A6A /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE0B59B1B7E5B3F008C5A6A /* UIScrollView+EmptyDataSet.m */; };
 		1AE0B5A81B7E5B58008C5A6A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AE0B5A41B7E5B58008C5A6A /* LaunchScreen.xib */; };
 		1AE0B5AA1B7E5B58008C5A6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AE0B5A61B7E5B58008C5A6A /* Main.storyboard */; };
 		1AE0B5BC1B7EBC24008C5A6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE0B5BB1B7EBC24008C5A6A /* AppDelegate.swift */; };
@@ -25,8 +24,6 @@
 		1AD947971B83E6E3005FD716 /* EmptyDataSet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyDataSet.xib; sourceTree = "<group>"; };
 		1AE0B5911B7E5B3F008C5A6A /* NWSTokenViewExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NWSTokenViewExampleViewController.swift; sourceTree = "<group>"; };
 		1AE0B5961B7E5B3F008C5A6A /* NWSTokenViewExample-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NWSTokenViewExample-Bridging-Header.h"; sourceTree = "<group>"; };
-		1AE0B59A1B7E5B3F008C5A6A /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
-		1AE0B59B1B7E5B3F008C5A6A /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
 		1AE0B5A51B7E5B58008C5A6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = NWSTokenView/Base.lproj/LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
 		1AE0B5A71B7E5B58008C5A6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = NWSTokenView/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		1AE0B5BB1B7EBC24008C5A6A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = NWSTokenView/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -83,30 +80,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		1AE0B5971B7E5B3F008C5A6A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		1AE0B5981B7E5B3F008C5A6A /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				1AE0B5991B7E5B3F008C5A6A /* DZNEmptyDataSet */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		1AE0B5991B7E5B3F008C5A6A /* DZNEmptyDataSet */ = {
-			isa = PBXGroup;
-			children = (
-				1AE0B59A1B7E5B3F008C5A6A /* UIScrollView+EmptyDataSet.h */,
-				1AE0B59B1B7E5B3F008C5A6A /* UIScrollView+EmptyDataSet.m */,
-			);
-			path = DZNEmptyDataSet;
-			sourceTree = "<group>";
-		};
 		2262B394AD655F0649ECC06A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,8 +114,6 @@
 				1AE0B5BE1B7EBC78008C5A6A /* Images.xcassets */,
 				1AE0B5901B7E5B3F008C5A6A /* Controllers */,
 				1AE0B5921B7E5B3F008C5A6A /* Views */,
-				1AE0B5971B7E5B3F008C5A6A /* Models */,
-				1AE0B5981B7E5B3F008C5A6A /* Resources */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for NWSTokenView";
@@ -198,7 +169,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				091EE04C276118F5DA38CFB5 /* [CP] Embed Pods Frameworks */,
-				B90B8B298674B34A788C018F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,28 +237,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NWSTokenView_Example/Pods-NWSTokenView_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/NWSTokenView/NWSTokenView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NWSTokenView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NWSTokenView_Example/Pods-NWSTokenView_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B90B8B298674B34A788C018F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NWSTokenView_Example/Pods-NWSTokenView_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BDCF73B232B0C1D7B938BAC2 /* [CP] Check Pods Manifest.lock */ = {
@@ -297,13 +257,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NWSTokenView_Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -314,7 +277,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AE0B5BC1B7EBC24008C5A6A /* AppDelegate.swift in Sources */,
-				1AE0B5A21B7E5B3F008C5A6A /* UIScrollView+EmptyDataSet.m in Sources */,
 				1AA0589F1B8F7A8600C6F303 /* NWSImageToken.swift in Sources */,
 				1AE0B59C1B7E5B3F008C5A6A /* NWSTokenViewExampleViewController.swift in Sources */,
 			);
@@ -394,6 +356,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -442,6 +405,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
