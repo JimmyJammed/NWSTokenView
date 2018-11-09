@@ -3,5 +3,6 @@ use_frameworks!
 
 target 'NWSTokenView_Example' do
   pod "NWSTokenView", :path => "../"
+  pod "DZNEmptyDataSet", '~> 1.8.1'
 end
 

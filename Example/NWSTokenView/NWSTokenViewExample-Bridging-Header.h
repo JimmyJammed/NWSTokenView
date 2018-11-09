@@ -9,6 +9,4 @@
 #ifndef NWSTokenView_NWSTokenViewExample_Bridging_Header_h
 #define NWSTokenView_NWSTokenViewExample_Bridging_Header_h
 
-#import "UIScrollView+EmptyDataSet.h"
-
 #endif
