@@ -42,8 +42,8 @@ public protocol NWSTokenDelegate
 // MARK: NWSTokenView Class
 open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
 {
-    @IBInspectable open var dataSource: NWSTokenDataSource? = nil
-    @IBInspectable open var delegate: NWSTokenDelegate? = nil
+    open var dataSource: NWSTokenDataSource? = nil
+    open var delegate: NWSTokenDelegate? = nil
     
     // MARK: Private Vars
     fileprivate var shouldBecomeFirstResponder: Bool = false
@@ -56,7 +56,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     var label = UILabel()
     var tokens: [NWSToken] = []
     var selectedToken: NWSToken?
-    var tokenViewInsets: UIEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5) // Default
+    var tokenViewInsets: UIEdgeInsets = UIEdgeInsets.init(top: 5, left: 5, bottom: 5, right: 5) // Default
     var tokenHeight: CGFloat = 30.0 // Default
     var didReloadFromRotation = false
     
@@ -101,17 +101,17 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         // Auto Layout Constraints
         self.translatesAutoresizingMaskIntoConstraints = false
         self.scrollView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.left, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.left, multiplier: 1.0, constant: 0).isActive = true
-        NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.right, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.right, multiplier: 1.0, constant: 0).isActive = true
-        NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.top, multiplier: 1.0, constant: 0).isActive = true
-        NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.bottom, multiplier: 1.0, constant: 0).isActive = true
+        NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1.0, constant: 0).isActive = true
+        NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutConstraint.Attribute.right, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.right, multiplier: 1.0, constant: 0).isActive = true
+        NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1.0, constant: 0).isActive = true
+        NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1.0, constant: 0).isActive = true
 
         // Orientation Rotation Listener
-        NotificationCenter.default.addObserver(self, selector: #selector(NWSTokenView.didRotateInterfaceOrientation), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(NWSTokenView.didRotateInterfaceOrientation), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     /// Reloads data when interface orientation is changed.
-    func didRotateInterfaceOrientation()
+    @objc func didRotateInterfaceOrientation()
     {
         // Ignore "flat" orientation
         if UIDevice.current.orientation == UIDeviceOrientation.faceUp || UIDevice.current.orientation == UIDeviceOrientation.faceDown || UIDevice.current.orientation == UIDeviceOrientation.unknown
@@ -343,7 +343,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     /// - parameter tapGesture: UITapGestureRecognizer associated with the token.
     ///
     /// - returns: NWSToken
-    open func didTapToken(_ tapGesture: UITapGestureRecognizer)
+    @objc open func didTapToken(_ tapGesture: UITapGestureRecognizer)
     {
         let token = tapGesture.view as! NWSToken
         self.selectToken(token)

@@ -39,8 +39,8 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         super.viewDidLoad()
 
         // Adjust tableView offset for keyboard
-        NotificationCenter.default.addObserver(self, selector: #selector(NWSTokenViewExampleViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(NWSTokenViewExampleViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(NWSTokenViewExampleViewController.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(NWSTokenViewExampleViewController.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         // Create list of contacts to test
         let unsortedContacts = [
@@ -108,9 +108,9 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     }
     
     // MARK: Keyboard
-    func keyboardWillShow(_ notification: Notification)
+    @objc func keyboardWillShow(_ notification: Notification)
     {
-        if let keyboardSize = ((notification as NSNotification).userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+        if let keyboardSize = ((notification as NSNotification).userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
             tableView.contentInset = contentInsets
             tableView.scrollIndicatorInsets = contentInsets
@@ -118,7 +118,7 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         }        
     }
     
-    func keyboardWillHide(_ notification: NotificationCenter)
+    @objc func keyboardWillHide(_ notification: NotificationCenter)
     {
         tableView.contentInset = UIEdgeInsets.zero
         tableView.scrollIndicatorInsets = UIEdgeInsets.zero
@@ -228,7 +228,7 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         {
             view.frame = scrollView.bounds
             view.translatesAutoresizingMaskIntoConstraints = false
-            view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+            view.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
             return view
         }
 
@@ -244,7 +244,7 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
     
     func insetsForTokenView(_ tokenView: NWSTokenView) -> UIEdgeInsets?
     {
-        return UIEdgeInsetsMake(5, 5, 5, 5)
+        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     }
     
     func titleForTokenViewLabel(_ tokenView: NWSTokenView) -> String?
@@ -334,8 +334,8 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         }
         
         // Check if typed an email and hit space
-        let lastChar = text[text.characters.index(before: text.endIndex)]
-        if lastChar == " " && text.substring(with: text.startIndex..<text.characters.index(before: text.endIndex)).isEmail()
+        let lastChar = text[text.index(before: text.endIndex)]
+        if lastChar == " " && text.substring(with: text.startIndex..<text.index(before: text.endIndex)).isEmail()
         {
             self.didTypeEmailInTokenView()
             return
@@ -436,7 +436,7 @@ extension String
     func isEmail() -> Bool
     {
         let regex = try? NSRegularExpression(pattern: "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$", options: .caseInsensitive)
-        return regex?.firstMatch(in: self, options: [], range: NSMakeRange(0, self.characters.count)) != nil
+        return regex?.firstMatch(in: self, options: [], range: NSMakeRange(0, self.count)) != nil
     }
 }
 
