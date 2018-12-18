@@ -45,6 +45,7 @@ extension UITextView {
     override open var bounds: CGRect {
         didSet {
             if #available(iOS 9.0, *) {
+                self.layoutIfNeeded()
                 return
             }
             self.resizePlaceholder()
@@ -55,6 +56,7 @@ extension UITextView {
     override open var frame: CGRect {
         didSet {
             if #available(iOS 9.0, *) {
+                self.layoutIfNeeded()
                 return
             }
             self.resizePlaceholder()
