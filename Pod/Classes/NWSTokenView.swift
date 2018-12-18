@@ -61,7 +61,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         let textView = PlaceHolderTextView()
         textView.backgroundColor = UIColor.clear
         textView.textColor = UIColor.black
-        textView.font = UIFont(name: "HelveticaNeue", size: 14)
+        textView.font = NWSTokenViewAppearance.appearance.font
         textView.delegate = self
         textView.isScrollEnabled = false
         textView.autocorrectionType = UITextAutocorrectionType.no // Hide suggestions to prevent UI issues with message bar / keyboard.
@@ -102,7 +102,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         self.addSubview(self.scrollView)
         
         // Set default label properties
-        self.label.font = UIFont(name: "HelveticaNeue", size: 14)
+        self.label.font = NWSTokenViewAppearance.appearance.font
         self.label.textColor = UIColor.black
         
         self.scrollView.addSubview(self.textView)

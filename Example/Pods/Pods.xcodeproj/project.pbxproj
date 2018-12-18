@@ -20,6 +20,7 @@
 		8511E9645F5C2B18746B4B4B29284451 /* UIScrollView+EmptyDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B6B21AF41EBE54F12A278D7A573A5A1 /* UIScrollView+EmptyDataSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A1AB754AA4572CE62B65CE145D5F3259 /* NWSTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53DF2347D6C5062CAA2E05EFFD38579 /* NWSTokenView.swift */; };
 		DCBD7A4421C8ADC400ECF3CE /* PlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBD7A4221C8ACD900ECF3CE /* PlaceHolderTextView.swift */; };
+		DCBD7A4921C8C76800ECF3CE /* NWSTokenViewAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBD7A4721C8C76300ECF3CE /* NWSTokenViewAppearance.swift */; };
 		EA94DA9BD00455E6B3257AA9E98F642D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
 		F1752353413B6A4874A11B0200E7BAAD /* Pods-NWSTokenView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD696B350B24FF7C2E10E861461F05 /* Pods-NWSTokenView_Example-dummy.m */; };
 		FE0B84F58CE9E2073246D1ECF0F63BCF /* Pods-NWSTokenView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 22D1FCA79367A42C2C9CD63E39A0BBB0 /* Pods-NWSTokenView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -74,6 +75,7 @@
 		BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		D53DF2347D6C5062CAA2E05EFFD38579 /* NWSTokenView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NWSTokenView.swift; path = Pod/Classes/NWSTokenView.swift; sourceTree = "<group>"; };
 		DCBD7A4221C8ACD900ECF3CE /* PlaceHolderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceHolderTextView.swift; path = Pod/Classes/PlaceHolderTextView.swift; sourceTree = "<group>"; };
+		DCBD7A4721C8C76300ECF3CE /* NWSTokenViewAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NWSTokenViewAppearance.swift; path = Pod/Classes/NWSTokenViewAppearance.swift; sourceTree = "<group>"; };
 		DE00F85E916E751C2043C3AE739B1065 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E76D566068414FA510524885118A1DE6 /* DZNEmptyDataSet-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DZNEmptyDataSet-dummy.m"; sourceTree = "<group>"; };
 		F140BB8CB1913362E6404034AAC9886D /* NWSTokenView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NWSTokenView-dummy.m"; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		379AF04B85ED66878E4602E9EF7A7F70 /* NWSTokenView */ = {
 			isa = PBXGroup;
 			children = (
+				DCBD7A4721C8C76300ECF3CE /* NWSTokenViewAppearance.swift */,
 				D53DF2347D6C5062CAA2E05EFFD38579 /* NWSTokenView.swift */,
 				DCBD7A4221C8ACD900ECF3CE /* PlaceHolderTextView.swift */,
 				986D034B43D9FFCD712E2182614D3CB6 /* NWSToken */,
@@ -394,6 +397,7 @@
 			files = (
 				553D757033F81EF01EEF10CF1F02CE08 /* NWSToken.swift in Sources */,
 				1C6FDE791A0086E6DF6056DC114C6207 /* NWSTokenView-dummy.m in Sources */,
+				DCBD7A4921C8C76800ECF3CE /* NWSTokenViewAppearance.swift in Sources */,
 				A1AB754AA4572CE62B65CE145D5F3259 /* NWSTokenView.swift in Sources */,
 				DCBD7A4421C8ADC400ECF3CE /* PlaceHolderTextView.swift in Sources */,
 			);
