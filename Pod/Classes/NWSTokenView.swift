@@ -45,6 +45,12 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     open var dataSource: NWSTokenDataSource? = nil
     open var delegate: NWSTokenDelegate? = nil
     
+    open var isEditable: Bool = true {
+        didSet {
+            self.textView.isEditable = self.isEditable
+        }
+    }
+    
     // MARK: Private Vars
     fileprivate var shouldBecomeFirstResponder: Bool = false
     fileprivate var scrollView = UIScrollView()
@@ -181,8 +187,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         }
         
         // Scroll to bottom if added new token, otherwise stay in current position
-        if self.tokens.count > self.lastTokenCount
-        {
+        if self.tokens.count > self.lastTokenCount && self.isEditable {
             self.shouldBecomeFirstResponder = true
             self.scrollToBottom(animated: false)
         }
@@ -295,10 +300,13 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         
         // Set hidden text view delegate for deselecting
         token.hiddenTextView.delegate = self
+        token.hiddenTextView.isEditable = self.isEditable
         
-        // Add tap gesture
-        let tapGesture = UITapGestureRecognizer(target: self, action:#selector(NWSTokenView.didTapToken(_:)))
-        token.addGestureRecognizer(tapGesture)
+        if self.isEditable {
+            // Add tap gesture
+            let tapGesture = UITapGestureRecognizer(target: self, action:#selector(NWSTokenView.didTapToken(_:)))
+            token.addGestureRecognizer(tapGesture)
+        }
         
         // Add tags for referencing
         token.tag = index

@@ -19,7 +19,7 @@
 		75D0A461B8CF202F41C55CA1E732124C /* DZNEmptyDataSet-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E76D566068414FA510524885118A1DE6 /* DZNEmptyDataSet-dummy.m */; };
 		8511E9645F5C2B18746B4B4B29284451 /* UIScrollView+EmptyDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B6B21AF41EBE54F12A278D7A573A5A1 /* UIScrollView+EmptyDataSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A1AB754AA4572CE62B65CE145D5F3259 /* NWSTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53DF2347D6C5062CAA2E05EFFD38579 /* NWSTokenView.swift */; };
-		DCBD7A4321C8ACDA00ECF3CE /* UIPlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBD7A4221C8ACD900ECF3CE /* UIPlaceHolderTextView.swift */; };
+		DCBD7A4421C8ADC400ECF3CE /* UIPlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBD7A4221C8ACD900ECF3CE /* UIPlaceHolderTextView.swift */; };
 		EA94DA9BD00455E6B3257AA9E98F642D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
 		F1752353413B6A4874A11B0200E7BAAD /* Pods-NWSTokenView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD696B350B24FF7C2E10E861461F05 /* Pods-NWSTokenView_Example-dummy.m */; };
 		FE0B84F58CE9E2073246D1ECF0F63BCF /* Pods-NWSTokenView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 22D1FCA79367A42C2C9CD63E39A0BBB0 /* Pods-NWSTokenView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -395,6 +395,7 @@
 				553D757033F81EF01EEF10CF1F02CE08 /* NWSToken.swift in Sources */,
 				1C6FDE791A0086E6DF6056DC114C6207 /* NWSTokenView-dummy.m in Sources */,
 				A1AB754AA4572CE62B65CE145D5F3259 /* NWSTokenView.swift in Sources */,
+				DCBD7A4421C8ADC400ECF3CE /* UIPlaceHolderTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +404,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				75D0A461B8CF202F41C55CA1E732124C /* DZNEmptyDataSet-dummy.m in Sources */,
-				DCBD7A4321C8ACDA00ECF3CE /* UIPlaceHolderTextView.swift in Sources */,
 				4568C6CC7F78399CA1312B20E26EA8FE /* UIScrollView+EmptyDataSet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
