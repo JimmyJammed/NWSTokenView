@@ -252,20 +252,6 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     /// Sets up token view text view.
     fileprivate func setupTextView(offsetX x: inout CGFloat, offsetY y: inout CGFloat, remainingWidth: inout CGFloat)
     {
-        //        // Set placeholder text (ignore if tokens exist, text exists, or is currently active field)
-        //        if self.tokens.count == 0 && self.lastText == "" && !self.shouldBecomeFirstResponder
-        //        {
-        //            if let placeholderText = self.dataSource?.titleForTokenViewPlaceholder(self)
-        //            {
-        //                self.textView.text = placeholderText
-        //                self.textView.textColor = UIColor.lightGray
-        //            }
-        //        }
-        //        else
-        //        {
-        //            self.textView.textColor = UIColor.black
-        //            self.textView.text = ""
-        //        }
         if let textView = self.textView as? PlaceHolderTextView {
             textView.placeholderText = self.dataSource?.titleForTokenViewPlaceholder(self)
         }
@@ -328,13 +314,6 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         // Update frame data
         x += self.tokenViewInsets.left + token.frame.width
         remainingWidth = self.scrollView.bounds.width - x
-        
-        // Check if previously selected (i.e. pre-rotation)
-        //        if self.selectedToken != nil && self.selectedToken?.titleLabel.text == token.titleLabel.text
-        //        {
-        //            self.selectedToken = nil // Reset so selectToken function properly sets token
-        //            self.selectToken(token)
-        //        }
     }
     
     /// Returns a generated token.
@@ -399,24 +378,6 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
             self.selectedToken = nil
         }
         
-//        // Check if text view is input or hidden
-//        if textView.superview is NWSToken
-//        {
-//            // Do nothing...
-//        }
-//        else
-//        {
-//            // Replace placeholder text
-//            if let placeholderText = self.dataSource?.titleForTokenViewPlaceholder(self){
-//                if textView.text == placeholderText
-//                {
-//                    textView.text = ""
-//                    textView.textColor = UIColor.black
-//                }
-//            }
-//
-//        }
-        
         // Notify delegate
         self.delegate?.tokenView(self)
     }
@@ -441,18 +402,6 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
                 }
             }
         }
-//        else
-//        {
-//            // Replace placeholder text
-//            if self.tokens.count == 0 && textView.text == ""
-//            {
-//                if let placeholderText = self.dataSource?.titleForTokenViewPlaceholder(self)
-//                {
-//                    textView.text = placeholderText
-//                    textView.textColor = UIColor.lightGray
-//                }
-//            }
-//        }
         
         self.delegate?.tokenViewDidEndEditing(self)
     }
