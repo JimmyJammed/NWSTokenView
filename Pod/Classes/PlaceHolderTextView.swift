@@ -85,11 +85,10 @@ extension UITextView {
             let labelX = self.textContainer.lineFragmentPadding + self.textContainerInset.left
             let labelY = self.textContainerInset.top
             
-            placeholderLabel.sizeToFit()
             let labelWidth = self.frame.width - (labelX * 2)
-            let labelHeight = placeholderLabel.frame.height
+            let size = placeholderLabel.sizeThatFits(CGSize(width: labelWidth, height: placeholderLabel.frame.height))
             
-            placeholderLabel.frame = CGRect(x: labelX, y: labelY, width: labelWidth, height: labelHeight)
+            placeholderLabel.frame = CGRect(x: labelX, y: labelY, width: size.width, height: size.height)
         }
     }
     
