@@ -116,7 +116,7 @@ extension UITextView {
         placeholderLabel.isHidden = self.text.count > 0
         
         self.addSubview(placeholderLabel)
-        self.resizePlaceholder()
+        self.refreshPlaceholder(placeholderLabel)
     }
     
     fileprivate func refreshPlaceholder(_ placeholderLabel: UILabel?) {
