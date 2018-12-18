@@ -121,8 +121,8 @@ extension UITextView {
     fileprivate func refreshPlaceholder(_ placeholderLabel: UILabel?) {
         placeholderLabel?.translatesAutoresizingMaskIntoConstraints = false
         if #available(iOS 9.0, *) {
-            placeholderLabel?.leftAnchor.constraint(equalTo: self.leftAnchor, constant: textContainerInset.left + 4).isActive = true
-            placeholderLabel?.rightAnchor.constraint(equalTo: self.rightAnchor, constant: textContainerInset.right + 4).isActive = true
+            placeholderLabel?.leftAnchor.constraint(equalTo: self.leftAnchor, constant: textContainerInset.left + self.textContainer.lineFragmentPadding).isActive = true
+            placeholderLabel?.rightAnchor.constraint(equalTo: self.rightAnchor, constant: textContainerInset.right + self.textContainer.lineFragmentPadding).isActive = true
             placeholderLabel?.topAnchor.constraint(equalTo: self.topAnchor, constant: textContainerInset.top).isActive = true
             placeholderLabel?.bottomAnchor.constraint(lessThanOrEqualTo: self.bottomAnchor, constant: textContainerInset.bottom)
         } else {
