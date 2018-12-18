@@ -308,7 +308,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         // Check if token is out of view's bounds, move to new line if so (unless its first token, truncate it)
         if remainingWidth <= self.tokenViewInsets.left + token.frame.width + self.tokenViewInsets.right && self.tokens.count > 1
         {
-            x = 0
+            x = self.tokenViewInsets.left
             y += token.frame.height + self.tokenViewInsets.top
         }
         token.frame = CGRect(x: x+self.tokenViewInsets.left, y: y, width: min(token.bounds.width, self.scrollView.bounds.width-x-self.tokenViewInsets.left-self.tokenViewInsets.right), height: token.bounds.height)
