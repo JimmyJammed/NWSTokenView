@@ -58,7 +58,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     fileprivate var lastText = ""
     
     open lazy var textView: UITextView = {
-        let textView = UIPlaceHolderTextView()
+        let textView = PlaceHolderTextView()
         textView.backgroundColor = UIColor.clear
         textView.textColor = UIColor.black
         textView.font = UIFont(name: "HelveticaNeue", size: 14)
@@ -266,7 +266,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         //            self.textView.textColor = UIColor.black
         //            self.textView.text = ""
         //        }
-        if let textView = self.textView as? UIPlaceHolderTextView {
+        if let textView = self.textView as? PlaceHolderTextView {
             textView.placeholderText = self.dataSource?.titleForTokenViewPlaceholder(self)
         }
         
