@@ -16,14 +16,7 @@
 
 import UIKit
 
-class PlaceHolderTextView: UITextView {
-    
-    /// Resize the placeholder when the UITextView bounds change
-    override open var bounds: CGRect {
-        didSet {
-            self.resizePlaceholder()
-        }
-    }
+class PlaceHolderTextView: UITextView, UITextViewDelegate {
     
     var placeholderText: String? {
         didSet {
@@ -33,10 +26,27 @@ class PlaceHolderTextView: UITextView {
     
     var textViewDelegate: UITextViewDelegate?
     
+    /// When the UITextView did change, show or hide the label based on if the UITextView is empty or not
+    ///
+    /// - Parameter textView: The UITextView that got updated
+    private func textViewDidChange(_ textView: UITextView) {
+        if let placeholderLabel = self.viewWithTag(100) as? UILabel {
+            placeholderLabel.isHidden = self.text.count > 0
+        }
+        
+        self.textViewDelegate?.textViewDidChange!(textView)
+    }
 }
 
 /// Extend UITextView and implemented UITextViewDelegate to listen for changes
-extension PlaceHolderTextView: UITextViewDelegate {
+extension UITextView {
+    
+    /// Resize the placeholder when the UITextView bounds change
+    override open var bounds: CGRect {
+        didSet {
+            self.resizePlaceholder()
+        }
+    }
     
     /// The UITextView placeholder text
     var placeholder: String? {
@@ -62,17 +72,6 @@ extension PlaceHolderTextView: UITextViewDelegate {
         }
     }
     
-    /// When the UITextView did change, show or hide the label based on if the UITextView is empty or not
-    ///
-    /// - Parameter textView: The UITextView that got updated
-    private func textViewDidChange(_ textView: UITextView) {
-        if let placeholderLabel = self.viewWithTag(100) as? UILabel {
-            placeholderLabel.isHidden = self.text.count > 0
-        }
-        
-        self.textViewDelegate?.textViewDidChange!(textView)
-    }
-    
     /// Resize the placeholder UILabel to make sure it's in the same position as the UITextView text
     private func resizePlaceholder() {
         if let placeholderLabel = self.viewWithTag(100) as! UILabel? {
@@ -86,7 +85,7 @@ extension PlaceHolderTextView: UITextViewDelegate {
     }
     
     /// Adds a placeholder UILabel to this UITextView
-    private func addPlaceholder(_ placeholderText: String) {
+    fileprivate func addPlaceholder(_ placeholderText: String) {
         let placeholderLabel = UILabel()
         
         placeholderLabel.text = placeholderText
@@ -101,6 +100,7 @@ extension PlaceHolderTextView: UITextViewDelegate {
         
         self.addSubview(placeholderLabel)
         self.resizePlaceholder()
-        self.delegate = self
+        
+        self.delegate = self as? UITextViewDelegate
     }
 }
