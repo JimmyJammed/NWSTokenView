@@ -4,14 +4,14 @@
 //
 //  Created by James Hickman on 8/11/15.
 /*
-Copyright (c) 2015 Appmazo, LLC
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.//
-*/
+ Copyright (c) 2015 Appmazo, LLC
+ 
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ 
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.//
+ */
 
 import UIKit
 
@@ -48,9 +48,19 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     // MARK: Private Vars
     fileprivate var shouldBecomeFirstResponder: Bool = false
     fileprivate var scrollView = UIScrollView()
-    open var textView = UITextView()
     fileprivate var lastTokenCount = 0
     fileprivate var lastText = ""
+    
+    open lazy var textView: UITextView = {
+        let textView = UIPlaceHolderTextView()
+        textView.backgroundColor = UIColor.clear
+        textView.textColor = UIColor.black
+        textView.font = UIFont(name: "HelveticaNeue", size: 14)
+        textView.delegate = self
+        textView.isScrollEnabled = false
+        textView.autocorrectionType = UITextAutocorrectionType.no // Hide suggestions to prevent UI issues with message bar / keyboard.
+        return textView
+    }()
     
     // MARK: Public Vars
     var label = UILabel()
@@ -77,7 +87,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     override open func awakeFromNib()
     {
         super.awakeFromNib()
-
+        
         // Set default scroll properties
         self.scrollView.backgroundColor = UIColor.clear
         self.scrollView.isScrollEnabled = true
@@ -89,13 +99,6 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         self.label.font = UIFont(name: "HelveticaNeue", size: 14)
         self.label.textColor = UIColor.black
         
-        // Set default text view properties
-        self.textView.backgroundColor = UIColor.clear
-        self.textView.textColor = UIColor.black
-        self.textView.font = UIFont(name: "HelveticaNeue", size: 14)
-        self.textView.delegate = self
-        self.textView.isScrollEnabled = false
-        self.textView.autocorrectionType = UITextAutocorrectionType.no // Hide suggestions to prevent UI issues with message bar / keyboard.
         self.scrollView.addSubview(self.textView)
         
         // Auto Layout Constraints
@@ -105,7 +108,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutConstraint.Attribute.right, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.right, multiplier: 1.0, constant: 0).isActive = true
         NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1.0, constant: 0).isActive = true
         NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1.0, constant: 0).isActive = true
-
+        
         // Orientation Rotation Listener
         NotificationCenter.default.addObserver(self, selector: #selector(NWSTokenView.didRotateInterfaceOrientation), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
@@ -221,11 +224,6 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         
         self.tokens = []
         self.tokenHeight = 0
-        // Ignore placeholder text
-        if self.textView.text != self.dataSource?.titleForTokenViewPlaceholder(self)
-        {
-            self.lastText = self.textView.text
-        }
     }
     
     /// Sets up token view label.
@@ -249,19 +247,22 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     /// Sets up token view text view.
     fileprivate func setupTextView(offsetX x: inout CGFloat, offsetY y: inout CGFloat, remainingWidth: inout CGFloat)
     {
-        // Set placeholder text (ignore if tokens exist, text exists, or is currently active field)
-        if self.tokens.count == 0 && self.lastText == "" && !self.shouldBecomeFirstResponder
-        {
-            if let placeholderText = self.dataSource?.titleForTokenViewPlaceholder(self)
-            {
-                self.textView.text = placeholderText
-                self.textView.textColor = UIColor.lightGray
-            }
-        }
-        else
-        {
-            self.textView.textColor = UIColor.black
-            self.textView.text = ""
+        //        // Set placeholder text (ignore if tokens exist, text exists, or is currently active field)
+        //        if self.tokens.count == 0 && self.lastText == "" && !self.shouldBecomeFirstResponder
+        //        {
+        //            if let placeholderText = self.dataSource?.titleForTokenViewPlaceholder(self)
+        //            {
+        //                self.textView.text = placeholderText
+        //                self.textView.textColor = UIColor.lightGray
+        //            }
+        //        }
+        //        else
+        //        {
+        //            self.textView.textColor = UIColor.black
+        //            self.textView.text = ""
+        //        }
+        if let textView = self.textView as? UIPlaceHolderTextView {
+            textView.placeholderText = self.dataSource?.titleForTokenViewPlaceholder(self)
         }
         
         // Get remaining width on line
@@ -321,11 +322,11 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         remainingWidth = self.scrollView.bounds.width - x
         
         // Check if previously selected (i.e. pre-rotation)
-//        if self.selectedToken != nil && self.selectedToken?.titleLabel.text == token.titleLabel.text
-//        {
-//            self.selectedToken = nil // Reset so selectToken function properly sets token
-//            self.selectToken(token)
-//        }
+        //        if self.selectedToken != nil && self.selectedToken?.titleLabel.text == token.titleLabel.text
+        //        {
+        //            self.selectedToken = nil // Reset so selectToken function properly sets token
+        //            self.selectToken(token)
+        //        }
     }
     
     /// Returns a generated token.
@@ -390,24 +391,23 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
             self.selectedToken = nil
         }
         
-        // Check if text view is input or hidden
-        if textView.superview is NWSToken
-        {
-            // Do nothing...
-        }
-        else
-        {
-            // Replace placeholder text
-            if let placeholderText = self.dataSource?.titleForTokenViewPlaceholder(self)
-            {
-                if textView.text == placeholderText
-                {
-                    textView.text = ""
-                    textView.textColor = UIColor.black
-                }
-            }
-            
-        }
+//        // Check if text view is input or hidden
+//        if textView.superview is NWSToken
+//        {
+//            // Do nothing...
+//        }
+//        else
+//        {
+//            // Replace placeholder text
+//            if let placeholderText = self.dataSource?.titleForTokenViewPlaceholder(self){
+//                if textView.text == placeholderText
+//                {
+//                    textView.text = ""
+//                    textView.textColor = UIColor.black
+//                }
+//            }
+//
+//        }
         
         // Notify delegate
         self.delegate?.tokenView(self)
@@ -433,18 +433,18 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
                 }
             }
         }
-        else
-        {
-            // Replace placeholder text
-            if self.tokens.count == 0 && textView.text == ""
-            {
-                if let placeholderText = self.dataSource?.titleForTokenViewPlaceholder(self)
-                {
-                    textView.text = placeholderText
-                    textView.textColor = UIColor.lightGray
-                }
-            }
-        }
+//        else
+//        {
+//            // Replace placeholder text
+//            if self.tokens.count == 0 && textView.text == ""
+//            {
+//                if let placeholderText = self.dataSource?.titleForTokenViewPlaceholder(self)
+//                {
+//                    textView.text = placeholderText
+//                    textView.textColor = UIColor.lightGray
+//                }
+//            }
+//        }
         
         self.delegate?.tokenViewDidEndEditing(self)
     }
