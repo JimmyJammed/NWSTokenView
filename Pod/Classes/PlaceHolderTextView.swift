@@ -111,6 +111,7 @@ extension UITextView {
         placeholderLabel.textColor = UIColor.lightGray
         placeholderLabel.tag = 100
         placeholderLabel.numberOfLines = 0
+        placeholderLabel.font = self.font
         
         placeholderLabel.isHidden = self.text.count > 0
         
