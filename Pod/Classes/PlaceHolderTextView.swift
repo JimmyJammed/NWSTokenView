@@ -31,7 +31,7 @@ class PlaceHolderTextView: UITextView {
     }
     
     /// Validate Placeholder should hidden or visible
-    private func textChanged() {
+    func textChanged() {
         if let placeholderLabel = self.viewWithTag(100) as? UILabel {
             placeholderLabel.isHidden = self.text.count > 0
         }

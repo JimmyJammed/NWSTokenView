@@ -468,6 +468,9 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         }
         else // Text View Input
         {
+            // Update Placeholder
+            (textView as? PlaceHolderTextView)?.textChanged()
+            
             // Check if text view will overflow current line
             var scrollViewOriginY = textView.frame.origin.y
             let availableWidth = textView.bounds.width
