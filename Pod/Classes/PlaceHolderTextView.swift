@@ -116,8 +116,6 @@ extension UITextView {
         
         self.addSubview(placeholderLabel)
         self.resizePlaceholder()
-        
-        self.delegate = self as? UITextViewDelegate
     }
     
     fileprivate func refreshPlaceholder(_ placeholderLabel: UILabel?) {
