@@ -24,6 +24,13 @@ class PlaceHolderTextView: UITextView, UITextViewDelegate {
         }
     }
     
+    var padding: CGFloat = 5 {
+        didSet {
+            self.textContainerInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
+            self.textContainer.lineFragmentPadding = padding
+        }
+    }
+    
     var textViewDelegate: UITextViewDelegate?
     
     /// When the UITextView did change, show or hide the label based on if the UITextView is empty or not
