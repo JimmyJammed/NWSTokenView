@@ -16,7 +16,7 @@
 
 import UIKit
 
-class PlaceHolderTextView: UITextView, UITextViewDelegate {
+class PlaceHolderTextView: UITextView {
     
     var placeholderText: String? {
         didSet {
@@ -24,17 +24,17 @@ class PlaceHolderTextView: UITextView, UITextViewDelegate {
         }
     }
     
-    var textViewDelegate: UITextViewDelegate?
+    override var text: String! {
+        didSet {
+            self.textChanged()
+        }
+    }
     
-    /// When the UITextView did change, show or hide the label based on if the UITextView is empty or not
-    ///
-    /// - Parameter textView: The UITextView that got updated
-    private func textViewDidChange(_ textView: UITextView) {
+    /// Validate Placeholder should hidden or visible
+    private func textChanged() {
         if let placeholderLabel = self.viewWithTag(100) as? UILabel {
             placeholderLabel.isHidden = self.text.count > 0
         }
-        
-        self.textViewDelegate?.textViewDidChange!(textView)
     }
 }
 
