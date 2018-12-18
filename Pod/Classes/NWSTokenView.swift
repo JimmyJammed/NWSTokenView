@@ -59,6 +59,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     
     open lazy var textView: UITextView = {
         let textView = PlaceHolderTextView()
+        textView.padding = 0
         textView.backgroundColor = UIColor.clear
         textView.textColor = UIColor.black
         textView.font = NWSTokenViewAppearance.appearance.font
