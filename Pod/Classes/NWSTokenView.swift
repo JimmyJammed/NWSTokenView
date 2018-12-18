@@ -495,6 +495,9 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
                 }
                 textView.frame = CGRect(x: self.tokenViewInsets.left, y: scrollViewOriginY, width: maxWidth, height: height)
                 self.scrollView.contentSize = CGSize(width: self.scrollView.bounds.width, height: textView.frame.origin.y+height+self.tokenViewInsets.bottom)
+                
+                // Notify delegate of content size change
+                self.delegate?.tokenView(self, contentSizeChanged: self.scrollView.contentSize)
                 self.layoutIfNeeded()
             }
             self.textView.layoutIfNeeded()
