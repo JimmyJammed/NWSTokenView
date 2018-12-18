@@ -253,7 +253,11 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     fileprivate func setupTextView(offsetX x: inout CGFloat, offsetY y: inout CGFloat, remainingWidth: inout CGFloat)
     {
         if let textView = self.textView as? PlaceHolderTextView {
-            textView.placeholderText = self.dataSource?.titleForTokenViewPlaceholder(self)
+            if self.tokens.count == 0 {
+                textView.placeholderText = self.dataSource?.titleForTokenViewPlaceholder(self)
+            } else {
+                textView.placeholderText = nil
+            }
         }
         
         // Get remaining width on line
