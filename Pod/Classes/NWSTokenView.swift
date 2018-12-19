@@ -48,6 +48,11 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     open var isEditable: Bool = true {
         didSet {
             self.textView.isEditable = self.isEditable
+            
+            self.textView.removeFromSuperview()
+            if isEditable {
+                self.scrollView.addSubview(self.textView)
+            }
         }
     }
     
@@ -104,8 +109,6 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         // Set default label properties
         self.label.font = NWSTokenViewAppearance.appearance.font
         self.label.textColor = UIColor.black
-        
-        self.scrollView.addSubview(self.textView)
         
         // Auto Layout Constraints
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -173,8 +176,10 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
             }
         }
         
-        // Add TextView
-        self.setupTextView(offsetX: &scrollViewOriginX, offsetY: &scrollViewOriginY, remainingWidth: &remainingWidth)
+        if self.isEditable {
+            // Add TextView
+            self.setupTextView(offsetX: &scrollViewOriginX, offsetY: &scrollViewOriginY, remainingWidth: &remainingWidth)
+        }
         
         // Update scroll view content size
         if self.tokens.count > 0
