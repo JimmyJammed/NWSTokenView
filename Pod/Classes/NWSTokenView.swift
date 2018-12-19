@@ -110,6 +110,10 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         self.label.font = NWSTokenViewAppearance.appearance.font
         self.label.textColor = UIColor.black
         
+        if isEditable {
+            self.scrollView.addSubview(self.textView)
+        }
+        
         // Auto Layout Constraints
         self.translatesAutoresizingMaskIntoConstraints = false
         self.scrollView.translatesAutoresizingMaskIntoConstraints = false
