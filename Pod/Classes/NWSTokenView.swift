@@ -81,11 +81,10 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     var tokenHeight: CGFloat = 30.0 // Default
     var didReloadFromRotation = false
     
-    // MARK: Constants
-    var labelMinimumHeight: CGFloat = 30.0
-    var labelMinimumWidth: CGFloat = 30.0
-    var textViewMinimumWidth: CGFloat = 30.0
-    var textViewMinimumHeight: CGFloat = 30.0
+    open var labelMinimumHeight: CGFloat = 30.0
+    open var labelMinimumWidth: CGFloat = 30.0
+    open var textViewMinimumWidth: CGFloat = 30.0
+    open var textViewMinimumHeight: CGFloat = 30.0
     
     open override func layoutSubviews() {
         super.layoutSubviews()
