@@ -93,6 +93,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         // Update scroll view content size
         let contentSize = self.scrollView.contentSize
         self.scrollView.contentSize = CGSize(width: self.scrollView.bounds.width, height: contentSize.height)
+        reloadData()
     }
     
     override open func awakeFromNib()
