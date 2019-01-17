@@ -191,7 +191,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         // Update scroll view content size
         if self.tokens.count > 0
         {
-            self.scrollView.contentSize = CGSize(width: self.scrollView.bounds.width, height: scrollViewOriginY+max(textViewMinimumHeight, self.tokenHeight)+self.tokenViewInsets.top)
+            self.scrollView.contentSize = CGSize(width: self.scrollView.bounds.width, height: scrollViewOriginY+max(textViewMinimumHeight, self.tokenHeight, self.textView.frame.height)+self.tokenViewInsets.top)
         }
         else
         {
@@ -272,8 +272,10 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
             }
         }
         
+        let textWidth = self.tokenViewInsets.left + textView.attributedText.size().width + self.tokenViewInsets.right + (textView.textContainer.lineFragmentPadding * 2)
+        
         // Get remaining width on line
-        if remainingWidth >= self.textViewMinimumWidth
+        if textWidth <= remainingWidth && remainingWidth >= self.textViewMinimumWidth
         {
             self.textView.frame = CGRect(x: x + self.tokenViewInsets.left, y: y, width: remainingWidth - self.tokenViewInsets.left - self.tokenViewInsets.right, height: max(self.textViewMinimumHeight, self.tokenHeight))
             remainingWidth = self.scrollView.bounds.width - x - self.textView.frame.width
@@ -288,7 +290,9 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
             // Increase Y Offset
             y += max(self.textViewMinimumHeight, self.tokenHeight) + self.tokenViewInsets.top
             
-            self.textView.frame = CGRect(x: x + self.tokenViewInsets.left, y: y, width: remainingWidth - self.tokenViewInsets.left - self.tokenViewInsets.right, height: max(self.textViewMinimumHeight, self.tokenHeight))
+            let textViewWidth = remainingWidth - self.tokenViewInsets.left - self.tokenViewInsets.right
+            let size = textView.sizeThatFits(CGSize(width: textViewWidth, height: max(self.textViewMinimumHeight, self.tokenHeight)))
+            self.textView.frame = CGRect(origin: CGPoint(x: x + self.tokenViewInsets.left, y: y), size: size)
         }
         
         self.textView.returnKeyType = UIReturnKeyType.next
@@ -329,7 +333,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         
         // Update frame data
         x += self.tokenViewInsets.left + token.frame.width
-        remainingWidth = self.scrollView.bounds.width - x
+        remainingWidth = self.scrollView.bounds.width - x - self.tokenViewInsets.left
     }
     
     /// Returns a generated token.
@@ -488,7 +492,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
             let availableWidth = textView.bounds.width
             let maxWidth = self.scrollView.bounds.width - self.tokenViewInsets.left - self.tokenViewInsets.right
             
-            let textWidth = self.tokenViewInsets.left + textView.attributedText.size().width + self.tokenViewInsets.right
+            let textWidth = self.tokenViewInsets.left + textView.attributedText.size().width + self.tokenViewInsets.right + (textView.textContainer.lineFragmentPadding * 2)
             
             self.textView.frame.size = CGSize(width: self.textView.frame.size.width, height: self.textView.contentSize.height)
             
@@ -511,13 +515,13 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
                 textView.frame = CGRect(x: self.tokenViewInsets.left, y: scrollViewOriginY, width: maxWidth, height: height)
                 self.scrollView.contentSize = CGSize(width: self.scrollView.bounds.width, height: textView.frame.origin.y+height+self.tokenViewInsets.bottom)
                 
-//                // Notify delegate of content size change
-//                self.delegate?.tokenView(self, contentSizeChanged: self.scrollView.contentSize)
+                //                // Notify delegate of content size change
+                self.delegate?.tokenView(self, contentSizeChanged: self.scrollView.contentSize)
                 
                 self.layoutIfNeeded()
             }
             self.textView.layoutIfNeeded()
-            self.scrollToBottom(animated: true)
+            self.scrollToBottom(animated: false)
             self.delegate?.tokenView(self, didChangeText: textView.text)
         }
     }
