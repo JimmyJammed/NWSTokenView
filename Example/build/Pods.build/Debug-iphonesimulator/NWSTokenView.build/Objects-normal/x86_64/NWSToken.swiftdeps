@@ -1,0 +1,482 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "NWSToken"
+provides-nominal:
+- "12NWSTokenView0A0C"
+provides-member:
+- ["12NWSTokenView0A0C", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "AssignmentPrecedence"
+- "Bool"
+- "BooleanLiteralType"
+- "CGRect"
+- "NSCoder"
+- "NWSToken"
+- !private "StringLiteralType"
+- !private "UITextAutocorrectionType"
+- "UITextView"
+- "UIView"
+depends-member:
+- !private ["SK", "init"]
+- !private ["SK", "init"]
+- !private ["So15CALayerDelegateP", "UITextAutocorrectionType"]
+- ["So15CALayerDelegateP", "UITextView"]
+- ["So15CALayerDelegateP", ""]
+- !private ["So15CALayerDelegateP", "addSubview"]
+- !private ["So15CALayerDelegateP", "autocorrectionType"]
+- !private ["So15CALayerDelegateP", "hiddenTextView"]
+- ["So15CALayerDelegateP", "init"]
+- !private ["So15CALayerDelegateP", "initTextView"]
+- !private ["So15CALayerDelegateP", "isHidden"]
+- !private ["So15CALayerDelegateP", "text"]
+- !private ["s7CVarArgP", "UITextAutocorrectionType"]
+- ["s7CVarArgP", "UITextView"]
+- ["s7CVarArgP", ""]
+- !private ["s7CVarArgP", "addSubview"]
+- !private ["s7CVarArgP", "autocorrectionType"]
+- !private ["s7CVarArgP", "hiddenTextView"]
+- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "initTextView"]
+- !private ["s7CVarArgP", "isHidden"]
+- !private ["s7CVarArgP", "text"]
+- !private ["Sl", "init"]
+- !private ["Sl", "init"]
+- !private ["SL", "init"]
+- !private ["SL", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "UITextAutocorrectionType"]
+- ["s28CustomDebugStringConvertibleP", "UITextView"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "addSubview"]
+- !private ["s28CustomDebugStringConvertibleP", "autocorrectionType"]
+- !private ["s28CustomDebugStringConvertibleP", "hiddenTextView"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "initTextView"]
+- !private ["s28CustomDebugStringConvertibleP", "isHidden"]
+- !private ["s28CustomDebugStringConvertibleP", "text"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s23CustomStringConvertibleP", "UITextAutocorrectionType"]
+- ["s23CustomStringConvertibleP", "UITextView"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "addSubview"]
+- !private ["s23CustomStringConvertibleP", "autocorrectionType"]
+- !private ["s23CustomStringConvertibleP", "hiddenTextView"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "initTextView"]
+- !private ["s23CustomStringConvertibleP", "isHidden"]
+- !private ["s23CustomStringConvertibleP", "text"]
+- !private ["Se", "init"]
+- !private ["Se", "init"]
+- !private ["SE", "init"]
+- !private ["SE", "init"]
+- !private ["SQ", "UITextAutocorrectionType"]
+- ["SQ", "UITextView"]
+- ["SQ", ""]
+- !private ["SQ", "addSubview"]
+- !private ["SQ", "autocorrectionType"]
+- !private ["SQ", "hiddenTextView"]
+- ["SQ", "init"]
+- !private ["SQ", "init"]
+- !private ["SQ", "initTextView"]
+- !private ["SQ", "isHidden"]
+- !private ["SQ", "no"]
+- !private ["SQ", "text"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["SH", "UITextAutocorrectionType"]
+- ["SH", "UITextView"]
+- ["SH", ""]
+- !private ["SH", "addSubview"]
+- !private ["SH", "autocorrectionType"]
+- !private ["SH", "hiddenTextView"]
+- ["SH", "init"]
+- !private ["SH", "init"]
+- !private ["SH", "initTextView"]
+- !private ["SH", "isHidden"]
+- !private ["SH", "no"]
+- !private ["SH", "text"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["So8NSCodingP", "UITextAutocorrectionType"]
+- ["So8NSCodingP", "UITextView"]
+- ["So8NSCodingP", ""]
+- !private ["So8NSCodingP", "addSubview"]
+- !private ["So8NSCodingP", "autocorrectionType"]
+- !private ["So8NSCodingP", "hiddenTextView"]
+- ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "initTextView"]
+- !private ["So8NSCodingP", "isHidden"]
+- !private ["So8NSCodingP", "text"]
+- ["So8NSObjectC", "Bool"]
+- ["So8NSObjectC", "CGRect"]
+- ["So8NSObjectC", "NSCoder"]
+- !private ["So8NSObjectC", "UITextAutocorrectionType"]
+- ["So8NSObjectC", "UITextView"]
+- !private ["So8NSObjectC", "addSubview"]
+- !private ["So8NSObjectC", "autocorrectionType"]
+- ["So8NSObjectC", "hiddenTextView"]
+- ["So8NSObjectC", "init"]
+- ["So8NSObjectC", "initTextView"]
+- !private ["So8NSObjectC", "isHidden"]
+- ["So8NSObjectC", "isSelected"]
+- !private ["So8NSObjectC", "text"]
+- !private ["So8NSObjectP", "UITextAutocorrectionType"]
+- ["So8NSObjectP", "UITextView"]
+- ["So8NSObjectP", ""]
+- !private ["So8NSObjectP", "addSubview"]
+- !private ["So8NSObjectP", "autocorrectionType"]
+- !private ["So8NSObjectP", "hiddenTextView"]
+- ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "initTextView"]
+- !private ["So8NSObjectP", "isHidden"]
+- !private ["So8NSObjectP", "text"]
+- ["12NWSTokenView0A0C", "Bool"]
+- ["12NWSTokenView0A0C", "CGRect"]
+- ["12NWSTokenView0A0C", "NSCoder"]
+- !private ["12NWSTokenView0A0C", "UITextAutocorrectionType"]
+- ["12NWSTokenView0A0C", "UITextView"]
+- !private ["12NWSTokenView0A0C", "addSubview"]
+- ["12NWSTokenView0A0C", "hiddenTextView"]
+- ["12NWSTokenView0A0C", "init"]
+- !private ["12NWSTokenView0A0C", "initTextView"]
+- ["12NWSTokenView0A0C", "isSelected"]
+- !private ["Sm", "init"]
+- !private ["Sm", "init"]
+- !private ["SY", "no"]
+- !private ["ST", "init"]
+- !private ["ST", "init"]
+- !private ["SS", "init"]
+- !private ["SS", "init"]
+- !private ["Sy", "init"]
+- !private ["Sy", "init"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["So29UIAccessibilityIdentificationP", "UITextAutocorrectionType"]
+- ["So29UIAccessibilityIdentificationP", "UITextView"]
+- ["So29UIAccessibilityIdentificationP", ""]
+- !private ["So29UIAccessibilityIdentificationP", "addSubview"]
+- !private ["So29UIAccessibilityIdentificationP", "autocorrectionType"]
+- !private ["So29UIAccessibilityIdentificationP", "hiddenTextView"]
+- ["So29UIAccessibilityIdentificationP", "init"]
+- !private ["So29UIAccessibilityIdentificationP", "initTextView"]
+- !private ["So29UIAccessibilityIdentificationP", "isHidden"]
+- !private ["So29UIAccessibilityIdentificationP", "text"]
+- !private ["So12UIAppearanceP", "UITextAutocorrectionType"]
+- ["So12UIAppearanceP", "UITextView"]
+- ["So12UIAppearanceP", ""]
+- !private ["So12UIAppearanceP", "addSubview"]
+- !private ["So12UIAppearanceP", "autocorrectionType"]
+- !private ["So12UIAppearanceP", "hiddenTextView"]
+- ["So12UIAppearanceP", "init"]
+- !private ["So12UIAppearanceP", "initTextView"]
+- !private ["So12UIAppearanceP", "isHidden"]
+- !private ["So12UIAppearanceP", "text"]
+- !private ["So21UIAppearanceContainerP", "UITextAutocorrectionType"]
+- ["So21UIAppearanceContainerP", "UITextView"]
+- ["So21UIAppearanceContainerP", ""]
+- !private ["So21UIAppearanceContainerP", "addSubview"]
+- !private ["So21UIAppearanceContainerP", "autocorrectionType"]
+- !private ["So21UIAppearanceContainerP", "hiddenTextView"]
+- ["So21UIAppearanceContainerP", "init"]
+- !private ["So21UIAppearanceContainerP", "initTextView"]
+- !private ["So21UIAppearanceContainerP", "isHidden"]
+- !private ["So21UIAppearanceContainerP", "text"]
+- !private ["So30UIContentSizeCategoryAdjustingP", "autocorrectionType"]
+- ["So30UIContentSizeCategoryAdjustingP", "init"]
+- !private ["So30UIContentSizeCategoryAdjustingP", "isHidden"]
+- !private ["So30UIContentSizeCategoryAdjustingP", "text"]
+- !private ["So17UICoordinateSpaceP", "UITextAutocorrectionType"]
+- ["So17UICoordinateSpaceP", "UITextView"]
+- ["So17UICoordinateSpaceP", ""]
+- !private ["So17UICoordinateSpaceP", "addSubview"]
+- !private ["So17UICoordinateSpaceP", "autocorrectionType"]
+- !private ["So17UICoordinateSpaceP", "hiddenTextView"]
+- ["So17UICoordinateSpaceP", "init"]
+- !private ["So17UICoordinateSpaceP", "initTextView"]
+- !private ["So17UICoordinateSpaceP", "isHidden"]
+- !private ["So17UICoordinateSpaceP", "text"]
+- !private ["So13UIDynamicItemP", "UITextAutocorrectionType"]
+- ["So13UIDynamicItemP", "UITextView"]
+- ["So13UIDynamicItemP", ""]
+- !private ["So13UIDynamicItemP", "addSubview"]
+- !private ["So13UIDynamicItemP", "autocorrectionType"]
+- !private ["So13UIDynamicItemP", "hiddenTextView"]
+- ["So13UIDynamicItemP", "init"]
+- !private ["So13UIDynamicItemP", "initTextView"]
+- !private ["So13UIDynamicItemP", "isHidden"]
+- !private ["So13UIDynamicItemP", "text"]
+- !private ["So18UIFocusEnvironmentP", "UITextAutocorrectionType"]
+- ["So18UIFocusEnvironmentP", "UITextView"]
+- ["So18UIFocusEnvironmentP", ""]
+- !private ["So18UIFocusEnvironmentP", "addSubview"]
+- !private ["So18UIFocusEnvironmentP", "autocorrectionType"]
+- !private ["So18UIFocusEnvironmentP", "hiddenTextView"]
+- ["So18UIFocusEnvironmentP", "init"]
+- !private ["So18UIFocusEnvironmentP", "initTextView"]
+- !private ["So18UIFocusEnvironmentP", "isHidden"]
+- !private ["So18UIFocusEnvironmentP", "text"]
+- !private ["So11UIFocusItemP", "UITextAutocorrectionType"]
+- ["So11UIFocusItemP", "UITextView"]
+- ["So11UIFocusItemP", ""]
+- !private ["So11UIFocusItemP", "addSubview"]
+- !private ["So11UIFocusItemP", "autocorrectionType"]
+- !private ["So11UIFocusItemP", "hiddenTextView"]
+- ["So11UIFocusItemP", "init"]
+- !private ["So11UIFocusItemP", "initTextView"]
+- !private ["So11UIFocusItemP", "isHidden"]
+- !private ["So11UIFocusItemP", "text"]
+- !private ["So20UIFocusItemContainerP", "UITextAutocorrectionType"]
+- ["So20UIFocusItemContainerP", "UITextView"]
+- ["So20UIFocusItemContainerP", ""]
+- !private ["So20UIFocusItemContainerP", "addSubview"]
+- !private ["So20UIFocusItemContainerP", "autocorrectionType"]
+- !private ["So20UIFocusItemContainerP", "hiddenTextView"]
+- ["So20UIFocusItemContainerP", "init"]
+- !private ["So20UIFocusItemContainerP", "initTextView"]
+- !private ["So20UIFocusItemContainerP", "isHidden"]
+- !private ["So20UIFocusItemContainerP", "text"]
+- !private ["So30UIFocusItemScrollableContainerP", "autocorrectionType"]
+- ["So30UIFocusItemScrollableContainerP", "init"]
+- !private ["So30UIFocusItemScrollableContainerP", "isHidden"]
+- !private ["So30UIFocusItemScrollableContainerP", "text"]
+- !private ["So10UIKeyInputP", "autocorrectionType"]
+- ["So10UIKeyInputP", "init"]
+- !private ["So10UIKeyInputP", "isHidden"]
+- !private ["So10UIKeyInputP", "text"]
+- !private ["So30UIPasteConfigurationSupportingP", "UITextAutocorrectionType"]
+- ["So30UIPasteConfigurationSupportingP", "UITextView"]
+- ["So30UIPasteConfigurationSupportingP", ""]
+- !private ["So30UIPasteConfigurationSupportingP", "addSubview"]
+- !private ["So30UIPasteConfigurationSupportingP", "autocorrectionType"]
+- !private ["So30UIPasteConfigurationSupportingP", "hiddenTextView"]
+- ["So30UIPasteConfigurationSupportingP", "init"]
+- !private ["So30UIPasteConfigurationSupportingP", "initTextView"]
+- !private ["So30UIPasteConfigurationSupportingP", "isHidden"]
+- !private ["So30UIPasteConfigurationSupportingP", "text"]
+- ["So11UIResponderC", "Bool"]
+- ["So11UIResponderC", "CGRect"]
+- ["So11UIResponderC", "NSCoder"]
+- !private ["So11UIResponderC", "UITextAutocorrectionType"]
+- ["So11UIResponderC", "UITextView"]
+- !private ["So11UIResponderC", "addSubview"]
+- !private ["So11UIResponderC", "autocorrectionType"]
+- ["So11UIResponderC", "hiddenTextView"]
+- ["So11UIResponderC", "init"]
+- ["So11UIResponderC", "initTextView"]
+- !private ["So11UIResponderC", "isHidden"]
+- ["So11UIResponderC", "isSelected"]
+- !private ["So11UIResponderC", "text"]
+- !private ["So30UIResponderStandardEditActionsP", "UITextAutocorrectionType"]
+- ["So30UIResponderStandardEditActionsP", "UITextView"]
+- ["So30UIResponderStandardEditActionsP", ""]
+- !private ["So30UIResponderStandardEditActionsP", "addSubview"]
+- !private ["So30UIResponderStandardEditActionsP", "autocorrectionType"]
+- !private ["So30UIResponderStandardEditActionsP", "hiddenTextView"]
+- ["So30UIResponderStandardEditActionsP", "init"]
+- !private ["So30UIResponderStandardEditActionsP", "initTextView"]
+- !private ["So30UIResponderStandardEditActionsP", "isHidden"]
+- !private ["So30UIResponderStandardEditActionsP", "text"]
+- !private ["So12UIScrollViewC", "autocorrectionType"]
+- ["So12UIScrollViewC", "init"]
+- !private ["So12UIScrollViewC", "isHidden"]
+- !private ["So12UIScrollViewC", "text"]
+- !private ["So24UITextAutocorrectionTypeV", "no"]
+- !private ["So15UITextDraggableP", "autocorrectionType"]
+- ["So15UITextDraggableP", "init"]
+- !private ["So15UITextDraggableP", "isHidden"]
+- !private ["So15UITextDraggableP", "text"]
+- !private ["So15UITextDroppableP", "autocorrectionType"]
+- ["So15UITextDroppableP", "init"]
+- !private ["So15UITextDroppableP", "isHidden"]
+- !private ["So15UITextDroppableP", "text"]
+- !private ["So11UITextInputP", "autocorrectionType"]
+- ["So11UITextInputP", "init"]
+- !private ["So11UITextInputP", "isHidden"]
+- !private ["So11UITextInputP", "text"]
+- !private ["So17UITextInputTraitsP", "autocorrectionType"]
+- ["So17UITextInputTraitsP", "init"]
+- !private ["So17UITextInputTraitsP", "isHidden"]
+- !private ["So17UITextInputTraitsP", "text"]
+- !private ["So34UITextPasteConfigurationSupportingP", "autocorrectionType"]
+- ["So34UITextPasteConfigurationSupportingP", "init"]
+- !private ["So34UITextPasteConfigurationSupportingP", "isHidden"]
+- !private ["So34UITextPasteConfigurationSupportingP", "text"]
+- !private ["So10UITextViewC", "autocorrectionType"]
+- ["So10UITextViewC", "init"]
+- !private ["So10UITextViewC", "isHidden"]
+- !private ["So10UITextViewC", "text"]
+- !private ["So18UITraitEnvironmentP", "UITextAutocorrectionType"]
+- ["So18UITraitEnvironmentP", "UITextView"]
+- ["So18UITraitEnvironmentP", ""]
+- !private ["So18UITraitEnvironmentP", "addSubview"]
+- !private ["So18UITraitEnvironmentP", "autocorrectionType"]
+- !private ["So18UITraitEnvironmentP", "hiddenTextView"]
+- ["So18UITraitEnvironmentP", "init"]
+- !private ["So18UITraitEnvironmentP", "initTextView"]
+- !private ["So18UITraitEnvironmentP", "isHidden"]
+- !private ["So18UITraitEnvironmentP", "text"]
+- !private ["So23UIUserActivityRestoringP", "UITextAutocorrectionType"]
+- ["So23UIUserActivityRestoringP", "UITextView"]
+- ["So23UIUserActivityRestoringP", ""]
+- !private ["So23UIUserActivityRestoringP", "addSubview"]
+- !private ["So23UIUserActivityRestoringP", "autocorrectionType"]
+- !private ["So23UIUserActivityRestoringP", "hiddenTextView"]
+- ["So23UIUserActivityRestoringP", "init"]
+- !private ["So23UIUserActivityRestoringP", "initTextView"]
+- !private ["So23UIUserActivityRestoringP", "isHidden"]
+- !private ["So23UIUserActivityRestoringP", "text"]
+- ["So6UIViewC", "Bool"]
+- ["So6UIViewC", "CGRect"]
+- ["So6UIViewC", "NSCoder"]
+- !private ["So6UIViewC", "UITextAutocorrectionType"]
+- ["So6UIViewC", "UITextView"]
+- ["So6UIViewC", ""]
+- !private ["So6UIViewC", "addSubview"]
+- !private ["So6UIViewC", "autocorrectionType"]
+- ["So6UIViewC", "hiddenTextView"]
+- ["So6UIViewC", "init"]
+- ["So6UIViewC", "initTextView"]
+- !private ["So6UIViewC", "isHidden"]
+- ["So6UIViewC", "isSelected"]
+- !private ["So6UIViewC", "text"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "UITextAutocorrectionType"]
+- ["s37_DefaultCustomPlaygroundQuickLookableP", "UITextView"]
+- ["s37_DefaultCustomPlaygroundQuickLookableP", ""]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "addSubview"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "autocorrectionType"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "hiddenTextView"]
+- ["s37_DefaultCustomPlaygroundQuickLookableP", "init"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "initTextView"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "isHidden"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "text"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "UITextAutocorrectionType"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "UITextView"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "addSubview"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "autocorrectionType"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "hiddenTextView"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "initTextView"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "isHidden"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "text"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s16_SwiftStringViewP", "init"]
+- !private ["s16_SwiftStringViewP", "init"]
+depends-nominal:
+- !private "SK"
+- "So15CALayerDelegateP"
+- "s7CVarArgP"
+- !private "Sl"
+- !private "SL"
+- "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "Se"
+- !private "SE"
+- "SQ"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- "SH"
+- !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- "So8NSCodingP"
+- "So8NSObjectC"
+- "So8NSObjectP"
+- "12NWSTokenView0A0C"
+- !private "Sm"
+- !private "SY"
+- !private "ST"
+- !private "SS"
+- !private "Sy"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- "So29UIAccessibilityIdentificationP"
+- "So12UIAppearanceP"
+- "So21UIAppearanceContainerP"
+- "So30UIContentSizeCategoryAdjustingP"
+- "So17UICoordinateSpaceP"
+- "So13UIDynamicItemP"
+- "So18UIFocusEnvironmentP"
+- "So11UIFocusItemP"
+- "So20UIFocusItemContainerP"
+- "So30UIFocusItemScrollableContainerP"
+- "So10UIKeyInputP"
+- "So30UIPasteConfigurationSupportingP"
+- "So11UIResponderC"
+- "So30UIResponderStandardEditActionsP"
+- "So12UIScrollViewC"
+- !private "So24UITextAutocorrectionTypeV"
+- "So15UITextDraggableP"
+- "So15UITextDroppableP"
+- "So11UITextInputP"
+- "So17UITextInputTraitsP"
+- "So34UITextPasteConfigurationSupportingP"
+- "So10UITextViewC"
+- "So18UITraitEnvironmentP"
+- "So23UIUserActivityRestoringP"
+- "So6UIViewC"
+- "s37_DefaultCustomPlaygroundQuickLookableP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s33_ExpressibleByStringInterpolationP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/phanhauy/Desktop/Personal/My-Distribution/NWSTokenView/Example/Pods/Target Support Files/NWSTokenView/NWSTokenView-umbrella.h"
+- "/Users/phanhauy/Desktop/Personal/My-Distribution/NWSTokenView/Example/build/Pods.build/Debug-iphonesimulator/NWSTokenView.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "e88878fe96e2ef4a4dab1186cd0bef5b"

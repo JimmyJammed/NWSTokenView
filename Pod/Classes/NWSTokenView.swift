@@ -67,7 +67,6 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         textView.backgroundColor = UIColor.clear
         textView.textColor = UIColor.black
         textView.font = NWSTokenViewAppearance.appearance.font
-        textView.delegate = self
         textView.isScrollEnabled = false
         textView.autocorrectionType = UITextAutocorrectionType.no // Hide suggestions to prevent UI issues with message bar / keyboard.
         return textView
@@ -81,6 +80,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     var tokenHeight: CGFloat = 30.0 // Default
     var didReloadFromRotation = false
     
+    // MARK: Constants
     open var labelMinimumHeight: CGFloat = 30.0
     open var labelMinimumWidth: CGFloat = 30.0
     open var textViewMinimumWidth: CGFloat = 30.0
@@ -109,6 +109,9 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         // Set default label properties
         self.label.font = NWSTokenViewAppearance.appearance.font
         self.label.textColor = UIColor.black
+        
+        // Set default text view properties
+        textView.delegate = self
         
         if isEditable {
             self.scrollView.addSubview(self.textView)
@@ -508,8 +511,9 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
                 textView.frame = CGRect(x: self.tokenViewInsets.left, y: scrollViewOriginY, width: maxWidth, height: height)
                 self.scrollView.contentSize = CGSize(width: self.scrollView.bounds.width, height: textView.frame.origin.y+height+self.tokenViewInsets.bottom)
                 
-                // Notify delegate of content size change
-                self.delegate?.tokenView(self, contentSizeChanged: self.scrollView.contentSize)
+//                // Notify delegate of content size change
+//                self.delegate?.tokenView(self, contentSizeChanged: self.scrollView.contentSize)
+                
                 self.layoutIfNeeded()
             }
             self.textView.layoutIfNeeded()
@@ -534,5 +538,3 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         self.scrollView.setContentOffset(bottomPoint, animated: animated)
     }
 }
-
-

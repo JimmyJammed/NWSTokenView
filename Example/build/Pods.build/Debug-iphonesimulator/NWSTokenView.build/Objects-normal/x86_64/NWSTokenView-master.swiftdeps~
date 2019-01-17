@@ -1,8 +1,8 @@
 version: "Apple Swift version 4.2.1 (swiftlang-1000.11.42 clang-1000.11.45.1)"
 options: "687fb9c51c70a1b2c73e5ff79e9ceef4"
-build_time: [1547694692, 955386000]
+build_time: [1547694303, 939688000]
 inputs:
   "/Users/phanhauy/Desktop/Personal/My-Distribution/NWSTokenView/Pod/Classes/NWSToken/NWSToken.swift": [1544675834, 0]
   "/Users/phanhauy/Desktop/Personal/My-Distribution/NWSTokenView/Pod/Classes/NWSTokenViewAppearance.swift": [1545113699, 0]
   "/Users/phanhauy/Desktop/Personal/My-Distribution/NWSTokenView/Pod/Classes/NWSTokenView.swift": [1545205265, 0]
-  "/Users/phanhauy/Desktop/Personal/My-Distribution/NWSTokenView/Pod/Classes/PlaceHolderTextView.swift": !dirty [1547694680, 0]
+  "/Users/phanhauy/Desktop/Personal/My-Distribution/NWSTokenView/Pod/Classes/PlaceHolderTextView.swift": [1545126286, 0]
