@@ -91,13 +91,13 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         self.addSubview(self.scrollView)
         
         // Set default label properties
-        self.label.font = UIFont(name: "HelveticaNeue", size: 14)
+        self.label.font = UIFont.systemFont(ofSize: 14.0)
         self.label.textColor = UIColor.black
-        
+
         // Set default text view properties
         self.textView.backgroundColor = UIColor.clear
         self.textView.textColor = UIColor.black
-        self.textView.font = UIFont(name: "HelveticaNeue", size: 14)
+        self.textView.font = UIFont.systemFont(ofSize: 14.0)
         self.textView.delegate = self
         self.textView.isScrollEnabled = false
         self.textView.autocorrectionType = UITextAutocorrectionType.no // Hide suggestions to prevent UI issues with message bar / keyboard.
@@ -240,7 +240,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         {
             self.label.bounds.size = CGSize(width: self.labelMinimumWidth, height: self.labelMinimumHeight)
             self.label.text = labelText
-            self.label.font = self.dataSource?.fontForTokenViewLabel(self) ?? UIFont(name: "HelveticaNeue", size: 14)
+            self.label.font = self.dataSource?.fontForTokenViewLabel(self) ?? UIFont.systemFont(ofSize: 14.0)
             self.label.textColor = self.dataSource?.textColorForTokenViewLabel(self) ?? UIColor.black
             self.label.frame = CGRect(x: x, y: y, width: self.label.bounds.width-self.tokenViewInsets.left-self.tokenViewInsets.right, height: self.labelMinimumHeight)
             self.label.sizeToFit()
@@ -256,7 +256,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     /// Sets up token view text view.
     fileprivate func setupTextView(offsetX x: inout CGFloat, offsetY y: inout CGFloat, remainingWidth: inout CGFloat)
     {
-        self.textView.font = self.dataSource?.fontForTokenViewTextView(self) ?? UIFont(name: "HelveticaNeue", size: 14)
+        self.textView.font = self.dataSource?.fontForTokenViewTextView(self) ?? UIFont.systemFont(ofSize: 14.0)
         // Set placeholder text (ignore if tokens exist, text exists, or is currently active field)
         if self.tokens.count == 0 && self.lastText == "" && !self.shouldBecomeFirstResponder
         {
