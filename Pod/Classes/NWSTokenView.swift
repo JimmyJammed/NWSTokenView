@@ -21,7 +21,12 @@ public protocol NWSTokenDataSource
     func insetsForTokenView(_ tokenView: NWSTokenView) -> UIEdgeInsets?
     func numberOfTokensForTokenView(_ tokenView: NWSTokenView) -> Int
     func titleForTokenViewLabel(_ tokenView: NWSTokenView) -> String?
+    func fontForTokenViewLabel(_ tokenview: NWSTokenView) -> UIFont?
+    func textColorForTokenViewLabel(_ tokenview: NWSTokenView) -> UIColor?
     func titleForTokenViewPlaceholder(_ tokenView: NWSTokenView) -> String?
+    func fontForTokenViewTextView(_ tokenview: NWSTokenView) -> UIFont?
+    func textColorForTokenViewPlaceholder(_ tokenview: NWSTokenView) -> UIColor?
+    func textColorForTokenViewTextView(_ tokenview: NWSTokenView) -> UIColor?
     func tokenView(_ tokenView: NWSTokenView, viewForTokenAtIndex index: Int) -> UIView?
 }
 
@@ -235,6 +240,8 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         {
             self.label.bounds.size = CGSize(width: self.labelMinimumWidth, height: self.labelMinimumHeight)
             self.label.text = labelText
+            self.label.font = self.dataSource?.fontForTokenViewLabel(self) ?? UIFont(name: "HelveticaNeue", size: 14)
+            self.label.textColor = self.dataSource?.textColorForTokenViewLabel(self) ?? UIColor.black
             self.label.frame = CGRect(x: x, y: y, width: self.label.bounds.width-self.tokenViewInsets.left-self.tokenViewInsets.right, height: self.labelMinimumHeight)
             self.label.sizeToFit()
             // Reset frame after sizeToFit
@@ -249,18 +256,19 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     /// Sets up token view text view.
     fileprivate func setupTextView(offsetX x: inout CGFloat, offsetY y: inout CGFloat, remainingWidth: inout CGFloat)
     {
+        self.textView.font = self.dataSource?.fontForTokenViewTextView(self) ?? UIFont(name: "HelveticaNeue", size: 14)
         // Set placeholder text (ignore if tokens exist, text exists, or is currently active field)
         if self.tokens.count == 0 && self.lastText == "" && !self.shouldBecomeFirstResponder
         {
             if let placeholderText = self.dataSource?.titleForTokenViewPlaceholder(self)
             {
                 self.textView.text = placeholderText
-                self.textView.textColor = UIColor.lightGray
+                self.textView.textColor = self.dataSource?.textColorForTokenViewPlaceholder(self) ?? UIColor.lightGray
             }
         }
         else
         {
-            self.textView.textColor = UIColor.black
+            self.textView.textColor = self.dataSource?.textColorForTokenViewTextView(self) ?? UIColor.black
             self.textView.text = ""
         }
         
@@ -403,7 +411,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
                 if textView.text == placeholderText
                 {
                     textView.text = ""
-                    textView.textColor = UIColor.black
+                    textView.textColor = self.dataSource?.textColorForTokenViewTextView(self) ?? UIColor.black
                 }
             }
             
@@ -441,7 +449,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
                 if let placeholderText = self.dataSource?.titleForTokenViewPlaceholder(self)
                 {
                     textView.text = placeholderText
-                    textView.textColor = UIColor.lightGray
+                    textView.textColor = self.dataSource?.textColorForTokenViewPlaceholder(self) ?? UIColor.lightGray
                 }
             }
         }
