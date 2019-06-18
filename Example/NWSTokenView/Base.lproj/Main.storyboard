@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A319" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vx6-RL-lMv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vx6-RL-lMv">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,27 +18,30 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="979-fw-I4V">
+                                <rect key="frame" x="0.0" y="138" width="414" height="724"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NWSTokenViewExampleCellIdentifier" rowHeight="60" id="lfN-Hg-td8" customClass="NWSTokenViewExampleCell" customModule="NWSTokenView_Example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="60"/>
+                                        <rect key="frame" x="0.0" y="22" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lfN-Hg-td8" id="f2P-3A-aTj">
-                                            <frame key="frameInset" width="320" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TokenPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="YRs-03-c8g">
+                                                    <rect key="frame" x="20" y="5" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="995-Q2-u0g"/>
                                                         <constraint firstAttribute="width" constant="50" id="bQO-fV-uis"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bolt" translatesAutoresizingMaskIntoConstraints="NO" id="el5-Z1-T0C">
+                                                    <rect key="frame" x="354" y="10" width="40" height="40"/>
                                                     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="6mW-So-0hQ"/>
@@ -44,6 +49,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Johnny Appleseed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6G-aw-ujb">
+                                                    <rect key="frame" x="78" y="5" width="268" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="Al1-WY-grL"/>
                                                     </constraints>
@@ -83,15 +89,17 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QjA-FH-dTJ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="50"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kbh-2L-BPR" customClass="NWSTokenView" customModule="NWSTokenView">
+                                        <rect key="frame" x="8" y="5" width="398" height="40"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="R9E-yS-qrh"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.50909271915467202" green="0.62471629836183595" blue="0.94157379082959103" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.73520356419999999" green="0.21438239249999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="kbh-2L-BPR" firstAttribute="top" secondItem="QjA-FH-dTJ" secondAttribute="top" constant="5" id="9r1-WO-ZU4"/>
                                     <constraint firstItem="kbh-2L-BPR" firstAttribute="trailing" secondItem="QjA-FH-dTJ" secondAttribute="trailingMargin" id="AuB-YL-r1b"/>
@@ -122,18 +130,18 @@
                             <constraint firstItem="QjA-FH-dTJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="97C-HW-i98"/>
                             <constraint firstItem="979-fw-I4V" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="2" id="ZUg-g0-HnQ"/>
                             <constraint firstItem="979-fw-I4V" firstAttribute="leading" secondItem="QjA-FH-dTJ" secondAttribute="leading" id="haL-Tx-RDU"/>
-                            <constraint firstItem="QjA-FH-dTJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="km0-Ql-akX"/>
+                            <constraint firstItem="QjA-FH-dTJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="km0-Ql-akX"/>
                             <constraint firstItem="979-fw-I4V" firstAttribute="top" secondItem="QjA-FH-dTJ" secondAttribute="bottom" id="rhb-lz-Lu7"/>
                             <constraint firstItem="QjA-FH-dTJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="tUD-0Q-E0k"/>
                             <constraint firstItem="979-fw-I4V" firstAttribute="top" secondItem="QjA-FH-dTJ" secondAttribute="top" constant="50" id="uB1-6c-22l"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="QjA-FH-dTJ" secondAttribute="trailing" constant="-16" id="vgc-U7-7TS"/>
+                            <constraint firstAttribute="trailing" secondItem="QjA-FH-dTJ" secondAttribute="trailing" id="vgc-U7-7TS"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="3uB-l6-VDv"/>
-                                <exclude reference="97C-HW-i98"/>
                                 <exclude reference="ZUg-g0-HnQ"/>
                                 <exclude reference="uB1-6c-22l"/>
+                                <exclude reference="3uB-l6-VDv"/>
+                                <exclude reference="97C-HW-i98"/>
                             </mask>
                         </variation>
                         <connections>
@@ -163,9 +171,9 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vx6-RL-lMv" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cEB-S8-A1o">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.18875950574874878" green="0.40674507617950439" blue="0.83389544486999512" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.73520356416702271" green="0.21438239248517882" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
