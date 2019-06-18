@@ -98,12 +98,57 @@ func titleForTokenViewLabel(tokenView: NWSTokenView) -> String?
 }
 ```
 
+The font for the tokenView label:
+
+```swift
+func fontForTokenViewLabel(tokenView: NWSTokenView) -> UIFont?
+{
+    return UIFont.systemFont(ofSize: 14.0)
+}
+```
+
+The text color for the tokenView label:
+
+```swift
+func textColorForTokenViewLabel(tokenView: NWSTokenView) -> UIColor?
+{
+    return UIColor.black
+}
+```
+
 The placeholder text for the tokenView when there are no tokens:
 
 ```swift
 func titleForTokenViewPlaceholder(tokenView: NWSTokenView) -> String?
 {
     return "Search contacts..."
+}
+```
+
+The font for the tokenView textView:
+
+```swift
+func fontForTokenViewTextView(tokenView: NWSTokenView) -> UIFont?
+{
+    return UIFont.systemFont(ofSize: 14.0)
+}
+```
+
+The text color for the tokenView textView when there are no tokens:
+
+```swift
+func textColorForTokenViewPlaceholder(tokenView: NWSTokenView) -> UIColor?
+{
+    return UIColor.lightGray
+}
+```
+
+The text color for the tokenView textView:
+
+```swift
+func textColorForTokenViewTextView(tokenView: NWSTokenView) -> UIColor?
+{
+    return UIColor.black
 }
 ```
 
