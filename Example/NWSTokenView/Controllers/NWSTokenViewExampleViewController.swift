@@ -254,11 +254,31 @@ class NWSTokenViewExampleViewController: UIViewController, UITableViewDataSource
         return "To:"
     }
     
+    func fontForTokenViewLabel(_ tokenview: NWSTokenView) -> UIFont? {
+        return nil
+    }
+    
+    func textColorForTokenViewLabel(_ tokenview: NWSTokenView) -> UIColor? {
+        return nil
+    }
+    
     func titleForTokenViewPlaceholder(_ tokenView: NWSTokenView) -> String?
     {
         return "Search contacts..."
     }
     
+    func fontForTokenViewTextView(_ tokenview: NWSTokenView) -> UIFont? {
+        return nil
+    }
+    
+    func textColorForTokenViewPlaceholder(_ tokenview: NWSTokenView) -> UIColor? {
+        return nil
+    }
+    
+    func textColorForTokenViewTextView(_ tokenview: NWSTokenView) -> UIColor? {
+        return nil
+    }
+
     func tokenView(_ tokenView: NWSTokenView, viewForTokenAtIndex index: Int) -> UIView?
     {
         let contact = selectedContacts[Int(index)]
