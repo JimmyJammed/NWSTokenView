@@ -583,6 +583,9 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
             if finalText != proposedText
             {
                 textView.text = finalText
+                // We need to invoke `textViewDidChange` ourselves as the system doesn't
+                // when we return `false`
+                textViewDidChange(textView)
                 return false
             }
         }
