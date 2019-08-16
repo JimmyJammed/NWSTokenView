@@ -58,7 +58,7 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
     fileprivate var lastText = ""
     
     // MARK: Public Vars
-    var label = UILabel()
+    open var label = UILabel()
     var tokens: [NWSToken] = []
     var selectedToken: NWSToken?
     var tokenViewInsets: UIEdgeInsets = UIEdgeInsets.init(top: 5, left: 5, bottom: 5, right: 5) // Default
