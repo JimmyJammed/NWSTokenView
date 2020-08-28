@@ -122,6 +122,17 @@ open class NWSTokenView: UIView, UIScrollViewDelegate, UITextViewDelegate
         }
     }
 
+    public var keyboardType: UIKeyboardType {
+        get {
+            return textView.keyboardType
+        }
+        set {
+            guard textView.keyboardType != newValue else { return }
+            textView.keyboardType = newValue
+            textView.reloadInputViews()
+        }
+    }
+
     public var titleFont: UIFont {
         get {
             return label.font
